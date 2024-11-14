@@ -23,5 +23,3 @@ app.use('/admin', adminRouter)
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
   })
-
-  llll
