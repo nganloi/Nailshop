@@ -1,0 +1,146 @@
+<%- include('../layout/dashboard/head'); -%>
+
+
+<body>
+
+    <!-- header sec start -->
+    <%- include('../layout/dashboard/header'); -%>
+
+    <!-- header sec end -->
+    <!-- banner-sec start -->
+    <section class="banner inner-banner">
+        <div class="inner-shape">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="banner-text">
+                            <h1 class="h1-title">checkout</h1>
+                            <div class="banner-links">
+                                <ul>
+                                    <li><a href="index.html" title="Home">Home</a> /</li>
+                                    <li>Check Out</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- banner-sec end -->
+    <!-- checkout-start -->
+    <section class="checkout">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <h2 class="h2-title">billing information</h2>
+                    <div class="checkout-form">
+                        <form action="javascript:void(0);">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-input" placeholder="First Name">
+                                </div>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-input" placeholder="Last Name">
+                                </div>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-input" placeholder="Phone Number">
+                                </div>
+                                <div class="col-lg-6">
+                                    <input type="email" class="form-input" placeholder="E-mail Address">
+                                </div>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-input" placeholder="Country">
+                                </div>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-input" placeholder="State/City">
+                                </div>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-input" placeholder="Town">
+                                </div>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-input" placeholder="Pin Code">
+                                </div>
+                                <div class="col-12">
+                                    <textarea class="form-input" cols="30" rows="20" placeholder="Address"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <input type="checkbox" id="shiptothesameaddress">
+                                        <label for="shiptothesameaddress">ship to the same address</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="submit-btn">
+                                        <a href="javascript:void(0);" class="sec-btn" title="Deliver Here">Deliver
+                                            Here</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="your-order">
+                        <h2 class="h2-title">your order</h2>
+                        <div class="order-list">
+                            <ul>
+                                <li class="list-name">
+                                    <p>L’Oreal Hair Spa Nourishing Creambath</p> <span>$65</span>
+                                </li>
+                                <li class="list-name">
+                                    <p>Swedish Spa Beauty Wonder Oil By Oriflame</p> <span>$55</span>
+                                </li>
+                                <li class="list-name">
+                                    <p>Bio Argan Oil By Lakme</p> <span>$25</span>
+                                </li>
+                                <li class="list-name">
+                                    <p><b>cart subtotal</b></p> <span>$145</span>
+                                </li>
+                                <li class="list-name">
+                                    <p><b>shipping</b></p><span>$55</span>
+                                </li>
+                                <li class="list-name">
+                                    <p><b>cart total</b></p><span>$200</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- checkout-end -->
+    <!-- footer start -->
+    <section class="subscribe">
+        <div class="container lg-container">
+            <div class="sub-sec back-img" style="background-image:url(assets/images/subscribe-bg.jpg);">
+                <div class="row">
+                    <div class="col-xl-6 col-12 m-auto">
+                        <div class="title">
+                            <h2 class="h2-title lg-title">subscribe to get our latest updated</h2>
+                        </div>
+                        <div class="subscribe-from">
+                            <div class="form-box">
+                                <form>
+                                    <input type="email" class="form-input-2" name="email" placeholder="Email Address..."
+                                        required="">
+                                    <button type="submit" class="sec-btn"><span>Subscribe</span></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <%- include('../layout/dashboard/footer'); -%>
+
+    <!-- footer end -->
+    <!-- Scroll To Top Start -->
+    <%- include('../layout/dashboard/js'); -%>
+
+
+</body>
+
+</html>

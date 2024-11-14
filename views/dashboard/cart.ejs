@@ -1,0 +1,344 @@
+<%- include('../layout/dashboard/head'); -%>
+
+
+<body>
+    <!-- header sec start -->
+    <%- include('../layout/dashboard/header'); -%>
+
+    <!-- header sec end -->
+    <!-- banner-sec start -->
+    <section class="banner inner-banner">
+        <div class="inner-shape">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="banner-text">
+                            <h1 class="h1-title">shopping cart</h1>
+                            <div class="banner-links">
+                                <ul>
+                                    <li><a href="index.html" title="Home">Home</a> /</li>
+                                    <li>Shopping Cart</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- banner-sec end -->
+    <!-- wishlist sec start -->
+    <section class="wishlist">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title">
+                        <h2 class="h2-title">your wishlist</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="table-responsive">
+                        <table class="table check-tbl">
+                            <thead>
+                                <tr>
+                                    <th class="remove">Remove</th>
+                                    <th class="image">Image</th>
+                                    <th>Product name</th>
+                                    <th class="stock">Stock Status</th>
+                                    <th class="p-price">Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="alert">
+                                    <td class="product-item-close remove">
+                                        <a href="javascript:void(0);" data-bs-dismiss="alert" aria-label="close"
+                                            class="ti-close"><i class="fas fa-times"></i></a>
+                                    </td>
+                                    <td class="product-item-img image">
+                                        <img src="assets/images/wish1.jpg" alt="wish1" />
+                                    </td>
+                                    <td class="product-item-name">Prduct Item 1</td>
+                                    <td class="product-item-quantity stock">In Stock</td>
+                                    <td class="product-item-price p-price">$50.00</td>
+                                </tr>
+                                <tr class="alert">
+                                    <td class="product-item-close remove">
+                                        <a href="javascript:void(0);" data-bs-dismiss="alert" aria-label="close"
+                                            class="ti-close"><i class="fas fa-times"></i></a>
+                                    </td>
+                                    <td class="product-item-img image">
+                                        <img src="assets/images/wish2.jpg" alt="wish2" />
+                                    </td>
+                                    <td class="product-item-name">Prduct Item 2</td>
+                                    <td class="product-item-quantity stock">In Stock</td>
+                                    <td class="product-item-price p-price">$100.00</td>
+                                </tr>
+                                <tr class="alert">
+                                    <td class="product-item-close remove">
+                                        <a href="javascript:void(0);" data-bs-dismiss="alert" aria-label="close"
+                                            class="ti-close"><i class="fas fa-times"></i></a>
+                                    </td>
+                                    <td class="product-item-img image">
+                                        <img src="assets/images/wish3.jpg" alt="wish3" />
+                                    </td>
+                                    <td class="product-item-name">Prduct Item 3</td>
+                                    <td class="product-item-quantity stock">In Stock</td>
+                                    <td class="product-item-price p-price">$80.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="total-pro">
+                <h3 class="h3-title">total price</h3>
+                <h4 class="h4-title">$230.00</h4>
+            </div>
+            <div class="pro-btns">
+                <a href="javascript:void(0);" class="sec-btn" title="Update Cart">Update Cart</a>
+                <a href="product.html" class="sec-btn" title="Continue Shopping">Continue Shopping</a>
+            </div>
+        </div>
+    </section>
+    <!-- wishlist sec end -->
+    <!-- related product start-->
+    <section class="related-products">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="h2-title">Related Products</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="related-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="single-product mb-30">
+                                    <div class="product-img">
+                                        <a href="single-product.html">
+                                            <img src="assets/images/product1.png" alt="product1" />
+                                        </a>
+                                        <span class="descount-sticker">sold-out</span>
+                                        <span class="sticker">New</span>
+
+                                        <div class="product-action d-flex justify-content-between">
+                                            <a class="product-btn" href="javascript:void(0);">Add to Cart</a>
+                                            <ul class="d-flex">
+                                                <li>
+                                                    <a href="#quick-view-modal-container" data-bs-toggle="modal"
+                                                        title="Quick View"><i class="fa fa-eye"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0);"><i class="fa fa-exchange"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <h3><a href="single-product.html">hair shampoo</a></h3>
+                                        <div class="ratting">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                        <h4 class="price"><span class="new">$50.00</span></h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="single-product mb-30">
+                                    <div class="product-img">
+                                        <a href="single-product.html">
+                                            <img src="assets/images/product2.png" alt="product2" />
+                                        </a>
+                                        <span class="descount-sticker">10% off</span>
+
+                                        <div class="product-action d-flex justify-content-between">
+                                            <a class="product-btn" href="javascript:void(0);">Add to Cart</a>
+                                            <ul class="d-flex">
+                                                <li>
+                                                    <a href="#quick-view-modal-container" data-bs-toggle="modal"
+                                                        title="Quick View"><i class="fa fa-eye"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0);"><i class="fa fa-exchange"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <h3><a href="single-product.html">hair shampoo</a></h3>
+                                        <div class="ratting">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                        <h4 class="price"><span class="new">$50.00</span></h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="single-product mb-30">
+                                    <div class="product-img">
+                                        <a href="single-product.html">
+                                            <img src="assets/images/product3.png" alt="product3" />
+                                        </a>
+                                        <span class="sticker">New</span>
+
+                                        <div class="product-action d-flex justify-content-between">
+                                            <a class="product-btn" href="javascript:void(0);">Add to Cart</a>
+                                            <ul class="d-flex">
+                                                <li>
+                                                    <a href="#quick-view-modal-container" data-bs-toggle="modal"
+                                                        title="Quick View"><i class="fa fa-eye"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0);"><i class="fa fa-exchange"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <h3><a href="single-product.html">hair shampoo</a></h3>
+                                        <div class="ratting">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                        <h4 class="price"><span class="new">$50.00</span></h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="single-product mb-30">
+                                    <div class="product-img">
+                                        <a href="single-product.html">
+                                            <img src="assets/images/product4.png" alt="product4" />
+                                        </a>
+                                        <span class="descount-sticker">20% off</span>
+                                        <span class="sticker">New</span>
+
+                                        <div class="product-action d-flex justify-content-between">
+                                            <a class="product-btn" href="javascript:void(0);">Add to Cart</a>
+                                            <ul class="d-flex">
+                                                <li>
+                                                    <a href="#quick-view-modal-container" data-bs-toggle="modal"
+                                                        title="Quick View"><i class="fa fa-eye"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0);"><i class="fa fa-exchange"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <h3><a href="single-product.html">hair shampoo</a></h3>
+                                        <div class="ratting">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                        <h4 class="price"><span class="new">$50.00</span></h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="single-product mb-30">
+                                    <div class="product-img">
+                                        <a href="single-product.html">
+                                            <img src="assets/images/product1.png" alt="product1" />
+                                        </a>
+                                        <span class="descount-sticker">sold-out</span>
+                                        <span class="sticker">New</span>
+
+                                        <div class="product-action d-flex justify-content-between">
+                                            <a class="product-btn" href="javascript:void(0);">Add to Cart</a>
+                                            <ul class="d-flex">
+                                                <li>
+                                                    <a href="#quick-view-modal-container" data-bs-toggle="modal"
+                                                        title="Quick View"><i class="fa fa-eye"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0);"><i class="fa fa-exchange"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <h3><a href="single-product.html">hair shampoo</a></h3>
+                                        <div class="ratting">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                        <h4 class="price"><span class="new">$50.00</span></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- related product end -->
+    <!-- footer start -->
+    <section class="subscribe">
+        <div class="container lg-container">
+            <div class="sub-sec back-img" style="background-image: url(assets/images/subscribe-bg.jpg)">
+                <div class="row">
+                    <div class="col-xl-6 col-12 m-auto">
+                        <div class="title">
+                            <h2 class="h2-title lg-title">subscribe to get our latest updated</h2>
+                        </div>
+                        <div class="subscribe-from">
+                            <div class="form-box">
+                                <form>
+                                    <input type="email" class="form-input-2" name="email" placeholder="Email Address..."
+                                        required="" />
+                                    <button type="submit" class="sec-btn"><span>Subscribe</span></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <%- include('../layout/dashboard/footer'); -%>
+
+    <!-- footer end -->
+    <!-- Scroll To Top Start -->
+    <%- include('../layout/dashboard/js'); -%>
+
+</body>
+
+</html>

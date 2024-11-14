@@ -1,0 +1,261 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://postgres:12345@localhost:5432/bcare?schema=public" 
+}
+
+model profile {
+  id Int  @id @default(autoincrement())
+  name String? 
+  description String?
+  phone String?
+  address String?
+  time String?
+  date String?
+}
+
+model social {
+  id Int  @id @default(autoincrement())
+  name String?
+  link String?
+}
+
+model contact {
+  id Int  @id @default(autoincrement())
+  name String?
+  mail String?
+  phone String?
+  subject String?
+  description String?
+
+}
+
+model service {
+  id Int  @id @default(autoincrement())
+  image String?
+  name String?
+  description String?
+}
+
+model mkt_endow {
+  id Int  @id @default(autoincrement())
+  image String?
+  name String?
+  description String?
+
+}
+
+model promotion {
+  id Int  @id @default(autoincrement())
+  name String?
+  image String?
+  description String?
+
+}    
+
+
+model role {
+  id Int  @id @default(autoincrement())
+  possion String?
+  user user[]
+
+}
+
+
+
+model user {
+  id Int  @id @default(autoincrement())
+  image String?
+  fname String?
+  lname String?
+  phone String?
+  mail String?
+  contry String?
+  address String?
+  state String?
+  town String?
+  comment comment[]
+  order order[]
+  product user_product[]
+  coupon user_coupon[]
+  type user_type[]
+}
+
+
+model comment {
+  id Int  @id @default(autoincrement())
+  content String?
+  user user @relation(fields: [userid], references: [id])
+  userid Int
+  blog blog @relation(fields: [blogid], references: [id])
+  blogid Int
+
+}
+
+model blog {
+  id Int @id @default(autoincrement())
+  image String?
+  name String?
+  description String?
+  time String?
+  comment comment[]
+  tag blog_tag[]
+}
+
+model tag {
+  id Int @id @default(autoincrement())
+  name String?
+  bog blog_tag[] 
+}
+ 
+model blog_tag {
+  id Int  @id @default(autoincrement())
+  tag tag @relation(fields: [tagid], references: [id])
+  tagid Int
+  blog blog @relation(fields: [blogid], references: [id])
+  blogid Int
+} 
+
+model product {
+  id Int  @id @default(autoincrement())
+  image String?
+  name String?
+  price String?
+  description String?
+  stock String?
+  comment comment[]
+  order order_product[]
+  user user_product[]
+  coupon coupon_product[]
+
+
+}
+ 
+model user_product {
+  id Int  @id @default(autoincrement())
+  user @relation(fields: [userid], references: [id])
+  userid Int
+  product product @relation(fields: [productid], references: [id])
+  productid Int
+ }
+
+
+model product_cate {
+  id Int  @id @default(autoincrement())
+  cate @relation(fields: [cateid], references: [id])
+  cateid Int
+  product product @relation(fields: [productid], references: [id])
+  productid Int
+}
+
+
+model product_coupon {
+  id Int  @id @default(autoincrement())
+  coupon @relation(fields: [couponid], references: [id])
+  couponid Int
+  product product @relation(fields: [productid], references: [id])
+  productid Int
+}
+
+model oder_product {
+  id Int  @id @default(autoincrement())
+  order @relation(fields: [orderid], references: [id])
+  orderid Int
+  product product @relation(fields: [productid], references: [id])
+  productid Int
+}
+
+model like_product {
+  id Int  @id @default(autoincrement())
+  user user @relation(fields: [userid], references: [id])
+  userid Int
+  product product @relation(fields: [productid], references: [id])
+  productid Int
+}
+
+
+model oder {
+  id Int  @id @default(autoincrement())
+  user @relation(fields: [userid], references: [id])
+  userid Int
+  active String?
+  product order_product[]
+  coupon order_coupon[]
+}
+
+model category {
+  id Int  @id @default(autoincrement())
+  name String?
+  product product_cate[]
+  coupon cate_coupon[]
+}
+
+model cate_coupon {
+  id Int  @id @default(autoincrement())
+  cate  category @relation(fields: [cateid], references: [id])
+  cateid Int
+  coupon coupon @relation(fields: [couponid], references: [id])
+  couponid Int
+}
+
+model coupon {
+  id Int  @id @default(autoincrement())
+  name String?
+  price String?
+  quantity String?
+  coupon String?
+  action string?
+  user user_coupon[]
+  product product_coupon[]
+  order order_coupon[]
+  type type_coupon[]
+  cate cate_coupon[]
+}
+
+model user_coupon {
+  id Int  @id @default(autoincrement())
+  user  user @relation(fields: [userid], references: [id])
+  userid Int
+  coupon coupon @relation(fields: [couponid], references: [id])
+  couponid Int
+}
+
+model order_coupon {
+  id Int  @id @default(autoincrement())
+  order  order @relation(fields: [orderid], references: [id])
+  orderid Int
+  coupon coupon @relation(fields: [couponid], references: [id])
+  couponid Int
+}
+
+model type {
+  id Int  @id @default(autoincrement())
+  name String?
+  user user_type[]
+  coupon type_coupon[]
+}
+
+model type_coupon {
+  id Int  @id @default(autoincrement())
+  type  type @relation(fields: [typeid], references: [id])
+  typeid Int
+  coupon coupon @relation(fields: [couponid], references: [id])
+  couponid Int
+}
+
+model user_type {
+  id Int  @id @default(autoincrement())
+  type  type @relation(fields: [typeid], references: [id])
+  typeid Int
+  user user @relation(fields: [userid], references: [id])
+  userid Int
+}

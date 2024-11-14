@@ -1,0 +1,860 @@
+<%- include('../layout/dashboard/head'); -%>
+
+
+<body>
+    <!-- header sec start -->
+    <%- include('../layout/dashboard/header'); -%>
+
+    <!-- header sec end -->
+    <!-- banner-sec start -->
+    <section class="banner">
+        <div class="banner-bg" style="background-image: url(assets/images/banner-img.png)"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="banner-text">
+                        <h1 class="h1-title">Get the skin You want to feel</h1>
+                        <p>the right formula cleanses your skin without stripping essential ,healthy oils. take it easy
+                            with exfoliatingscrubs</p>
+                        <div class="banner-btn">
+                            <a href="javascript:void(0);" class="sec-btn" title="Book Now">Book Now</a>
+                            <a href="javascript:void(0);" class="video-btn">
+                                <span class="icon"> <i class="fas fa-play"></i> </span>Play Video</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- banner-sec end -->
+    <!-- about sec start -->
+    <section class="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title">
+                        <h2 class="h2-title">Why To choose Us?</h2>
+                        <p>Beauties Operates its retail network on stand-alone basis</p>
+                    </div>
+                </div>
+            </div>
+            <div class="about-list">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="about-box">
+                            <div class="about-icon">
+                                <img src="assets/images/icon-1.svg" alt="free delivery" />
+                            </div>
+                            <h4 class="h4-title">free & fast shipping</h4>
+                            <p>we have delivery service that is fast , safe & free of charge shipping</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="about-box">
+                            <div class="about-icon">
+                                <img src="assets/images/icon-2.svg" alt="free delivery" />
+                            </div>
+                            <h4 class="h4-title">100% original brands</h4>
+                            <p>our products are 100% original brand we also have guarentee for product</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="about-box">
+                            <div class="about-icon">
+                                <img src="assets/images/icon-3.svg" alt="free delivery" />
+                            </div>
+                            <h4 class="h4-title">discount every weeks</h4>
+                            <p>Get attracive discount every weeks on weekend for all categories</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="about-shape">
+            <img src="assets/images/abou-us-shape-icon.svg" alt="abou-us-shape-icon" width="170" height="212" />
+        </div>
+    </section>
+    <!-- about sec end -->
+    <!-- courses sec start -->
+    <section class="courses">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title">
+                        <h2 class="h2-title">our Services</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="portfolio-tabbing">
+                        <ul id="filters">
+                            <li>
+                                <span class="filter active"
+                                    data-filter=".all, .Make-up, .Hairstyle, .Nail-art, .massage"> All</span>
+                            </li>
+                            <li>
+                                <span class="filter" data-filter=".Make-up">Make-up</span>
+                            </li>
+                            <li>
+                                <span class="filter" data-filter=".Hairstyle">Hairstyle</span>
+                            </li>
+                            <li>
+                                <span class="filter" data-filter=".massage">massage</span>
+                            </li>
+                            <li>
+                                <span class="filter" data-filter=".Nail-art">Nail-art</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="portfolio-list-box">
+                        <div class="portfoliolist bydefault_show" id="portfoliolist">
+                            <div class="portfolio Hairstyle" data-cat=".Hairstyle">
+                                <a href="/service-detail">
+                                    <div class="course-detail-box">
+                                        <div class="course-image">
+                                            <div class="course-img back-img"
+                                                style="background-image: url(assets/images/course-2.jpg)"></div>
+                                        </div>
+                                        <div class="course-text">
+                                            <h3 class="h3-title">Hairstyle</h3>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="portfolio Make-up" data-cat=".Make-up">
+                                <a href="/service-detail">
+                                    <div class="course-detail-box">
+                                        <div class="course-image">
+                                            <div class="course-img back-img"
+                                                style="background-image: url(assets/images/make-up.jpg)"></div>
+                                        </div>
+                                        <div class="course-text">
+                                            <h3 class="h3-title">Make-up</h3>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="portfolio massage" data-cat=".massage">
+                                <a href="/service-detail">
+                                    <div class="course-detail-box">
+                                        <div class="course-image">
+                                            <div class="course-img back-img"
+                                                style="background-image: url(assets/images/course-1.jpg)"></div>
+                                        </div>
+                                        <div class="course-text">
+                                            <h3 class="h3-title">Face Massage</h3>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="portfolio Nail-art" data-cat=".Nail-art">
+                                <a href="/service-detail">
+                                    <div class="course-detail-box">
+                                        <div class="course-image">
+                                            <div class="course-img back-img"
+                                                style="background-image: url(assets/images/nail-art.jpg)"></div>
+                                        </div>
+                                        <div class="course-text">
+                                            <h3 class="h3-title">Nail-art</h3>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="portfolio massage" data-cat=".massage">
+                                <a href="/service-detail">
+                                    <div class="course-detail-box">
+                                        <div class="course-image">
+                                            <div class="course-img back-img"
+                                                style="background-image: url(assets/images/spa.jpg)"></div>
+                                        </div>
+                                        <div class="course-text">
+                                            <h3 class="h3-title">SPA</h3>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="portfolio Hairstyle" data-cat=".Hairstyle">
+                                <a href="/service-detail">
+                                    <div class="course-detail-box">
+                                        <div class="course-image">
+                                            <div class="course-img back-img"
+                                                style="background-image: url(assets/images/Hair-treatment.jpg)"></div>
+                                        </div>
+                                        <div class="course-text">
+                                            <h3 class="h3-title">Hair Treatment</h3>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- courses sec end -->
+    <!-- offer sec start -->
+    <section class="offer back-img" style="background-image: url(assets/images/offer-bg.jpg)">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 m-auto">
+                    <div class="offer-text">
+                        <div class="title">
+                            <h2 class="h2-title big-title">Get Special offer</h2>
+                        </div>
+                        <p>
+                            indian dolor sit amet, consectetur adipiscing elit. Proin lorem mauris, gravida eget finibus
+                            ut, lobortis et diam. Aliquam risus. indian dolor sit amet, consectetur adipiscing
+                            elitindian dolor sit amet, consectetur adipiscing elit. Proin lorem mauris, gravida eget
+                            finibus ut, lobortis et diam. Aliquam risus. indian dolor sit amet, consectetur adipiscing
+                            elit
+                        </p>
+                        <a href="javascript:void(0);" class="sec-btn sec-btn-lg" title="Book Appointment">Book
+                            Appointment</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- offer sec end -->
+    <!-- product sec start -->
+    <section class="product">
+        <div class="products-slider">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="product-text">
+                            <h2 class="h2-title">Our latest products</h2>
+                            <p>indian dolor sit amet, consectetur adipiscing elit. Proin lorem mauris, gravida eget
+                                finibus ut, lobortis et diam. Aliquam risus.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="product-img back-img"
+                                        style="background-image: url(assets/images/product1.jpg)"></div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product-img back-img"
+                                        style="background-image: url(assets/images/h-product2.jpg)"></div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product-img back-img"
+                                        style="background-image: url(assets/images/h-product3.jpg)"></div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product-img back-img"
+                                        style="background-image: url(assets/images/h-product4.jpg)"></div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product-img back-img"
+                                        style="background-image: url(assets/images/h-product5.jpg)"></div>
+                                </div>
+                            </div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="beauty-expert">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="title">
+                            <h2 class="h2-title">our Beauty experts</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="expert-detail">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="team-swiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="expert-box">
+                                            <div class="expert-img">
+                                                <img src="assets/images/expert-1.jpg" alt="expert1" />
+                                            </div>
+                                            <div class="expert-title">
+                                                <h4 class="h4-title">Madison Arina</h4>
+                                                <span>Makeup artist</span>
+                                            </div>
+                                            <div class="expert-text">
+                                                <p>indian dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                    tempory sed do eiusmod tempory</p>
+                                            </div>
+                                            <div class="social-icons">
+                                                <ul>
+                                                    <li>
+                                                        <a href="javascript:void(0);" title="Instagram"><i
+                                                                class="fab fa-instagram"></i></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:void(0);" title="Facebook"><i
+                                                                class="fab fa-facebook-f"></i></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:void(0);" title="Pinterest"><i
+                                                                class="fab fa-pinterest-p"></i></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="expert-box">
+                                            <div class="expert-img">
+                                                <img src="assets/images/expert2.jpg" alt="expert2" />
+                                            </div>
+                                            <div class="expert-title">
+                                                <h4 class="h4-title">mehjabin rumi</h4>
+                                                <span>therapist</span>
+                                            </div>
+                                            <div class="expert-text">
+                                                <p>indian dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                    tempory sed do eiusmod tempory</p>
+                                            </div>
+                                            <div class="social-icons">
+                                                <ul>
+                                                    <li>
+                                                        <a href="javascript:void(0);" title="Instagram"><i
+                                                                class="fab fa-instagram"></i></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:void(0);" title="Facebook"><i
+                                                                class="fab fa-facebook-f"></i></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:void(0);" title="Pinterest"><i
+                                                                class="fab fa-pinterest-p"></i></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="expert-box">
+                                            <div class="expert-img">
+                                                <img src="assets/images/hair-dresser.jpg" alt="hair-dresser" />
+                                            </div>
+                                            <div class="expert-title">
+                                                <h4 class="h4-title">Madison Alina</h4>
+                                                <span>Hair-dresser</span>
+                                            </div>
+                                            <div class="expert-text">
+                                                <p>indian dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                    tempory sed do eiusmod tempory</p>
+                                            </div>
+                                            <div class="social-icons">
+                                                <ul>
+                                                    <li>
+                                                        <a href="javascript:void(0);" title="Instagram"><i
+                                                                class="fab fa-instagram"></i></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:void(0);" title="Facebook"><i
+                                                                class="fab fa-facebook-f"></i></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:void(0);" title="Pinterest"><i
+                                                                class="fab fa-pinterest-p"></i></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="expert-box">
+                                            <div class="expert-img">
+                                                <img src="assets/images/nail-artist.jpg" alt="nail-artist" />
+                                            </div>
+                                            <div class="expert-title">
+                                                <h4 class="h4-title">Adam Amelia</h4>
+                                                <span>Nail Artist</span>
+                                            </div>
+                                            <div class="expert-text">
+                                                <p>indian dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                    tempory sed do eiusmod tempory</p>
+                                            </div>
+                                            <div class="social-icons">
+                                                <ul>
+                                                    <li>
+                                                        <a href="javascript:void(0);" title="Instagram"><i
+                                                                class="fab fa-instagram"></i></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:void(0);" title="Facebook"><i
+                                                                class="fab fa-facebook-f"></i></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:void(0);" title="Pinterest"><i
+                                                                class="fab fa-pinterest-p"></i></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="expert-box">
+                                            <div class="expert-img">
+                                                <img src="assets/images/expert2.jpg" alt="expert2" />
+                                            </div>
+                                            <div class="expert-title">
+                                                <h4 class="h4-title">mehjabin rumi</h4>
+                                                <span>therapist</span>
+                                            </div>
+                                            <div class="expert-text">
+                                                <p>indian dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                    tempory sed do eiusmod tempory</p>
+                                            </div>
+                                            <div class="social-icons">
+                                                <ul>
+                                                    <li>
+                                                        <a href="javascript:void(0);" title="Instagram"><i
+                                                                class="fab fa-instagram"></i></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:void(0);" title="Facebook"><i
+                                                                class="fab fa-facebook-f"></i></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:void(0);" title="Pinterest"><i
+                                                                class="fab fa-pinterest-p"></i></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="expert-box">
+                                            <div class="expert-img">
+                                                <img src="assets/images/hair-dresser.jpg" alt="hair-dresser" />
+                                            </div>
+                                            <div class="expert-title">
+                                                <h4 class="h4-title">Madison Alina</h4>
+                                                <span>Hair-dresser</span>
+                                            </div>
+                                            <div class="expert-text">
+                                                <p>indian dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                    tempory sed do eiusmod tempory</p>
+                                            </div>
+                                            <div class="social-icons">
+                                                <ul>
+                                                    <li>
+                                                        <a href="javascript:void(0);" title="Instagram"><i
+                                                                class="fab fa-instagram"></i></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:void(0);" title="Facebook"><i
+                                                                class="fab fa-facebook-f"></i></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:void(0);" title="Pinterest"><i
+                                                                class="fab fa-pinterest-p"></i></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="expert-box">
+                                            <div class="expert-img">
+                                                <img src="assets/images/nail-artist.jpg" alt="nail-artist" />
+                                            </div>
+                                            <div class="expert-title">
+                                                <h4 class="h4-title">Adam Amelia</h4>
+                                                <span>Nail Artist</span>
+                                            </div>
+                                            <div class="expert-text">
+                                                <p>indian dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                    tempory sed do eiusmod tempory</p>
+                                            </div>
+                                            <div class="social-icons">
+                                                <ul>
+                                                    <li>
+                                                        <a href="javascript:void(0);" title="Instagram"><i
+                                                                class="fab fa-instagram"></i></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:void(0);" title="Facebook"><i
+                                                                class="fab fa-facebook-f"></i></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:void(0);" title="Pinterest"><i
+                                                                class="fab fa-pinterest-p"></i></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-arrows">
+                                    <div class="swiper-button-prev"></div>
+                                    <div class="swiper-pagination"></div>
+                                    <div class="swiper-button-next"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- product sec end -->
+    <!-- blog sec start -->
+    <section class="blog">
+        <div class="container lg-container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title">
+                        <h2 class="h2-title">recent blogs</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="blog-box-list">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="blog-box">
+                            <div class="blog-img back-img" style="background-image: url(assets/images/blog-1.jpg)">
+                            </div>
+                            <div class="blog-text">
+                                <h3 class="h3-title">At vero eos et accusamus et iusto</h3>
+                                <div class="course-content">
+                                    <div class="lessons">
+                                        <i class="fas fa-calendar"></i>
+                                        <p>Jan 22 , 2023</p>
+                                    </div>
+                                    <div class="time">
+                                        <i class="fas fa-comment"></i>
+                                        <p>2 comments</p>
+                                    </div>
+                                </div>
+                                <p>indian dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempory sed do
+                                    eiusmod tempory...</p>
+                                <div class="blog-link">
+                                    <a href="/blog-detail" title="Read more">Read more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="blog-box">
+                            <div class="blog-img back-img" style="background-image: url(assets/images/blog-2.jpg)">
+                            </div>
+                            <div class="blog-text">
+                                <h3 class="h3-title">At vero eos et accusamus et iusto</h3>
+                                <div class="course-content">
+                                    <div class="lessons">
+                                        <i class="fas fa-calendar"></i>
+                                        <p>Jan 22 , 2023</p>
+                                    </div>
+                                    <div class="time">
+                                        <i class="fas fa-comment"></i>
+                                        <p>2 comments</p>
+                                    </div>
+                                </div>
+                                <p>indian dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempory sed do
+                                    eiusmod tempory...</p>
+                                <div class="blog-link">
+                                    <a href="/blog-detail" title="Read more">Read more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="blog-box">
+                            <div class="blog-img back-img" style="background-image: url(assets/images/blog-3.jpg)">
+                            </div>
+                            <div class="blog-text">
+                                <h3 class="h3-title">At vero eos et accusamus et iusto</h3>
+                                <div class="course-content">
+                                    <div class="lessons">
+                                        <i class="fas fa-calendar"></i>
+                                        <p>Jan 22 , 2023</p>
+                                    </div>
+                                    <div class="time">
+                                        <i class="fas fa-comment"></i>
+                                        <p>2 comments</p>
+                                    </div>
+                                </div>
+                                <p>indian dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempory sed do
+                                    eiusmod tempory...</p>
+                                <div class="blog-link">
+                                    <a href="/blog-detail" title="Read more">Read more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="blog-btn">
+                <a href="/blog" class="sec-btn">View More</a>
+            </div>
+        </div>
+    </section>
+    <!-- blog sec end -->
+    <!-- pricing plan sec -->
+    <section class="pricing-plans">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title">
+                        <h2 class="h2-title">Pricing plans</h2>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="product-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="product-box">
+                                    <div class="product-img back-img"
+                                        style="background-image: url(assets/images/product1.jpg)"></div>
+                                    <div class="product-info-text">
+                                        <h4 class="h4-title">facial massage</h4>
+                                        <p>indian dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempory
+                                            sed do eiusmod tempory...</p>
+                                        <div class="product-price"><span>100$</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="product-box">
+                                    <div class="product-img back-img"
+                                        style="background-image: url(assets/images/make-up.jpg)"></div>
+                                    <div class="product-info-text">
+                                        <h4 class="h4-title">Make Up</h4>
+                                        <p>indian dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempory
+                                            sed do eiusmod tempory...</p>
+                                        <div class="product-price"><span>100$</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="product-box">
+                                    <div class="product-img back-img"
+                                        style="background-image: url(assets/images/bridal_makeup.jpg)"></div>
+                                    <div class="product-info-text">
+                                        <h4 class="h4-title">Bridal Makeup</h4>
+                                        <p>dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempory sed do
+                                            eiusmod tempory...</p>
+                                        <div class="product-price"><span>100$</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="product-box">
+                                    <div class="product-img back-img"
+                                        style="background-image: url(assets/images/face-massage.jpeg)"></div>
+                                    <div class="product-info-text">
+                                        <h4 class="h4-title">facial massage</h4>
+                                        <p>dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempory sed do
+                                            eiusmod tempory...</p>
+                                        <div class="product-price"><span>100$</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="product-box">
+                                    <div class="product-img back-img"
+                                        style="background-image: url(assets/images/nail-art.jpg)"></div>
+                                    <div class="product-info-text">
+                                        <h4 class="h4-title">Nail Art</h4>
+                                        <p>dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempory sed do
+                                            eiusmod tempory...</p>
+                                        <div class="product-price"><span>100$</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="product-box">
+                                    <div class="product-img back-img"
+                                        style="background-image: url(assets/images/Hair-treatment.jpg)"></div>
+                                    <div class="product-info-text">
+                                        <h4 class="h4-title">Hair Styling</h4>
+                                        <p>dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempory sed do
+                                            eiusmod tempory...</p>
+                                        <div class="product-price"><span>100$</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="product-box">
+                                    <div class="product-img back-img"
+                                        style="background-image: url(assets/images/make-up.jpg)"></div>
+                                    <div class="product-info-text">
+                                        <h4 class="h4-title">Make Up</h4>
+                                        <p>dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempory sed do
+                                            eiusmod tempory...</p>
+                                        <div class="product-price"><span>100$</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="product-box">
+                                    <div class="product-img back-img"
+                                        style="background-image: url(assets/images/bridal_makeup.jpg)"></div>
+                                    <div class="product-info-text">
+                                        <h4 class="h4-title">Bridal Makeup</h4>
+                                        <p>dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempory sed do
+                                            eiusmod tempory...</p>
+                                        <div class="product-price"><span>100$</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="product-box">
+                                    <div class="product-img back-img"
+                                        style="background-image: url(assets/images/face-massage.jpeg)"></div>
+                                    <div class="product-info-text">
+                                        <h4 class="h4-title">facial massage</h4>
+                                        <p>dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempory sed do
+                                            eiusmod tempory...</p>
+                                        <div class="product-price"><span>100$</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- pricing plan sec -->
+    <!-- review sec start -->
+    <section class="review">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title">
+                        <h2 class="h2-title">what client say</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-9 m-auto">
+                    <div class="review-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="review-box">
+                                    <div class="review-img back-img"
+                                        style="background-image: url(assets/images/review-1.jpg)"></div>
+                                    <div class="review-info-text overflow-text">
+                                        <p>
+                                            It is a long established fact that a reader will be distracted by the
+                                            readable content of a page when looking at its layout.It is a long
+                                            established fact that a reader will be distracted by the readable content of
+                                            a page when looking at its layout.It
+                                            is a long established fact that a reader will be
+                                        </p>
+                                        <div class="review-author">
+                                            <span>- Eliza Martinez</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="review-box">
+                                    <div class="review-img back-img"
+                                        style="background-image: url(assets/images/review-1.jpg)"></div>
+                                    <div class="review-info-text overflow-text">
+                                        <p>
+                                            It is a long established fact that a reader will be distracted by the
+                                            readable content of a page when looking at its layout.It is a long
+                                            established fact that a reader will be distracted by the readable content of
+                                            a page when looking at its layout.It
+                                            is a long established fact that a reader will be
+                                        </p>
+                                        <div class="review-author">
+                                            <span>- Eliza Martinez</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="review-box">
+                                    <div class="review-img back-img"
+                                        style="background-image: url(assets/images/review-1.jpg)"></div>
+                                    <div class="review-info-text overflow-text">
+                                        <p>
+                                            It is a long established fact that a reader will be distracted by the
+                                            readable content of a page when looking at its layout.It is a long
+                                            established fact that a reader will be distracted by the readable content of
+                                            a page when looking at its layout.It
+                                            is a long established fact that a reader will be
+                                        </p>
+                                        <div class="review-author">
+                                            <span>- Eliza Martinez</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="review-box">
+                                    <div class="review-img back-img"
+                                        style="background-image: url(assets/images/review-1.jpg)"></div>
+                                    <div class="review-info-text overflow-text">
+                                        <p>
+                                            It is a long established fact that a reader will be distracted by the
+                                            readable content of a page when looking at its layout.It is a long
+                                            established fact that a reader will be distracted by the readable content of
+                                            a page when looking at its layout.It
+                                            is a long established fact that a reader will be
+                                        </p>
+                                        <div class="review-author">
+                                            <span>- Eliza Martinez</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-arrows">
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-pagination"></div>
+                            <div class="swiper-button-next"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- review sec end -->
+    <!-- footer start -->
+    <section class="subscribe">
+        <div class="container lg-container">
+            <div class="sub-sec back-img" style="background-image: url(assets/images/subscribe-bg.jpg)">
+                <div class="row">
+                    <div class="col-xl-6 col-12 m-auto">
+                        <div class="title">
+                            <h2 class="h2-title lg-title">subscribe to get our latest updated</h2>
+                        </div>
+                        <div class="subscribe-from">
+                            <div class="form-box">
+                                <form>
+                                    <input type="email" class="form-input-2" name="email" placeholder="Email Address..."
+                                        required="" />
+                                    <button type="submit" class="sec-btn">
+                                        <span>Subscribe</span>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <%- include('../layout/dashboard/footer'); -%>
+
+    <!-- footer end -->
+    <!-- Scroll To Top Start -->
+    <%- include('../layout/dashboard/js'); -%>
+
+</body>
+
+</html>

@@ -1,0 +1,394 @@
+<%- include('../layout/dashboard/head'); -%>
+
+
+<body>
+
+    <!-- header sec start -->
+    <%- include('../layout/dashboard/header'); -%>
+
+    <!-- header sec end -->
+    <!-- banner-sec start -->
+    <section class="banner inner-banner">
+        <div class="inner-shape">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="banner-text">
+                            <h1 class="h1-title">Products</h1>
+                            <div class="banner-links">
+                                <ul>
+                                    <li><a href="index.html" title="Home">Home</a> /</li>
+                                    <li>Product</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- banner-sec end -->
+    <!-- product detail sec start -->
+    <section class="product-info">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="product-sidebar">
+                        <div class="category-box">
+                            <h3 class="sidebar-title">category</h3>
+                            <div class="boxaccordion">
+                                <div class="wrapper">
+                                    <button class="toggle">facial cream<i class="fas fa-plus icon"></i></button>
+                                    <div class="content">
+                                        <p>FAQs accordion is a great way to help you build authority and trust, and at
+                                            the same time bestow a bit of personality on the website. It also helps you
+                                            answer frequently asked questions, produce additional content quickly, and
+                                            reduce bounce rates.</p>
+                                    </div>
+                                </div>
+                                <div class="wrapper">
+                                    <button class="toggle">Body cream<i class="fas fa-plus icon"></i></button>
+                                    <div class="content">
+                                        <p>Benefit of FAQs accordion for blogger is that it helps your blog visitors to
+                                            find what they are looking for in less time.</p>
+                                    </div>
+                                </div>
+                                <div class="wrapper">
+                                    <button class="toggle">Make Up<i class="fas fa-plus icon"></i></button>
+                                    <div class="content">
+                                        <ul>
+                                            <li>creamy conceller</li>
+                                            <li>liquid foundation</li>
+                                            <li>Compact powder</li>
+                                            <li>makeup primer</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="wrapper">
+                                    <button class="toggle">Hair products<i class="fas fa-plus icon"></i></button>
+                                    <div class="content">
+                                        <ul>
+                                            <li>Hair Shampoo</li>
+                                            <li>Hair Mask</li>
+                                            <li>Conditioner</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="availability-box">
+                            <h3 class="sidebar-title">availability</h3>
+                            <div class="new">
+                                <form>
+                                    <div class="form-group">
+                                        <input type="checkbox" id="Instock(7)">
+                                        <label for="Instock(7)">In stock (7)</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="checkbox" id="Outofstock(1)">
+                                        <label for="Outofstock(1)">Out of stock (1)</label>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="available-btns">
+                                <a href="javascript:void(0);" class="seec-btn">clear</a>
+                                <a href="javascript:void(0);" class="seec-btn">apply</a>
+                            </div>
+                        </div>
+                        <div class="price-box">
+                            <h3 class="sidebar-title">category</h3>
+                            <p>highest price is $200</p>
+                            <div class="price-btn available-btns">
+                                <span>$</span><input type="text" class="seec-btn" placeholder="From">
+                                <input type="text" class="seec-btn" placeholder="To">
+                            </div>
+                            <div class="available-btns">
+                                <a href="javascript:void(0);" class="seec-btn">clear</a>
+                                <a href="javascript:void(0);" class="seec-btn">apply</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="shop-topbar-wrapper d-md-flex justify-content-md-between align-items-center">
+                        <div class="grid-list-option">
+                            <ul class="nav" role="tablist">
+                                <li>
+                                    <a class="active show" data-bs-toggle="tab" href="#grid" aria-selected="true"
+                                        role="tab"><i class="fa fa-th"></i></a>
+                                </li>
+                                <li>
+                                    <a data-bs-toggle="tab" href="#list" class="" aria-selected="false" tabindex="-1"
+                                        role="tab"><i class="fa fa-th-list"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="toolbar-short-area d-md-flex align-items-center">
+                            <div class="toolbar-shorter ">
+                                <label>Sort By:</label>
+                                <select class="wide">
+                                    <option data-display="Featured">Featured</option>
+                                    <option value="Facial products">Facial products</option>
+                                    <option value="Hair Products">Hair Products</option>
+                                    <option value="Makeup Products">Makeup Products</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-grid-view">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="single-product mb-30">
+                                    <div class="product-img">
+                                        <a href="single-product.html">
+                                            <img src="assets/images/product1.png" alt="product1">
+                                        </a>
+                                        <span class="descount-sticker">sold-out</span>
+                                        <span class="sticker">New</span>
+
+                                        <div class="product-action d-flex justify-content-between">
+                                            <a class="product-btn" href="javascript:void(0);">Add to Cart</a>
+                                            <ul class="d-flex">
+                                                <li><a href="#quick-view-modal-container" data-bs-toggle="modal"
+                                                        title="Quick View"><img src="assets/images/eye.svg"
+                                                            alt="wishlist"></a></li>
+                                                <li><a href="javascript:void(0);"><img src="assets/images/like.svg"
+                                                            alt="wishlist"></a></li>
+                                                <li><a href="javascript:void(0);"><img src="assets/images/exchange.svg"
+                                                            alt="wishlist"></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <h3><a href="single-product.html">hair shampoo</a></h3>
+                                        <div class="ratting">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                        <h4 class="price"><span class="new">$50.00</span></h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="single-product mb-30">
+                                    <div class="product-img">
+                                        <a href="single-product.html">
+                                            <img src="assets/images/product3.png" alt="product3">
+                                        </a>
+
+                                        <div class="product-action d-flex justify-content-between">
+                                            <a class="product-btn" href="javascript:void(0);">Add to Cart</a>
+                                            <ul class="d-flex">
+                                                <li><a href="#quick-view-modal-container" data-bs-toggle="modal"
+                                                        title="Quick View"><img src="assets/images/eye.svg"
+                                                            alt="wishlist"></a></li>
+                                                <li><a href="javascript:void(0);"><img src="assets/images/like.svg"
+                                                            alt="wishlist"></a></li>
+                                                <li><a href="javascript:void(0);"><img src="assets/images/exchange.svg"
+                                                            alt="wishlist"></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <h3><a href="single-product.html">Facial creams</a></h3>
+                                        <div class="ratting">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                        <h4 class="price"><span class="new">$100.00</span></h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="single-product mb-30">
+                                    <div class="product-img">
+                                        <a href="single-product.html">
+                                            <img src="assets/images/product2.png" alt="product2">
+                                        </a>
+                                        <span class="descount-sticker">20% off</span>
+                                        <span class="sticker">New</span>
+
+                                        <div class="product-action d-flex justify-content-between">
+                                            <a class="product-btn" href="javascript:void(0);">Add to Cart</a>
+                                            <ul class="d-flex">
+                                                <li><a href="#quick-view-modal-container" data-bs-toggle="modal"
+                                                        title="Quick View"><img src="assets/images/eye.svg"
+                                                            alt="wishlist"></a></li>
+                                                <li><a href="javascript:void(0);"><img src="assets/images/like.svg"
+                                                            alt="wishlist"></a></li>
+                                                <li><a href="javascript:void(0);"><img src="assets/images/exchange.svg"
+                                                            alt="wishlist"></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <h3><a href="single-product.html">Body Lotion</a></h3>
+                                        <div class="ratting">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                        <h4 class="price"><span class="new">$80.00</span></h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="single-product mb-30">
+                                    <div class="product-img">
+                                        <a href="single-product.html">
+                                            <img src="assets/images/product1.png" alt="product1">
+                                        </a>
+                                        <span class="descount-sticker">10% off</span>
+                                        <span class="sticker">New</span>
+
+                                        <div class="product-action d-flex justify-content-between">
+                                            <a class="product-btn" href="javascript:void(0);">Add to Cart</a>
+                                            <ul class="d-flex">
+                                                <li><a href="#quick-view-modal-container" data-bs-toggle="modal"
+                                                        title="Quick View"><img src="assets/images/eye.svg"
+                                                            alt="wishlist"></a></li>
+                                                <li><a href="javascript:void(0);"><img src="assets/images/like.svg"
+                                                            alt="wishlist"></a></li>
+                                                <li><a href="javascript:void(0);"><img src="assets/images/exchange.svg"
+                                                            alt="wishlist"></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <h3><a href="single-product.html">hair shampoo</a></h3>
+                                        <div class="ratting">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                        <h4 class="price"><span class="new">$50.00</span></h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="single-product mb-30">
+                                    <div class="product-img">
+                                        <a href="single-product.html">
+                                            <img src="assets/images/product3.png" alt="product3">
+                                        </a>
+
+                                        <div class="product-action d-flex justify-content-between">
+                                            <a class="product-btn" href="javascript:void(0);">Add to Cart</a>
+                                            <ul class="d-flex">
+                                                <li><a href="#quick-view-modal-container" data-bs-toggle="modal"
+                                                        title="Quick View"><img src="assets/images/eye.svg"
+                                                            alt="wishlist"></a></li>
+                                                <li><a href="javascript:void(0);"><img src="assets/images/like.svg"
+                                                            alt="wishlist"></a></li>
+                                                <li><a href="javascript:void(0);"><img src="assets/images/exchange.svg"
+                                                            alt="wishlist"></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <h3><a href="single-product.html">Facial creams</a></h3>
+                                        <div class="ratting">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                        <h4 class="price"><span class="new">$100.00</span></h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="single-product mb-30">
+                                    <div class="product-img">
+                                        <a href="single-product.html">
+                                            <img src="assets/images/product2.png" alt="product2">
+                                        </a>
+                                        <span class="descount-sticker">sold-out</span>
+                                        <span class="sticker">New</span>
+
+                                        <div class="product-action d-flex justify-content-between">
+                                            <a class="product-btn" href="javascript:void(0);">Add to Cart</a>
+                                            <ul class="d-flex">
+                                                <li><a href="#quick-view-modal-container" data-bs-toggle="modal"
+                                                        title="Quick View"><img src="assets/images/eye.svg"
+                                                            alt="wishlist"></a></li>
+                                                <li><a href="javascript:void(0);"><img src="assets/images/like.svg"
+                                                            alt="wishlist"></a></li>
+                                                <li><a href="javascript:void(0);"><img src="assets/images/exchange.svg"
+                                                            alt="wishlist"></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <h3><a href="single-product.html">Body Lotion</a></h3>
+                                        <div class="ratting">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                        <h4 class="price"><span class="new">$80.00</span></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-pagination">
+                        <div class="pagination">
+                            <a href="javascript:void(0);"><i class="fas fa-chevron-left"></i></a>
+                            <a href="javascript:void(0);" class="active">1</a>
+                            <a href="javascript:void(0);">2</a>
+                            <a href="javascript:void(0);">3</a>
+
+                            <a href="javascript:void(0);"><i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- product detail sec start -->
+    <!-- footer start -->
+    <section class="subscribe">
+        <div class="container lg-container">
+            <div class="sub-sec back-img" style="background-image:url(assets/images/subscribe-bg.jpg);">
+                <div class="row">
+                    <div class="col-xl-6 col-12 m-auto">
+                        <div class="title">
+                            <h2 class="h2-title lg-title">subscribe to get our latest updated</h2>
+                        </div>
+                        <div class="subscribe-from">
+                            <div class="form-box">
+                                <form>
+                                    <input type="email" class="form-input-2" name="email" placeholder="Email Address..."
+                                        required="">
+                                    <button type="submit" class="sec-btn"><span>Subscribe</span></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <%- include('../layout/dashboard/footer'); -%>
+
+    <!-- footer end -->
+    <!-- Scroll To Top Start -->
+    <%- include('../layout/dashboard/js'); -%>
+
+</body>
+
+</html>
