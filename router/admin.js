@@ -8,7 +8,7 @@ const pagesRouter = require('./admin/page.js')
 const comments = require('./admin/comments.js')
 const  reviews = require('./admin/reviews.js')
 const coupon = require('./admin/coupon.js')
-
+const inforshop=require('./admin/inforshop.js')
 // ADMIN
 router.use('/',admin)
 
@@ -22,7 +22,7 @@ router.use('/product', productRouter)
 router.use('/user', userRouter)
 
 // PAGES
-router.use('/page', pagesRouter)
+router.use('/pages', pagesRouter)
 
 // COMMENTS
 router.use('/comments', comments)
@@ -33,6 +33,7 @@ router.use('/reviews', reviews)
 // COUPON
 router.use('/coupon', coupon)
 
-
+//INFORSHOP
+router.use('/inforshop',inforshop)
 
 module.exports = router;
