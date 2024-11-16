@@ -9,6 +9,9 @@ const comments = require('./admin/comments.js')
 const  reviews = require('./admin/reviews.js')
 const coupon = require('./admin/coupon.js')
 const inforshop=require('./admin/inforshop.js')
+const social = require('./admin/social.js')
+
+
 // ADMIN
 router.use('/',admin)
 
@@ -32,6 +35,10 @@ router.use('/reviews', reviews)
 
 // COUPON
 router.use('/coupon', coupon)
+
+
+//SOCIAL
+router.use('/social',social)
 
 //INFORSHOP
 router.use('/inforshop',inforshop)

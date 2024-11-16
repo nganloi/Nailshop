@@ -1,0 +1,66 @@
+<%- include('../../layout/admin/head'); -%>
+<body>
+
+<!-- header -->
+<%- include('../../layout/admin/header'); -%>
+<!-- end header -->
+
+<!-- sidebar -->
+<%- include('../../layout/admin/slidebar'); -%>
+<!-- end sidebar -->
+
+<!-- main content -->
+<main class="main">
+	<div class="container-fluid">
+		<div class="row">
+			<!-- main title -->
+			<div class="col-12">
+				<div class="main__title">
+					<h2>ADD SOCIAL</h2>
+				</div>
+			</div>
+			
+			<div class="col-12">
+				<form action="/admin/social/edit/<%= edit.id %>" method="post" class="form">
+					
+						<div class="row">
+							<div class="col-12">
+								<input type="text"  name="name" class="form__input" value="<%= edit.name %>" placeholder="Name">
+							</div>
+
+							<div class="col-12">
+								<input type="text"  name="link" class="form__input" value="<%= edit.link %>" placeholder="Link">
+							</div>
+							<div class="col-12">
+								<input type="text"  name="image" class="form__input" value="<%= edit.img %>" placeholder="Image">
+							</div>
+						</div>
+
+						
+						
+						<div class="col-12">
+							<div class="row">
+								
+								<div class="col-12">
+									<button type="submit" class="form__btn">EDIT</button>
+								</div>
+							</div>
+						</div>
+				
+				</form>
+			</div>
+		</div>
+
+			
+			
+		
+	</div>
+</main>
+	
+
+
+<!-- JS -->
+<%- include('../../layout/admin/js'); -%>
+</body>
+
+</html>
