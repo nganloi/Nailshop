@@ -7,6 +7,7 @@ CREATE TABLE "infshop" (
     "address" TEXT,
     "describe" TEXT,
     "timework" TEXT,
+    "img" TEXT,
 
     CONSTRAINT "infshop_pkey" PRIMARY KEY ("id")
 );
@@ -273,6 +274,8 @@ CREATE TABLE "contact" (
     "name" TEXT,
     "message" TEXT,
     "content" TEXT,
+    "email" TEXT,
+    "phone" TEXT,
 
     CONSTRAINT "contact_pkey" PRIMARY KEY ("id")
 );
