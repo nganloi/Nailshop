@@ -23,6 +23,7 @@ model infshop{
   address String?
   describe String?
   timework String?
+  img String?
 }
 
 model soicial{
@@ -277,6 +278,8 @@ model contact{
   name String?
   message String?
   content String?
+  email String?
+  phone String?
 }
 
 model coupon{

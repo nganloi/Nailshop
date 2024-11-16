@@ -8,6 +8,7 @@ const pagesRouter = require('./admin/page.js')
 const comments = require('./admin/comments.js')
 const  reviews = require('./admin/reviews.js')
 const coupon = require('./admin/coupon.js')
+const inforshop=require('./admin/inforshop.js')
 const social = require('./admin/social.js')
 
 
@@ -39,6 +40,7 @@ router.use('/coupon', coupon)
 //SOCIAL
 router.use('/social',social)
 
-
+//INFORSHOP
+router.use('/inforshop',inforshop)
 
 module.exports = router;
