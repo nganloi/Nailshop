@@ -10,252 +10,302 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = "postgresql://postgres:12345@localhost:5432/bcare?schema=public" 
+  url      = "postgresql://postgres:1@localhost:5432/shopnail/mydb?schema=public" 
 }
 
-model profile {
-  id Int  @id @default(autoincrement())
-  name String? 
-  description String?
+// INFORMATION SHOP
+
+model infshop{
+  id Int @id @default(autoincrement())
+  name String?
+  email String?
   phone String?
   address String?
-  time String?
-  date String?
+  describe String?
+  timework String?
 }
 
-model social {
-  id Int  @id @default(autoincrement())
+model soicial{
+  id Int @id @default(autoincrement())
   name String?
   link String?
+  img String?
 }
 
-model contact {
-  id Int  @id @default(autoincrement())
+model service{
+  id Int @id @default(autoincrement())
   name String?
-  mail String?
-  phone String?
-  subject String?
-  description String?
-
-}
-
-model service {
-  id Int  @id @default(autoincrement())
-  image String?
-  name String?
-  description String?
-}
-
-model mkt_endow {
-  id Int  @id @default(autoincrement())
-  image String?
-  name String?
-  description String?
-
-}
-
-model promotion {
-  id Int  @id @default(autoincrement())
-  name String?
-  image String?
-  description String?
-
-}    
-
-
-model role {
-  id Int  @id @default(autoincrement())
-  possion String?
-  user user[]
-
-}
-
-
-
-model user {
-  id Int  @id @default(autoincrement())
-  image String?
-  fname String?
-  lname String?
-  phone String?
-  mail String?
-  contry String?
-  address String?
-  state String?
-  town String?
-  comment comment[]
-  order order[]
-  product user_product[]
-  coupon user_coupon[]
-  type user_type[]
-}
-
-
-model comment {
-  id Int  @id @default(autoincrement())
+  img String?
   content String?
-  user user @relation(fields: [userid], references: [id])
-  userid Int
-  blog blog @relation(fields: [blogid], references: [id])
-  blogid Int
-
 }
 
-model blog {
-  id Int @id @default(autoincrement())
-  image String?
-  name String?
-  description String?
-  time String?
-  comment comment[]
-  tag blog_tag[]
-}
-
-model tag {
+model marketing_shop{
   id Int @id @default(autoincrement())
   name String?
-  bog blog_tag[] 
+  link String?
+  describe String?
+  img String?
+  active Int
 }
- 
-model blog_tag {
-  id Int  @id @default(autoincrement())
-  tag tag @relation(fields: [tagid], references: [id])
-  tagid Int
-  blog blog @relation(fields: [blogid], references: [id])
-  blogid Int
-} 
 
-model product {
-  id Int  @id @default(autoincrement())
-  image String?
+model marketing{
+  id Int @id @default(autoincrement())
+  name String?
+  describe String?
+  img String?
+  active Int
+  product marketing_product[]
+}
+
+model marketing_product{
+  id Int @id @default(autoincrement())
+  product product @relation(fields: [productid], references: [id])
+  productid Int
+  marketing marketing @relation(fields: [marketingid], references: [id])
+  marketingid Int
+}
+
+//  INFORMATION PRODUCT
+
+model product{
+  id Int @id @default(autoincrement())
   name String?
   price String?
-  description String?
-  stock String?
-  comment comment[]
-  order order_product[]
-  user user_product[]
+  img String[]
+  describe String?
+  content String?
+  category category @relation(fields: [categoryid], references: [id])
+  categoryid Int
+  sale Int
+  view Int
+  productlike productlike[]
+  marketing marketing_product[]
   coupon coupon_product[]
-
-
-}
- 
-model user_product {
-  id Int  @id @default(autoincrement())
-  user @relation(fields: [userid], references: [id])
-  userid Int
-  product product @relation(fields: [productid], references: [id])
-  productid Int
- }
-
-
-model product_cate {
-  id Int  @id @default(autoincrement())
-  cate @relation(fields: [cateid], references: [id])
-  cateid Int
-  product product @relation(fields: [productid], references: [id])
-  productid Int
+  order order_product[]
+  review review[]
+  classfy classfy[]
+  cart user_product[]
 }
 
-
-model product_coupon {
-  id Int  @id @default(autoincrement())
-  coupon @relation(fields: [couponid], references: [id])
-  couponid Int
-  product product @relation(fields: [productid], references: [id])
-  productid Int
+model category{
+  id Int @id @default(autoincrement())
+  name String?
+  coupon category_coupon[]
+  product product[]
 }
 
-model oder_product {
-  id Int  @id @default(autoincrement())
-  order @relation(fields: [orderid], references: [id])
-  orderid Int
+model classfy{
+  id Int @id @default(autoincrement())
+  name String?
+  quantity String?
+  img String?
   product product @relation(fields: [productid], references: [id])
   productid Int
+  order order_product[]
+  cart user_product[]
 }
 
-model like_product {
-  id Int  @id @default(autoincrement())
+model review{
+  id Int @id @default(autoincrement())
+  content String?
+  product product @relation(fields: [productid], references: [id])
+  productid Int
   user user @relation(fields: [userid], references: [id])
   userid Int
-  product product @relation(fields: [productid], references: [id])
-  productid Int
+  time String?
 }
 
+model order_product{
+  id Int @id @default(autoincrement())
+  product product @relation(fields: [productid], references: [id])
+  productid Int
+  quantity Int
+  classfy classfy @relation(fields: [classfyid], references: [id])
+  classfyid Int
+  order order @relation(fields: [orderid], references: [id])
+  orderid Int
 
-model oder {
-  id Int  @id @default(autoincrement())
-  user @relation(fields: [userid], references: [id])
+}
+
+model coupon_product{
+  id Int @id @default(autoincrement())
+  product product @relation(fields: [productid], references: [id])
+  productid Int
+  coupon coupon @relation(fields: [couponid], references: [id])
+  couponid Int
+}
+
+model productlike{
+  id Int @id @default(autoincrement())
+  product product @relation(fields: [productid], references: [id])
+  productid Int
+  user user @relation(fields: [userid], references: [id])
   userid Int
-  active String?
+}
+
+model user_product{
+  id Int @id @default(autoincrement())
+  product product @relation(fields: [productid], references: [id])
+  productid Int
+  user user @relation(fields: [userid], references: [id])
+  userid Int
+  classfy classfy @relation(fields: [classfyid], references: [id])
+  classfyid Int
+}
+
+// INFORMATION USER
+
+model user{
+  id Int @id @default(autoincrement())
+  name String?
+  img String?
+  email String?
+  phone String?
+  address String?
+  pass String?
+  role role @relation(fields: [roleid], references: [id])
+  roleid Int
+  blog blog[]
+  comment comment[]
+  review review[]
+  product user_product[]
+  order order[]
+  typer typer_user[]
+  coupon user_coupon[]
+  productlike productlike[]
+  addressoder address_order[]
+}
+
+model role{
+  id Int @id @default(autoincrement())
+  position String?
+  user user[]
+}
+
+model blog{
+  id Int @id @default(autoincrement())
+  name String?
+  describe String?
+  img String?
+  content String?
+  time String?
+  user user @relation(fields: [userid], references: [id])
+  userid Int
+  comment comment[]
+  tag tag_blog[]
+}
+
+model comment{
+  id Int @id @default(autoincrement())
+  content String?
+  time String?
+  user user @relation(fields: [userid], references: [id])
+  userid Int
+  blog blog @relation(fields: [blogid], references: [id])
+  blogid Int
+}
+
+model order{
+  id Int @id @default(autoincrement())
+  user user @relation(fields: [userid], references: [id])
+  userid Int
+  address String?
+  time String?
+  active Int
   product order_product[]
   coupon order_coupon[]
 }
 
-model category {
-  id Int  @id @default(autoincrement())
-  name String?
-  product product_cate[]
-  coupon cate_coupon[]
-}
-
-model cate_coupon {
-  id Int  @id @default(autoincrement())
-  cate  category @relation(fields: [cateid], references: [id])
-  cateid Int
-  coupon coupon @relation(fields: [couponid], references: [id])
-  couponid Int
-}
-
-model coupon {
-  id Int  @id @default(autoincrement())
-  name String?
-  price String?
-  quantity String?
-  coupon String?
-  action string?
-  user user_coupon[]
-  product product_coupon[]
-  order order_coupon[]
-  type type_coupon[]
-  cate cate_coupon[]
-}
-
-model user_coupon {
-  id Int  @id @default(autoincrement())
-  user  user @relation(fields: [userid], references: [id])
-  userid Int
-  coupon coupon @relation(fields: [couponid], references: [id])
-  couponid Int
-}
-
-model order_coupon {
-  id Int  @id @default(autoincrement())
-  order  order @relation(fields: [orderid], references: [id])
-  orderid Int
-  coupon coupon @relation(fields: [couponid], references: [id])
-  couponid Int
-}
-
-model type {
-  id Int  @id @default(autoincrement())
-  name String?
-  user user_type[]
-  coupon type_coupon[]
-}
-
-model type_coupon {
-  id Int  @id @default(autoincrement())
-  type  type @relation(fields: [typeid], references: [id])
-  typeid Int
-  coupon coupon @relation(fields: [couponid], references: [id])
-  couponid Int
-}
-
-model user_type {
-  id Int  @id @default(autoincrement())
-  type  type @relation(fields: [typeid], references: [id])
-  typeid Int
+model typer_user{
+  id Int @id @default(autoincrement())
   user user @relation(fields: [userid], references: [id])
   userid Int
+  typer typer @relation(fields: [typerid], references: [id])
+  typerid Int
+}
+
+model user_coupon{
+  id Int @id @default(autoincrement())
+  user user @relation(fields: [userid], references: [id])
+  userid Int
+  coupon coupon @relation(fields: [couponid], references: [id])
+  couponid Int
+}
+
+model address_order{
+  id Int @id @default(autoincrement())
+  name String?
+  active Int
+  user user @relation(fields: [userid], references: [id])
+  userid Int
+}
+
+// OTHER MODEL 
+
+model tag{
+  id Int @id @default(autoincrement())
+  name String?
+  blog tag_blog[]
+}
+
+model tag_blog{
+  id Int @id @default(autoincrement())
+  blog blog @relation(fields: [blogid], references: [id])
+  blogid Int
+  tag tag @relation(fields: [tagid], references: [id])
+  tagid Int
+}
+
+model category_coupon{
+  id Int @id @default(autoincrement())
+  category category @relation(fields: [categoryid], references: [id])
+  categoryid Int
+  coupon coupon @relation(fields: [couponid], references: [id])
+  couponid Int
+}
+
+model typer{
+  id Int @id @default(autoincrement())
+  name String?
+  coupon typer_coupon[]
+  user typer_user[]
+}
+
+model contact{
+  id Int @id @default(autoincrement())
+  subject String?
+  name String?
+  message String?
+  content String?
+}
+
+model coupon{
+  id Int @id @default(autoincrement())
+  name String?
+  discountpercent String?
+  discountprice String?
+  quantity Int
+  active Int
+  buymin String
+  category category_coupon[]
+  order order_coupon[]
+  typer typer_coupon[]
+  product coupon_product[]
+  user user_coupon[]
+}
+
+model order_coupon{
+  id Int @id @default(autoincrement())
+  coupon coupon @relation(fields: [couponid], references: [id])
+  couponid Int
+  order order @relation(fields: [orderid], references: [id])
+  orderid Int
+}
+
+model typer_coupon{
+  id Int @id @default(autoincrement())
+  coupon coupon @relation(fields: [couponid], references: [id])
+  couponid Int
+  typer typer @relation(fields: [typerid], references: [id])
+  typerid Int
 }
