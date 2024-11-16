@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 
 module.exports = {
-    getAdmin: async(req,res) => {
-        res.render('./admin/index')
+    getReviews: async(req,res) => {
+        res.render('./admin/reviews')
     }
 }
