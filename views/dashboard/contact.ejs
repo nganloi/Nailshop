@@ -16,7 +16,7 @@
                             <h1 class="h1-title">Contact Us</h1>
                             <div class="banner-links">
                                 <ul>
-                                    <li><a href="index.html" title="Home">Home</a> /</li>
+                                    <li><a href="/" title="Home">Home</a> /</li>
                                     <li>Contact Us</li>
                                 </ul>
                             </div>
@@ -38,22 +38,22 @@
                 <div class="col-xl-8 col-lg-6">
                     <div class="contact-form">
                         <h2 class="h2-title">it would be great to hear from you</h2>
-                        <form>
+                        <form action="/admin/contact" method="post" class="form">
                             <div class="row">
                                 <div class="col-12">
-                                    <input type="text" class="form-input" placeholder="Full Name">
+                                    <input type="text" class="form-input" placeholder="Full Name" name="name">
                                 </div>
                                 <div class="col-12">
-                                    <input type="email" class="form-input" placeholder="E-mail Address" required>
+                                    <input type="email" class="form-input" placeholder="E-mail Address" name="email" required>
                                 </div>
                                 <div class="col-lg-6">
-                                    <input type="text" class="form-input" placeholder="Phone Number">
+                                    <input type="text" class="form-input" placeholder="Phone Number" name="phone">
                                 </div>
                                 <div class="col-lg-6">
-                                    <input type="text" class="form-input" placeholder="Subject">
+                                    <input type="text" class="form-input" placeholder="Subject" name="subject">
                                 </div>
                                 <div class="col-12">
-                                    <textarea class="form-input" cols="30" rows="20"
+                                    <textarea class="form-input" cols="30" name="message" rows="20"
                                         placeholder="Type Message Here...."></textarea>
                                 </div>
                                 <div class="col-12">
