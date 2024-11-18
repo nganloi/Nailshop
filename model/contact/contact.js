@@ -18,6 +18,10 @@ module.exports={
         })
         return data;
     },
+    viewContact: async(id) => {
+        const data = await prisma.contact.findUnique({where:{id:id}});
+        return data;
+    },
     deletContact: async(id) => {
         const data = await prisma.contact.deleteMany({where:{id:id}});
         

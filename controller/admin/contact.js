@@ -6,17 +6,12 @@ module.exports = {
          const data = await contact.getContact();
         res.render('./admin/contact/view', {data:data})
     },
-
-    postContact: async(req,res) => {
-        const name = req.body.name;
-        const email = req.body.email;
-        const phone = parseInt(req.body.phone);
-        const subject = req.body.subject;
-        const message = req.body.message;
-        const creat = await contact.postContact(name,email,phone,subject,message);
-        res.redirect(`/`)
-
+    viewContact: async(req,res) => {
+        const id = parseInt(req.params.ID);
+        const data = await contact.viewContact(id);
+        res.render('./admin/contact/details', {details:data})
     },
+   
     deletContact: async(req,res) => {
         const id = parseInt(req.params.ID);
         const dele = await contact.deletContact(id);

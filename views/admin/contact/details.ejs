@@ -1,0 +1,64 @@
+<%- include('../../layout/admin/head'); -%>
+<body>
+
+<!-- header -->
+<%- include('../../layout/admin/header'); -%>
+<!-- end header -->
+
+<!-- sidebar -->
+<%- include('../../layout/admin/slidebar'); -%>
+<!-- end sidebar -->
+
+<!-- main content -->
+<main class="main">
+	<div class="container-fluid">
+		<div class="row">
+			<!-- main title -->
+			<div class="col-12">
+				<div class="main__title">
+					<h2>VIEW CONTACT</h2>
+				</div>
+			</div>
+			
+			<div class="col-12">
+					<form action="/admin/contact/view/<%= details.id %>" method="get" class="form">
+						<div class="row">
+							<div class="col-12">
+								<input type="text"  name="name" class="form__input" value="<%= details.name %>" placeholder="Name">
+							</div>
+
+							<div class="col-12">
+								<input type="text"  name="link" class="form__input" value="<%= details.email %>" placeholder="Link">
+							</div>
+							<div class="col-12">
+								<input type="text"  name="phone" class="form__input" value="<%= details.phone %>" placeholder="Phone">
+							</div>
+							<div class="col-12">
+								<input type="text"  name="subject" class="form__input" value="<%= details.subject %>" placeholder="Subject">
+							</div>
+							<div class="col-12">
+								<input type="text"  name="message" class="form__input" value="<%= details.message %>" placeholder="Message">
+							</div>
+						</div>
+
+						
+						<a href="/admin/contact" class="form__btn">EXIT</a>
+						
+				
+				</form>
+			</div>
+		</div>
+
+			
+			
+		
+	</div>
+</main>
+	
+
+
+<!-- JS -->
+<%- include('../../layout/admin/js'); -%>
+</body>
+
+</html>
