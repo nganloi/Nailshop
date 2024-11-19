@@ -11,6 +11,7 @@ const coupon = require('./admin/coupon.js')
 const inforshop=require('./admin/inforshop.js')
 const social = require('./admin/social.js')
 const contact = require('./admin/contact.js')
+const contact = require('./admin/contact.js')
 
 const marketingshop=require('./admin/marketingShop.js')
 
