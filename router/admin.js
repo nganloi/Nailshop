@@ -10,6 +10,7 @@ const  reviews = require('./admin/reviews.js')
 const coupon = require('./admin/coupon.js')
 const inforshop=require('./admin/inforshop.js')
 const social = require('./admin/social.js')
+const contact = require('./admin/contact.js')
 
 
 // ADMIN
@@ -42,5 +43,9 @@ router.use('/social',social)
 
 //INFORSHOP
 router.use('/inforshop',inforshop)
+
+
+//CONTACT
+router.use('/contact', contact)
 
 module.exports = router;
