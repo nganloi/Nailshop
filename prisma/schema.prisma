@@ -277,7 +277,6 @@ model contact{
   subject String?
   name String?
   message String?
-  content String?
   email String?
   phone String?
 }
