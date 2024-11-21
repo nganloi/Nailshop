@@ -17,7 +17,7 @@ module.exports = {
         const describe=req.body.describe
         const time=req.body.time
         const anh=req.file
-        const data=[]
+        const data= await view.getInforshop()
         const img=await checkimg.checkImg(anh,data)
         const creates=await edit.editShop(name, email, phone, address, describe, time, img)
         res.redirect('/admin/inforshop')

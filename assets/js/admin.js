@@ -74,7 +74,9 @@ $(document).ready(function () {
 		placeholder: "Choose genre / genres"
 	});
 
-	$('#subscription, #rights').select2();
+	$('#subscription, #rights').select2({
+		multiple: true
+	});
 
 	/*==============================
 	Upload cover

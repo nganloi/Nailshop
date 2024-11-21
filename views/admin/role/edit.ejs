@@ -1,0 +1,63 @@
+<%- include('../../layout/admin/head'); -%>
+<body>
+
+<!-- header -->
+<%- include('../../layout/admin/header'); -%>
+<!-- end header -->
+
+<!-- sidebar -->
+<%- include('../../layout/admin/slidebar'); -%>
+<!-- end sidebar -->
+
+<!-- main content -->
+<main class="main">
+	<div class="container-fluid">
+		<div class="row">
+			<!-- main title -->
+			<div class="col-12">
+				<div class="main__title">
+				</div>
+			</div>
+			<div class="zoom-anim-dialog modal">
+				<div  class="zoom-anim-dialog ">
+					<h6 class="modal__title">EDIT ROLE</h6>
+					<form action="/admin/role/edit/<%=data.id %>" method="post" class="form">
+									
+						<div class="row">
+							<div class="col-12">
+								<label class="profile__label">Name</label>
+								<input type="text"  name="name" class="form__input" placeholder="Name" value="<%=data.position%>"> 
+							</div>
+							<div class="col-12">
+								<label class="profile__label" for="rights">Add User</label>
+								<select class="js-example-basic-single" id="rights" name="user">
+									<% for (var j = 0; j < user.length; j++) { %>
+										<% 
+										// Kiểm tra xem user[j] có nằm trong data.user hay không
+										let isSelected = data.user.some(selectedUser => selectedUser.userid === user[j].id);
+										%>
+										<option value="<%= user[j].id %>" 
+											<%= isSelected ? "selected" : "" %>>
+											<%= user[j].name %>
+										</option>
+									<% } %>
+								</select>
+								
+							</div>
+						</div>
+					<div class="modal__btns">
+						<button class="modal__btn modal__btn--apply" type="submit">Apply</button>
+						<a class="modal__btn modal__btn--apply" href="/admin/role">Dismiss</a>
+					</div>
+				</form>
+				
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+<!-- JS -->
+<%- include('../../layout/admin/js'); -%>
+</body>
+
+</html>
