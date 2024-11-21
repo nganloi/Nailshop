@@ -75,8 +75,7 @@ model product{
   img String[]
   describe String?
   content String?
-  category category @relation(fields: [categoryid], references: [id])
-  categoryid Int
+  category category_product[]
   sale Int
   view Int
   productlike productlike[]
@@ -88,11 +87,19 @@ model product{
   cart user_product[]
 }
 
+model category_product{
+  id Int @id @default(autoincrement())
+  category category @relation(fields: [categoryid], references: [id])
+  categoryid Int
+  product product @relation(fields: [productid], references: [id])
+  productid Int
+}
+
 model category{
   id Int @id @default(autoincrement())
   name String?
   coupon category_coupon[]
-  product product[]
+  product category_product[]
 }
 
 model classfy{

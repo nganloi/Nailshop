@@ -4,7 +4,7 @@ module.exports={
  //GET INFORMATION SHOP
     getInforshop:async(req,res)=>{
         const data1=await prisma.infshop.findMany();
-        if(data1==null){
+        if(data1.length==0){
             const creat= await prisma.infshop.create({
                 data:{
                     name:'',
