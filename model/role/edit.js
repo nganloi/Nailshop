@@ -22,7 +22,7 @@ module.exports = {
             const creat1=await prisma.role_user.create({
                data:{
                userid:parseInt(user[i]),
-               roleid:data[0].id
+               roleid:id
                }
             })   
          }

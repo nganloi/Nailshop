@@ -15,6 +15,7 @@ const service = require('./admin/service.js')
 const marketingshop=require('./admin/marketingShop.js')
 const role = require('./admin/role.js')
 const tag = require('./admin/tag.js')
+const category = require('./admin/categoriy.js')
 // ADMIN
 router.use('/',admin)
 
@@ -61,4 +62,7 @@ router.use('/role',role)
 
 //TAG
 router.use('/tag', tag)
+
+//CATEGORY
+router.use('/category',category)
 module.exports = router;
