@@ -15,8 +15,8 @@
 				<!-- main title -->
 				<div class="col-12">
 					<div class="main__title">
-						<h2>MARKETING-SHOP</h2>
-						<a href="/admin/marketing-shop/create" class="main__title-link">ADD MARKETING</a>
+						<h2>MARKETING-PRODUCT</h2>
+						<a href="/admin/marketing-product/create" class="main__title-link">ADD MARKETING</a>
 					</div>
 				</div>			
 			<!-- comments -->
@@ -27,9 +27,9 @@
 							<tr>
 								<th>ID</th>
 								<th>NAME</th>
-								<th>LINK</th>
+								<th>DESCRIBE</th>
 								<th>STATUS</th>
-								<th>TEXT</th>
+								<th>QUANTITY PRODUCT</th>
 								<th>ACTIONS</th>
 							</tr>
 						</thead>
@@ -44,7 +44,7 @@
 									<div class="main__table-text"><%=data[i].name %></div>
 								</td>
 								<td>
-									<div class="main__table-text"><%=data[i].link %></div>
+									<div class="main__table-text"><%=data[i].describe.slice(0,15) %>...</div>
 								</td>
 								<td>
 									<%if(data[i].active==1){%>
@@ -54,23 +54,23 @@
 										<%}%>
 								</td>
 								<td>
-									<div class="main__table-text"><%=data[i].describe.slice(0,20) %>...</div>
+									<div class="main__table-text"><%=data[i].product.length %></div>
 								</td>
 								<td>
 									<div class="main__table-btns">
-										<a href="/admin/marketing-shop/edit/<%=data[i].id%>" class="main__table-btn main__table-btn--edit">
+										<a href="/admin/marketing-product/edit/<%=data[i].id%>" class="main__table-btn main__table-btn--edit">
 											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.92,11.6C19.9,6.91,16.1,4,12,4S4.1,6.91,2.08,11.6a1,1,0,0,0,0,.8C4.1,17.09,7.9,20,12,20s7.9-2.91,9.92-7.6A1,1,0,0,0,21.92,11.6ZM12,18c-3.17,0-6.17-2.29-7.9-6C5.83,8.29,8.83,6,12,6s6.17,2.29,7.9,6C18.17,15.71,15.17,18,12,18ZM12,8a4,4,0,1,0,4,4A4,4,0,0,0,12,8Zm0,6a2,2,0,1,1,2-2A2,2,0,0,1,12,14Z"/></svg>
 										</a>
 										<% if(data[i].active==1){%>
-											<a href="/admin/marketing-shop/status/<%=data[i].id%>" class="main__table-btn main__table-btn--banned">
+											<a href="/admin/marketing-product/status/<%=data[i].id%>" class="main__table-btn main__table-btn--banned">
 												<svg  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12,13a1,1,0,0,0-1,1v3a1,1,0,0,0,2,0V14A1,1,0,0,0,12,13Zm5-4H9V7a3,3,0,0,1,5.12-2.13,3.08,3.08,0,0,1,.78,1.38,1,1,0,1,0,1.94-.5,5.09,5.09,0,0,0-1.31-2.29A5,5,0,0,0,7,7V9a3,3,0,0,0-3,3v7a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V12A3,3,0,0,0,17,9Zm1,10a1,1,0,0,1-1,1H7a1,1,0,0,1-1-1V12a1,1,0,0,1,1-1H17a1,1,0,0,1,1,1Z"/></svg>										
 											</a>	
 											<%}else{%>
-											<a href="/admin/marketing-shop/status/<%=data[i].id%>" class="main__table-btn main__table-btn--delete">
+											<a href="/admin/marketing-product/status/<%=data[i].id%>" class="main__table-btn main__table-btn--delete">
 												<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,13a1,1,0,0,0-1,1v3a1,1,0,0,0,2,0V14A1,1,0,0,0,12,13Zm5-4V7A5,5,0,0,0,7,7V9a3,3,0,0,0-3,3v7a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V12A3,3,0,0,0,17,9ZM9,7a3,3,0,0,1,6,0V9H9Zm9,12a1,1,0,0,1-1,1H7a1,1,0,0,1-1-1V12a1,1,0,0,1,1-1H17a1,1,0,0,1,1,1Z"></path></svg>										
 											</a>									
 											<%}%>	
-										<a href="/admin/marketing-shop/delete/<%=data[i].id%>" class="main__table-btn main__table-btn--delete">
+										<a href="/admin/marketing-product/delete/<%=data[i].id%>" class="main__table-btn main__table-btn--delete">
 											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,6H16V5a3,3,0,0,0-3-3H11A3,3,0,0,0,8,5V6H4A1,1,0,0,0,4,8H5V19a3,3,0,0,0,3,3h8a3,3,0,0,0,3-3V8h1a1,1,0,0,0,0-2ZM10,5a1,1,0,0,1,1-1h2a1,1,0,0,1,1,1V6H10Zm7,14a1,1,0,0,1-1,1H8a1,1,0,0,1-1-1V8H17Z"/></svg>
 										</a>
 									</div>

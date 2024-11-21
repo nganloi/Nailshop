@@ -1,60 +1,66 @@
 <%- include('../../layout/admin/head'); -%>
-
 <body>
-    <!-- header -->
+
+<!-- header -->
 <%- include('../../layout/admin/header'); -%>
 <!-- end header -->
 
 <!-- sidebar -->
 <%- include('../../layout/admin/slidebar'); -%>
 <!-- end sidebar -->
+
+<!-- main content -->
 <main class="main">
 	<div class="container-fluid">
 		<div class="row">
 			<!-- main title -->
 			<div class="col-12">
 				<div class="main__title">
-					<h2>Edit Marketing-shop</h2>
+					<h2>Add New Marketing-product</h2>
 				</div>
 			</div>
 			<!-- end main title -->
 
 			<!-- form -->
 			<div class="col-12">
-				<form action="/admin/marketing-shop/edit/<%=data.id%>" class="form" method="post" enctype="multipart/form-data" >
+				<form action="/admin/marketing-product/create" class="form" method="post" enctype="multipart/form-data" >
 					<div class="row">
-						<div class="col-12 col-md-5 form__cover">
+						<div class="col-12 col-md-7 form__cover">
 							<div class="row">
 								<div class="col-12 col-sm-6 col-md-12">
 									<div class="form__img">
 										<label for="form__img-upload">Upload cover (270 x 400)</label>
 										<input id="form__img-upload" name="img" type="file"
 											accept=".svg,.png, .jpg, .jpeg">
-										<img id="form__img" src="<%=data.img %>" alt=" ">
+										<img id="form__img" src="" alt=" ">
 									</div>
 								</div>
 							</div>
 						</div>
 
-						<div class="col-12 col-md-7 form__content">
+						<div class="col-12 col-md-5 form__content">
 							<div class="row">
 								<div class="col-12">
 									<input type="text" class="form__input" name="name"
-										placeholder="Title" value="<%=data.name%>">
+										placeholder="Name" >
 								</div>
 
 								<div class="col-12">
 									<textarea id="text" name="describe" class="form__textarea"
-										placeholder="Description"><%=data.describe%></textarea>
+										placeholder="Description"></textarea>
 								</div>
-
 								<div class="col-12 col-sm-6 col-lg-6">
-									<input type="text" class="form__input" name="link"
-										placeholder="link" value="<%=data.link%>">
+									<label class="profile__label" for="rights">Add product</label>
+									<select class="js-example-basic-single" id="rights" name="product">
+										<% for(var j=0; j< product.length ; j++){%>
+											<option value="<%=product[j].id %>"><%=product[j].name %></option>
+										<%}%>
+									</select>
 								</div>
-
+							</div>
+						</div>
 						<div class="col-12">
-							<button type="submit" class="form__btn">EDIT</button>
+							<button type="submit" class="form__btn">CREATE</button>
 						</div>
 					</div>
 				</form>
@@ -63,6 +69,11 @@
 		</div>
 	</div>
 </main>
+<!-- end main content -->
+
+<!-- JS -->
 <%- include('../../layout/admin/js'); -%>
 </body>
+
+<!-- Mirrored from dmitryvolkov.me/demo/flixgo2.0/admin/add-item.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Mar 2022 10:07:55 GMT -->
 </html>

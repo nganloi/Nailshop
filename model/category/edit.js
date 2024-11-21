@@ -18,12 +18,14 @@ module.exports = {
          ////Xóa dữ liệu cũ trong bảng category_product
          const dele=await prisma.category_product.deleteMany({where:{categoryid:id}})
          ////Taọ mới dữ liệu productud và categoryid trong bảng category_product
+         for(var i=0 ; i< product.length; i++){
             const creat1=await prisma. category_product.create({
                data:{
                productid:parseInt(product[i]),
                categoryid:id
                }
             })   
+         }
          }
       }
 

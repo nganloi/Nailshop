@@ -14,14 +14,14 @@
 			<!-- main title -->
 			<div class="col-12">
 				<div class="main__title">
-					<h2>Edit Marketing-shop</h2>
+					<h2>Edit Marketing-product</h2>
 				</div>
 			</div>
 			<!-- end main title -->
 
 			<!-- form -->
 			<div class="col-12">
-				<form action="/admin/marketing-shop/edit/<%=data.id%>" class="form" method="post" enctype="multipart/form-data" >
+				<form action="/admin/marketing-product/edit/<%=data.id%>" class="form" method="post" >
 					<div class="row">
 						<div class="col-12 col-md-5 form__cover">
 							<div class="row">
@@ -47,12 +47,21 @@
 									<textarea id="text" name="describe" class="form__textarea"
 										placeholder="Description"><%=data.describe%></textarea>
 								</div>
-
 								<div class="col-12 col-sm-6 col-lg-6">
-									<input type="text" class="form__input" name="link"
-										placeholder="link" value="<%=data.link%>">
+									<label class="profile__label" for="rights">Add product</label>
+									<select class="js-example-basic-single" id="rights" name="product">
+										<% for (var j = 0; j < product.length; j++) { %>
+											<% 
+											// Kiểm tra xem user[j] có nằm trong data.user hay không
+											let isSelected = data.product.some(selectedUser => selectedUser.productid === product[j].id);
+											%>
+											<option value="<%= product[j].id %>" 
+												<%= isSelected ? "selected" : "" %>>
+												<%= product[j].name %>
+											</option>
+										<% } %>
+										</select>
 								</div>
-
 						<div class="col-12">
 							<button type="submit" class="form__btn">EDIT</button>
 						</div>

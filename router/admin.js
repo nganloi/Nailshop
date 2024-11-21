@@ -15,7 +15,11 @@ const service = require('./admin/service.js')
 const marketingshop=require('./admin/marketingShop.js')
 const role = require('./admin/role.js')
 const tag = require('./admin/tag.js')
+<<<<<<< Updated upstream
 const category = require('./admin/categoriy.js')
+=======
+const marketingproduct=require('./admin/marketingProduct.js')
+>>>>>>> Stashed changes
 // ADMIN
 router.use('/',admin)
 
@@ -63,6 +67,11 @@ router.use('/role',role)
 //TAG
 router.use('/tag', tag)
 
+<<<<<<< Updated upstream
 //CATEGORY
 router.use('/category',category)
+=======
+//MARKETING PRODUCT
+router.use('/marketing-product',marketingproduct)
+>>>>>>> Stashed changes
 module.exports = router;
