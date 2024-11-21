@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const edit= require('../../../model/role/edit');
+const edit= require('../../../model/tag/edit');
 const checkImg=require('../../../middlewea/checkimg')
 const viewUser=require('../../../model/user/view')
 module.exports = {
