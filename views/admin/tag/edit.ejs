@@ -1,0 +1,48 @@
+<%- include('../../layout/admin/head'); -%>
+<body>
+
+<!-- header -->
+<%- include('../../layout/admin/header'); -%>
+<!-- end header -->
+
+<!-- sidebar -->
+<%- include('../../layout/admin/slidebar'); -%>
+<!-- end sidebar -->
+
+<!-- main content -->
+<main class="main">
+	<div class="container-fluid">
+		<div class="row">
+			<!-- main title -->
+			<div class="col-12">
+				<div class="main__title">
+				</div>
+			</div>
+			<div class="zoom-anim-dialog modal">
+				<div  class="zoom-anim-dialog ">
+					<h6 class="modal__title">EDIT TAG</h6>
+					<form action="/admin/tag/edit/<%=data.id %>" method="post" class="form">
+									
+						<div class="row">
+							<div class="col-12">
+								<label class="profile__label">Name</label>
+								<input type="text"  name="name" class="form__input" placeholder="Name" value="<%=data.name%>"> 
+							</div>
+							
+						</div>
+					<div class="modal__btns">
+						<button class="modal__btn modal__btn--apply" type="submit">Apply</button>
+						<a class="modal__btn modal__btn--apply" href="/admin/tag">Dismiss</a>
+					</div>
+				</form>
+				
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+<!-- JS -->
+<%- include('../../layout/admin/js'); -%>
+</body>
+
+</html>
