@@ -2,7 +2,6 @@ const express = require('express')
 const router = express.Router();
 const admin = require('./admin/shop.js')
 const product = require('./admin/product.js')
-const pages = require('./admin/page.js')
 const blog = require('./admin/blog.js')
 const user = require('./admin/user.js')
 const comments = require('./admin/comments.js')
