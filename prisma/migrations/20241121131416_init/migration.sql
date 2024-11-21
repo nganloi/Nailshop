@@ -72,11 +72,19 @@ CREATE TABLE "product" (
     "img" TEXT[],
     "describe" TEXT,
     "content" TEXT,
-    "categoryid" INTEGER NOT NULL,
     "sale" INTEGER NOT NULL,
     "view" INTEGER NOT NULL,
 
     CONSTRAINT "product_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "category_product" (
+    "id" SERIAL NOT NULL,
+    "categoryid" INTEGER NOT NULL,
+    "productid" INTEGER NOT NULL,
+
+    CONSTRAINT "category_product_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
@@ -325,7 +333,10 @@ ALTER TABLE "marketing_product" ADD CONSTRAINT "marketing_product_productid_fkey
 ALTER TABLE "marketing_product" ADD CONSTRAINT "marketing_product_marketingid_fkey" FOREIGN KEY ("marketingid") REFERENCES "marketing"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "product" ADD CONSTRAINT "product_categoryid_fkey" FOREIGN KEY ("categoryid") REFERENCES "category"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "category_product" ADD CONSTRAINT "category_product_categoryid_fkey" FOREIGN KEY ("categoryid") REFERENCES "category"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "category_product" ADD CONSTRAINT "category_product_productid_fkey" FOREIGN KEY ("productid") REFERENCES "product"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "classfy" ADD CONSTRAINT "classfy_productid_fkey" FOREIGN KEY ("productid") REFERENCES "product"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
