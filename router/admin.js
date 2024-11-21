@@ -16,6 +16,8 @@ const marketingshop=require('./admin/marketingShop.js')
 const role = require('./admin/role.js')
 const tag = require('./admin/tag.js')
 const category = require('./admin/categoriy.js')
+const typer = require('./admin/typer.js')
+
 // ADMIN
 router.use('/',admin)
 
@@ -65,4 +67,7 @@ router.use('/tag', tag)
 
 //CATEGORY
 router.use('/category',category)
+
+//TYPE
+router.use('/typer', typer)
 module.exports = router;
