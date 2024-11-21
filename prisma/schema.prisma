@@ -10,7 +10,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = "postgresql://postgres:12345@localhost:5432/bcare?schema=public" 
+  url      = "postgresql://postgres:1@localhost:5432/shopnail?schema=public" 
 }
 
 // INFORMATION SHOP
@@ -164,8 +164,7 @@ model user{
   phone String?
   address String?
   pass String?
-  role role @relation(fields: [roleid], references: [id])
-  roleid Int
+  role role_user[] 
   blog blog[]
   comment comment[]
   review review[]
@@ -177,10 +176,18 @@ model user{
   addressoder address_order[]
 }
 
+model role_user{
+  id Int @id @default(autoincrement())
+  role role @relation(fields: [roleid], references: [id])
+  roleid Int
+  user user @relation(fields: [userid], references: [id])
+  userid Int
+}
+
 model role{
   id Int @id @default(autoincrement())
   position String?
-  user user[]
+  user role_user[]
 }
 
 model blog{

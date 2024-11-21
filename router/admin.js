@@ -11,10 +11,8 @@ const coupon = require('./admin/coupon.js')
 const inforshop=require('./admin/inforshop.js')
 const social = require('./admin/social.js')
 const contact = require('./admin/contact.js')
-const contact = require('./admin/contact.js')
-
 const marketingshop=require('./admin/marketingShop.js')
-
+const role = require('./admin/role.js')
 // ADMIN
 router.use('/',admin)
 
@@ -52,4 +50,7 @@ router.use('/contact', contact)
 
 //MARKETING SHOP
 router.use('/marketing-shop',marketingshop)
+
+//ROLE 
+router.use('/role',role)
 module.exports = router;

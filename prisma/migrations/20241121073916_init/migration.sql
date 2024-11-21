@@ -157,9 +157,17 @@ CREATE TABLE "user" (
     "phone" TEXT,
     "address" TEXT,
     "pass" TEXT,
-    "roleid" INTEGER NOT NULL,
 
     CONSTRAINT "user_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "role_user" (
+    "id" SERIAL NOT NULL,
+    "roleid" INTEGER NOT NULL,
+    "userid" INTEGER NOT NULL,
+
+    CONSTRAINT "role_user_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
@@ -273,7 +281,6 @@ CREATE TABLE "contact" (
     "subject" TEXT,
     "name" TEXT,
     "message" TEXT,
-    "content" TEXT,
     "email" TEXT,
     "phone" TEXT,
 
@@ -360,7 +367,10 @@ ALTER TABLE "user_product" ADD CONSTRAINT "user_product_userid_fkey" FOREIGN KEY
 ALTER TABLE "user_product" ADD CONSTRAINT "user_product_classfyid_fkey" FOREIGN KEY ("classfyid") REFERENCES "classfy"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "user" ADD CONSTRAINT "user_roleid_fkey" FOREIGN KEY ("roleid") REFERENCES "role"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "role_user" ADD CONSTRAINT "role_user_roleid_fkey" FOREIGN KEY ("roleid") REFERENCES "role"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "role_user" ADD CONSTRAINT "role_user_userid_fkey" FOREIGN KEY ("userid") REFERENCES "user"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "blog" ADD CONSTRAINT "blog_userid_fkey" FOREIGN KEY ("userid") REFERENCES "user"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
