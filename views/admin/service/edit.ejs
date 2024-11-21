@@ -16,61 +16,60 @@
 			<!-- main title -->
 			<div class="col-12">
 				<div class="main__title">
-					<h2>Add New Marketing</h2>
+					<h2>EDIT SERVICE</h2>
 				</div>
 			</div>
-			<!-- end main title -->
-
-			<!-- form -->
+			
 			<div class="col-12">
-				<form action="/admin/marketing-shop/create" class="form" method="post" enctype="multipart/form-data" >
+				<form action="/admin/service/edit/<%=data.id%>" class="form" method="post" enctype="multipart/form-data" >
 					<div class="row">
-						<div class="col-12 col-md-7 form__cover">
+						<div class="col-12 col-md-5 form__cover">
 							<div class="row">
 								<div class="col-12 col-sm-6 col-md-12">
 									<div class="form__img">
 										<label for="form__img-upload">Upload cover (270 x 400)</label>
 										<input id="form__img-upload" name="img" type="file"
-											accept=".svg,.png, .jpg, .jpeg">
-										<img id="form__img" src="" alt=" ">
+											accept=".svg,.svg,.png, .jpg, .jpeg">
+										<img id="form__img" src="<%=data.img %>" alt=" ">
 									</div>
 								</div>
 							</div>
 						</div>
 
-						<div class="col-12 col-md-5 form__content">
+						<div class="col-12 col-md-7 form__content">
 							<div class="row">
 								<div class="col-12">
 									<input type="text" class="form__input" name="name"
-										placeholder="Name" >
+										placeholder="Title" value="<%=data.name%>">
 								</div>
 
 								<div class="col-12">
-									<textarea id="text" name="describe" class="form__textarea"
-										placeholder="Description"></textarea>
+									<input id="text" name="content" class="form__input"
+										placeholder="Content" value="<%=data.content%>"></input>
 								</div>
-
-								<div class="col-12 col-sm-6 col-lg-6">
-									<input type="text" class="form__input" name="link"
-										placeholder="Link" >
+					
+						    </div>
+					    </div>
+								<div class="col-12 col-md-5">
+									<button type="submit" class="form__btn">EDIT</button>
+									<a href="/admin/service" class="form__btn">CANCEL</a>
 								</div>
-							</div>
-						</div>
-						<div class="col-12">
-							<button type="submit" class="form__btn">CREATE</button>
-						</div>
+						
 					</div>
 				</form>
 			</div>
-<!-- end form -->
 		</div>
+
+			
+			
+		
 	</div>
 </main>
-<!-- end main content -->
+	
+
 
 <!-- JS -->
 <%- include('../../layout/admin/js'); -%>
 </body>
 
-<!-- Mirrored from dmitryvolkov.me/demo/flixgo2.0/admin/add-item.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Mar 2022 10:07:55 GMT -->
 </html>
