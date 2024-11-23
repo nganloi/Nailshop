@@ -134,6 +134,15 @@ a:hover {
   text-transform: capitalize;
   margin-bottom: 20px;
 }
+.h2-title-login {
+  font-size: 60px;
+  line-height: 70px;
+  font-weight: 500;
+  margin-left: 345px;
+  color: var(--dark-color);
+  text-transform: capitalize;
+  margin-top: 30px;
+}
 
 .h3-title {
   font-size: 25px;
@@ -4382,3 +4391,5 @@ table.product-table {
 }
 }
 /*==========Responsive End==========*/
+
+

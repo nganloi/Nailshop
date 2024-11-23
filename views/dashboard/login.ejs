@@ -1,0 +1,72 @@
+<%- include('../layout/dashboard/head'); -%>
+
+<body>
+
+    <!-- header sec start -->
+    <%- include('../layout/dashboard/header'); -%>
+
+    <!-- header sec end -->
+    <!-- banner-sec start -->
+    <section class="banner inner-banner">
+        <div class="inner-shape">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="banner-text">
+                            <h1 class="h1-title">Login</h1>
+                            <div class="banner-links">
+                                <ul>
+                                    <li><a href="/" title="Home">Home</a> /</li>
+                                    <li>Login</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- banner-sec end -->
+    <!-- contact info sec -->
+    <section class="contact-info">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-4 col-lg-6">
+                    <div class="contact-img back-img" style="background-image:url(assets/images/contact-img.png);">
+                    </div>
+                </div>
+                <div class="col-xl-8 col-lg-6">
+                    <div class="contact-form">
+                        <h2 class="h2-title">Login here of the shop</h2>
+                        <form action="/login" method="post" class="form">
+                            <div class="row">
+                                <div class="col-12">
+                                    <input type="email" class="form-input" placeholder="E-mail Address" name="mail" required>
+                                </div><br>
+                                <div class="col-12">
+                                    <input type="text" class="form-input" placeholder="Password" name="password">
+                                </div>
+                                <div class="col-9">
+                                    <div class="submit-btn">
+                                        <button type="submit" class="sec-btn"><span>Submit</span></button>
+                                        <a href="/register" class="sec-btn" ><span>Register</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+  
+  
+
+    <!-- footer end -->
+    <!-- Scroll To Top Start -->
+    <%- include('../layout/dashboard/js'); -%>
+
+</body>
+
+</html>
