@@ -1,7 +1,7 @@
 <%- include('../../layout/admin/head'); -%>
-
 <body>
-    <!-- header -->
+
+<!-- header -->
 <%- include('../../layout/admin/header'); -%>
 <!-- end header -->
 
@@ -9,6 +9,85 @@
 <%- include('../../layout/admin/slidebar'); -%>
 <!-- end sidebar -->
 
+<!-- main content -->
+<main class="main">
+	<div class="container-fluid">
+		<div class="row">
+			<!-- main title -->
+			<div class="col-12">
+				<div class="main__title">
+					<h2>EDIT BLOG</h2>
+				</div>
+			</div>
+			
+			<div class="col-12">
+				<form action="/admin/blog/edit/<%=data.id%>" class="form" method="post" enctype="multipart/form-data" >
+					<div class="row">
+						<div class="col-12 col-md-5 form__cover">
+							<div class="row">
+								<div class="col-12 col-sm-6 col-md-12">
+									<div class="form__img">
+										<label for="form__img-upload">Upload cover (270 x 400)</label>
+										<input id="form__img-upload" name="img" type="file"
+											accept=".svg,.svg,.png, .jpg, .jpeg">
+										<img id="form__img" src="<%=data.img %>" alt=" ">
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-12 col-md-7 form__content">
+							<div class="row">
+								<div class="col-12">
+									<input type="text" class="form__input" name="name"
+										placeholder="Title" value="<%=data.name%>">
+								</div>
+
+								<div class="col-12">
+									<input id="text" name="description" class="form__input"
+										placeholder="Description" value="<%=data.describe%>">
+								</div>
+								<div class="col-12">
+									<input id="text" name="content" class="form__input"
+										placeholder="Content" value="<%=data.content%>">
+								</div>
+								<div class="col-12">
+									<input id="text" name="time" class="form__input"
+										placeholder="Time" value="<%=data.time%>"></input>
+								</div>
+								<div class="col-12">
+									<label class="profile__label" for="rights">Add Tag</label>
+									
+									<select class="js-example-basic-single" id="rights" name="tag">
+										<% for(var j=0; j< tag.length;j++){%>
+										   <option VALUE="<%= tag[j].name %>"><%= tag[j].name %></option>
+									   <%}%>
+										 </select>
+									
+								</div>
+					
+						    </div>
+					    </div>
+								<div class="col-12 col-md-5">
+									<button type="submit" class="form__btn">EDIT</button>
+									<a href="/admin/blog" class="form__btn">CANCEL</a>
+								</div>
+						
+					</div>
+				</form>
+			</div>
+		</div>
+
+			
+			
+		
+	</div>
+</main>
+	
+
+
+<!-- JS -->
 <%- include('../../layout/admin/js'); -%>
 </body>
+
 </html>
