@@ -8,7 +8,113 @@
 <!-- sidebar -->
 <%- include('../../layout/admin/slidebar'); -%>
 <!-- end sidebar -->
+<main class="main">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="row">
+				<!-- main title -->
+				<div class="col-12">
+					<div class="main__title">
+						<h2>COUPON</h2>
+						<a href="/admin/coupon/create" class="main__title-link">ADD COUPON</a>
+					</div>
+				</div>			
+			<!-- comments -->
+			<div class="col-12">
+				<div class="main__table-wrap">
+					<table class="main__table">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>NAME</th>
+								<th>BUYMIN</th>
+								<th>STATUS</th>
+								<th>QUANTITY</th>
+                                <th>DISCOUNT</th>
+								<th>ACTIONS</th>
+							</tr>
+						</thead>
 
+						<tbody>
+							<%for(var i=0; i< data.length; i++){%>
+							<tr>
+								<td>
+									<div class="main__table-text"><%=data[i].id %></div>
+								</td>
+								<td>
+									<div class="main__table-text"><%=data[i].name %></div>
+								</td>
+								<td>
+									<div class="main__table-text"><%=data[i].buymin %></div>
+								</td>
+								<td>
+									<%if(data[i].active==1){%>
+										<div class="main__table-text--green">OPEN</div>
+									<%}else{%>
+										<div class="main__table-text--red">CLOSED</div>
+										<%}%>
+								</td>
+								<td>
+									<div class="main__table-text"><%=data[i].quantity%></div>
+								</td>
+                                <td>
+									<div class="main__table-text"><%if(parseInt(data[i].discountpercent) != 0){%>
+                                        <%=data[i].discountpercent%>%
+                                            <%}else{%>
+                                                $<%=data[i].discountprice%>
+                                            <%}%>
+                                    </div>
+								</td>
+								<td>
+									<div class="main__table-btns">
+										<a href="/admin/coupon/edit/<%=data[i].id%>" class="main__table-btn main__table-btn--edit">
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.92,11.6C19.9,6.91,16.1,4,12,4S4.1,6.91,2.08,11.6a1,1,0,0,0,0,.8C4.1,17.09,7.9,20,12,20s7.9-2.91,9.92-7.6A1,1,0,0,0,21.92,11.6ZM12,18c-3.17,0-6.17-2.29-7.9-6C5.83,8.29,8.83,6,12,6s6.17,2.29,7.9,6C18.17,15.71,15.17,18,12,18ZM12,8a4,4,0,1,0,4,4A4,4,0,0,0,12,8Zm0,6a2,2,0,1,1,2-2A2,2,0,0,1,12,14Z"/></svg>
+										</a>
+										<% if(data[i].active==1){%>
+											<a href="/admin/coupon/status/<%=data[i].id%>" class="main__table-btn main__table-btn--banned">
+												<svg  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12,13a1,1,0,0,0-1,1v3a1,1,0,0,0,2,0V14A1,1,0,0,0,12,13Zm5-4H9V7a3,3,0,0,1,5.12-2.13,3.08,3.08,0,0,1,.78,1.38,1,1,0,1,0,1.94-.5,5.09,5.09,0,0,0-1.31-2.29A5,5,0,0,0,7,7V9a3,3,0,0,0-3,3v7a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V12A3,3,0,0,0,17,9Zm1,10a1,1,0,0,1-1,1H7a1,1,0,0,1-1-1V12a1,1,0,0,1,1-1H17a1,1,0,0,1,1,1Z"/></svg>										
+											</a>	
+											<%}else{%>
+											<a href="/admin/coupon/status/<%=data[i].id%>" class="main__table-btn main__table-btn--delete">
+												<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,13a1,1,0,0,0-1,1v3a1,1,0,0,0,2,0V14A1,1,0,0,0,12,13Zm5-4V7A5,5,0,0,0,7,7V9a3,3,0,0,0-3,3v7a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V12A3,3,0,0,0,17,9ZM9,7a3,3,0,0,1,6,0V9H9Zm9,12a1,1,0,0,1-1,1H7a1,1,0,0,1-1-1V12a1,1,0,0,1,1-1H17a1,1,0,0,1,1,1Z"></path></svg>										
+											</a>									
+											<%}%>	
+										<a href="/admin/coupon/delete/<%=data[i].id%>" class="main__table-btn main__table-btn--delete">
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,6H16V5a3,3,0,0,0-3-3H11A3,3,0,0,0,8,5V6H4A1,1,0,0,0,4,8H5V19a3,3,0,0,0,3,3h8a3,3,0,0,0,3-3V8h1a1,1,0,0,0,0-2ZM10,5a1,1,0,0,1,1-1h2a1,1,0,0,1,1,1V6H10Zm7,14a1,1,0,0,1-1,1H8a1,1,0,0,1-1-1V8H17Z"/></svg>
+										</a>
+									</div>
+								</td>
+							</tr>
+							<%}%>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!-- end comments -->
+
+			<!-- paginator -->
+			<div class="col-12">
+				<div class="paginator-wrap">
+					<span>10 from 21 356</span>
+
+					<ul class="paginator">
+						<li class="paginator__item paginator__item--prev">
+							<a href="#"><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24"><path d="M8.5,12.8l5.7,5.6c0.4,0.4,1,0.4,1.4,0c0,0,0,0,0,0c0.4-0.4,0.4-1,0-1.4l-4.9-5l4.9-5c0.4-0.4,0.4-1,0-1.4c-0.2-0.2-0.4-0.3-0.7-0.3c-0.3,0-0.5,0.1-0.7,0.3l-5.7,5.6C8.1,11.7,8.1,12.3,8.5,12.8C8.5,12.7,8.5,12.7,8.5,12.8z"></path></svg></a>
+						</li>
+						<li class="paginator__item"><a href="#">1</a></li>
+						<li class="paginator__item paginator__item--active"><a href="#">2</a></li>
+						<li class="paginator__item"><a href="#">3</a></li>
+						<li class="paginator__item"><a href="#">4</a></li>
+						<li class="paginator__item paginator__item--next">
+							<a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.54,11.29,9.88,5.64a1,1,0,0,0-1.42,0,1,1,0,0,0,0,1.41l4.95,5L8.46,17a1,1,0,0,0,0,1.41,1,1,0,0,0,.71.3,1,1,0,0,0,.71-.3l5.66-5.65A1,1,0,0,0,15.54,11.29Z"></path></svg></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- end paginator -->
+		</div>
+	</div>
+</main>
 <%- include('../../layout/admin/js'); -%>
 </body>
 </html>

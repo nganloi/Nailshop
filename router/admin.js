@@ -42,7 +42,6 @@ router.use('/reviews', reviews)
 // COUPON
 router.use('/coupon', coupon)
 
-
 //SOCIAL
 router.use('/social',social)
 
@@ -69,6 +68,8 @@ router.use('/category',category)
 
 //TYPE
 router.use('/typer', typer)
+
 //MARKETING PRODUCT
 router.use('/marketing-product',marketingproduct)
+
 module.exports = router;

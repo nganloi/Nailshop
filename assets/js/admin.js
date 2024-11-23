@@ -65,7 +65,10 @@ $(document).ready(function () {
 		placeholder: "Choose quality",
 		allowClear: true
 	});
-
+    $('#discount').select2({
+		placeholder: "Discount",
+		allowClear: true
+	});
 	$('#country').select2({
 		placeholder: "Choose country / countries"
 	});
@@ -75,6 +78,16 @@ $(document).ready(function () {
 	});
 
 	$('#subscription, #rights').select2({
+		multiple: true
+	});
+	$('#subscription, #rights1').select2({
+		multiple: true
+	});
+
+	$('#subscription, #rights2').select2({
+		multiple: true
+	});
+	$('#subscription, #rights3').select2({
 		multiple: true
 	});
 
