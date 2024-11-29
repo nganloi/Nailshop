@@ -13,11 +13,11 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="banner-text">
-                            <h1 class="h1-title">Login</h1>
+                            <h1 class="h1-title">Register</h1>
                             <div class="banner-links">
                                 <ul>
                                     <li><a href="/" title="Home">Home</a> /</li>
-                                    <li>Login</li>
+                                    <li>Register</li>
                                 </ul>
                             </div>
                         </div>
@@ -36,20 +36,29 @@
                     </div>
                 </div>
                 <div class="col-xl-8 col-lg-6">
-                    <div class="contact-form-login">
-                        <h2 class="h2-title-login">Login</h2>
-                        <form action="/login" method="post" class="form">
+                    <div class="contact-form-register">
+                        <h2 class="h2-title-login">Register</h2>
+                        <form action="/register" method="post" class="form">
                             <div class="row">
                                 <div class="col-9">
-                                    <input type="email" class="form-input" placeholder="E-mail Address" name="mail" required>
+                                    <input type="name" class="form-input" placeholder="Name" name="name" required>
                                 </div><br>
                                 <div class="col-9">
-                                    <input type="text" class="form-input" placeholder="Password" name="password">
+                                    <input type="email" class="form-input" placeholder="E-mail" name="mail" required>
+                                </div><br>
+                                <div class="col-9">
+                                    <input type="text" class="form-input" placeholder="Phone" name="phone" required>
+                                </div><br>
+                                <div class="col-9">
+                                    <input type="text" class="form-input" placeholder=" Address" name="address" required>
+                                </div><br>
+                                <div class="col-9">
+                                    <input type="password" class="form-input" placeholder="Password" name="pass" >
                                 </div>
                                 <div class="col-7" >
                                     <div class="submit-btn-login">
-                                        <button type="submit" class="sec-btn"><span>Login</span></button>
-                                        <a href="/register" class="sec-btn" ><span>Register</span></a>
+                                        <button type="submit" class="sec-btn"><span>Register</span></button>
+                                        <a href="/login" class="sec-btn" ><span>Login</span></a>
                                     </div>
                                 </div>
                             </div>

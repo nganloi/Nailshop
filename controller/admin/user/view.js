@@ -1,8 +1,9 @@
 const express = require('express')
 const app = express()
-
+const user = require('../../../model/user/view.js')
 module.exports = {
     getUser: async(req,res) => {
-        res.render('./admin/user/view')
+       const data = await user.user()
+        res.render('./admin/user/view', {data:data})
     }
 }

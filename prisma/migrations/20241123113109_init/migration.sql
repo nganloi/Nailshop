@@ -194,7 +194,6 @@ CREATE TABLE "blog" (
     "img" TEXT,
     "content" TEXT,
     "time" TEXT,
-    "userid" INTEGER NOT NULL,
 
     CONSTRAINT "blog_pkey" PRIMARY KEY ("id")
 );
@@ -382,9 +381,6 @@ ALTER TABLE "role_user" ADD CONSTRAINT "role_user_roleid_fkey" FOREIGN KEY ("rol
 
 -- AddForeignKey
 ALTER TABLE "role_user" ADD CONSTRAINT "role_user_userid_fkey" FOREIGN KEY ("userid") REFERENCES "user"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE "blog" ADD CONSTRAINT "blog_userid_fkey" FOREIGN KEY ("userid") REFERENCES "user"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "comment" ADD CONSTRAINT "comment_userid_fkey" FOREIGN KEY ("userid") REFERENCES "user"("id") ON DELETE RESTRICT ON UPDATE CASCADE;

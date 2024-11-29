@@ -170,7 +170,7 @@ model user{
   email String?
   phone String?
   address String?
-  pass String?
+  pass String? 
   role role_user[] 
   comment comment[]
   review review[]

@@ -13,6 +13,7 @@ const cart = require('./dashboard/cart.js')
 const checkout = require('./dashboard/checkout.js')
 const contact = require('./dashboard/contact.js')
 const login = require('./dashboard/login.js')
+const register = require('./dashboard/register.js')
 
 
 
@@ -49,4 +50,7 @@ router.use('/contact', contact)
 
 //LOGIN
 router.use('/login', login)
+
+//REGISTER
+router.use('/register', register)
 module.exports = router;

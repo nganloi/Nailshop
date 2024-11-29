@@ -1,16 +1,14 @@
 const express = require('express')
 const router = express.Router();
 const user = require('../../controller/admin/user/view.js')
-const userEditController = require('../../controller/admin/user/edit.js')
-const userCreateController = require('../../controller/admin/user/create.js')
+const delet = require('../../controller/admin/user/delete.js')
 
 //VIEW
 router.get('/', user.getUser)
 
 
-// CREATE
-router.get('/create',userCreateController.getCreateUser)
+
 
 // EDIT
-router.get('/edit', userEditController.getEditUser)
+router.get('/delete/:ID', delet. deletet)
 module.exports = router;
