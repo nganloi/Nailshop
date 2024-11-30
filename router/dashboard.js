@@ -6,7 +6,6 @@ const products = require('./dashboard/products.js')
 const productDetail = require('./dashboard/single-products.js')
 const service = require('./dashboard/service.js')
 const serviceDetail = require('./dashboard/service-detail.js')
-const about = require('./dashboard/about.js')
 const blogDetail = require('./dashboard/blog-detail.js')
 const blog = require('./dashboard/blog.js')
 const cart = require('./dashboard/cart.js')
@@ -30,9 +29,6 @@ router.use('/service', service)
 
 //SERVICE-DETAIL
 router.use('/service-Detail', serviceDetail)
-
-//ABOUT
-router.use('/about', about)
 
 //BLOG
 router.use('/blog', blog)
