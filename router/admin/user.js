@@ -2,13 +2,15 @@ const express = require('express')
 const router = express.Router();
 const user = require('../../controller/admin/user/view.js')
 const delet = require('../../controller/admin/user/delete.js')
+const edit = require('../../controller/admin/user/edit.js')
 
 //VIEW
 router.get('/', user.getUser)
 
+// SEE
+router.get('/edit/:ID',edit.getEdit )
 
 
-
-// EDIT
+// DELETE
 router.get('/delete/:ID', delet. deletet)
 module.exports = router;

@@ -10,11 +10,7 @@ module.exports = {
             phone: phone,
             address:address,
             pass: pass,
-            role: {
-                create: role.map(roleid => ({
-                    roleid: parseInt(roleid), 
-                })),
-            }
+           
         }
     })
    

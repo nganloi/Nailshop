@@ -18,7 +18,7 @@ module.exports = {
         const pass =  bcrypt.hashSync(pass1,5)
 
         
-        const create = await user.postCreate(name,mail,phone,address,pass,role)
+        const create = await user.postCreate(name,mail,phone,address,pass)
         res.redirect(`/login`)
 
     }

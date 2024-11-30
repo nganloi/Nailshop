@@ -1,0 +1,72 @@
+<%- include('../../layout/admin/head'); -%>
+<body>
+
+<!-- header -->
+<%- include('../../layout/admin/header'); -%>
+<!-- end header -->
+
+<!-- sidebar -->
+<%- include('../../layout/admin/slidebar'); -%>
+<!-- end sidebar -->
+
+<!-- main content -->
+<main class="main">
+	<div class="container-fluid">
+		<div class="row">
+			<!-- main title -->
+			<div class="col-12">
+				<div class="main__title">
+					<h2>USER</h2>
+				</div>
+			</div>
+			
+			<div class="col-12">
+				<form action="/admin/user/edit/<%= edit.id %>" method="post" class="form">
+					
+						<div class="row">
+							<div class="col-12">
+								<input type="text"  name="name" class="form__input" value="<%= edit.name %>" placeholder="Name">
+							</div>
+
+							<div class="col-12">
+								<input type="mail"  name="mail" class="form__input" value="<%= edit.email %>" placeholder="Email">
+							</div>
+							<div class="col-12">
+								<input type="text"  name="phone" class="form__input" value="<%= edit.phone %>" placeholder="Phone">
+							</div>
+							<div class="col-12">
+								<input type="text"  name="address" class="form__input" value="<%= edit.address %>" placeholder="Address">
+							</div>
+							<div class="col-12">
+								<input type="text"  name="pass" class="form__input" value="<%= edit.pass %>" placeholder="Password">
+							</div>
+						</div>
+
+						
+						
+						<div class="col-12">
+							<div class="row">
+								
+								<div class="col-12">
+									<a href="/admin/user" class="form__btn">EXIT</a>
+								</div>
+							</div>
+						</div>
+				
+				</form>
+			</div>
+		</div>
+
+			
+			
+		
+	</div>
+</main>
+	
+
+
+<!-- JS -->
+<%- include('../../layout/admin/js'); -%>
+</body>
+
+</html>
