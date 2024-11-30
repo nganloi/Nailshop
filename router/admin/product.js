@@ -23,7 +23,6 @@ router.post('/create',upload.array("img",5),productCreate.postCreate)
 router.get('/classfys',productCreate.getFalse)
 router.get('/discount', productCreate.getFalse)
 
-
 // EDIT
 router.get('/edit/:ID', productEdit.getEditProduct)//ID của product
 router.post('/edit/:ID',upload.array("img",5), productEdit.postEditProduct)//ID của product
@@ -36,8 +35,8 @@ router.post('/edit/classfys/:ID', productEdit.editclassfys)//ID của classfys
 router.get('/discount/:ID', productEdit.getdiscount)
 router.post('/edit/discount/:ID', productEdit.editdiscount)
 router.post('/edit/discount-coupon/:ID',productEdit.changeCoupon)//ID của product thay đổi coupon áp dụng cho prouduct
-router.get('/delete/discount-coupon/:ID', productEdit.deleteCoupon)//ID trong bảng coupon_product
-router.post('/edit/discount-category/:ID',productEdit.changeCategory)
+router.get('/delete/discount-coupon/:ID', productEdit.deleteCoupon)//ID của product
+router.post('/edit/discount-category/:ID',productEdit.changeCategory)//ID của product 
 ///CHANEG STATUS
 router.get('/status/:ID',productEdit.changeStatus)
 

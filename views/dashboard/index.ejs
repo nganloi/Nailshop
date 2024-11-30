@@ -7,17 +7,18 @@
 
     <!-- header sec end -->
     <!-- banner-sec start -->
+     <% for(var i =0 ; i < mrt_shop.length; i++){%>
+     <% if(mrt_shop[i].active ==1 ){%>    
     <section class="banner">
-        <div class="banner-bg" style="background-image: url(assets/images/banner-img.png)"></div>
+        <div class="banner-bg" style="background-image: url(<%=mrt_shop[i].img%>)"></div>
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="banner-text">
-                        <h1 class="h1-title">Get the skin You want to feel</h1>
-                        <p>the right formula cleanses your skin without stripping essential ,healthy oils. take it easy
-                            with exfoliatingscrubs</p>
+                        <h1 class="h1-title"><%=mrt_shop[i].name%></h1>
+                        <p><%=mrt_shop[i].describe%></p>
                         <div class="banner-btn">
-                            <a href="javascript:void(0);" class="sec-btn" title="Book Now">Book Now</a>
+                            <a href="<%=mrt_shop[i].link%>" class="sec-btn" title="Book Now">Book Now</a>
                             <a href="javascript:void(0);" class="video-btn">
                                 <span class="icon"> <i class="fas fa-play"></i> </span>Play Video</a>
                         </div>
@@ -26,6 +27,8 @@
             </div>
         </div>
     </section>
+    <%}%>
+    <%}%>
     <!-- banner-sec end -->
     <!-- about sec start -->
     <section class="about">
@@ -39,16 +42,18 @@
                 </div>
             </div>
             <div class="about-list">
-                <div class="row">
+                <div class="row justify-content-center">
+                    <% for(var i=0; i< service.length; i++){%>
                     <div class="col-lg-4">
                         <div class="about-box">
                             <div class="about-icon">
-                                <img src="assets/images/icon-1.svg" alt="free delivery" />
+                                <img src="<%=service[i].img%>" alt="free delivery"/>
                             </div>
-                            <h4 class="h4-title">free & fast shipping</h4>
-                            <p>we have delivery service that is fast , safe & free of charge shipping</p>
+                            <h4 class="h4-title"><%=service[i].name%></h4>
+                            <p><%=service[i].content%></p>
                         </div>
                     </div>
+                    <%}%>
                     <div class="col-lg-4">
                         <div class="about-box">
                             <div class="about-icon">
@@ -56,15 +61,6 @@
                             </div>
                             <h4 class="h4-title">100% original brands</h4>
                             <p>our products are 100% original brand we also have guarentee for product</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="about-box">
-                            <div class="about-icon">
-                                <img src="assets/images/icon-3.svg" alt="free delivery" />
-                            </div>
-                            <h4 class="h4-title">discount every weeks</h4>
-                            <p>Get attracive discount every weeks on weekend for all categories</p>
                         </div>
                     </div>
                 </div>

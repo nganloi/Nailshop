@@ -14,7 +14,7 @@ module.exports = {
       const link = req.body.link;
       const anh = req.file;
       const data=await edit.getEdit(id)
-      const img=await checkImg.checkImg(anh,data[0])
+      const img=await checkImg.checkImg(anh,data[0].img)
       const describe=req.body.describe
       const update = await edit.postEdit(id,name,img,link,describe);
       res.redirect(`/admin/marketing-shop`)

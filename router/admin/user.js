@@ -10,7 +10,6 @@ router.get('/', user.getUser)
 // SEE
 router.get('/edit/:ID',edit.getEdit )
 
-
 // DELETE
 router.get('/delete/:ID', delet. deletet)
 module.exports = router;
