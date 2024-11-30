@@ -11,6 +11,14 @@
 <main class="main">
 	<div class="container-fluid">
 		<div class="row">
+			<div class="row">
+				<!-- main title -->
+				<div class="col-12">
+					<div class="main__title">
+						<h2>MARKETING-SHOP</h2>
+						<a href="/admin/marketing-shop/create" class="main__title-link">ADD MARKETING</a>
+					</div>
+				</div>			
 			<!-- comments -->
 			<div class="col-12">
 				<div class="main__table-wrap">
@@ -46,7 +54,7 @@
 										<%}%>
 								</td>
 								<td>
-									<div class="main__table-text"><%=data[i].describe.slice(0,30) %></div>
+									<div class="main__table-text"><%=data[i].describe.slice(0,20) %>...</div>
 								</td>
 								<td>
 									<div class="main__table-btns">

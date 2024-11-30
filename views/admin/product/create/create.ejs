@@ -1,0 +1,88 @@
+<%- include('../../../layout/admin/head'); -%>
+<body>
+
+<!-- header -->
+<%- include('../../../layout/admin/header'); -%>
+<!-- end header -->
+
+<!-- sidebar -->
+<%- include('../../../layout/admin/slidebar'); -%>
+<!-- end sidebar -->
+<!-- main content -->
+<main class="main">
+	<div class="container-fluid">
+		<div class="row">
+			<!-- main title -->
+			<div class="col-12">
+				<div class="main__title">
+					<h2>Add new item</h2>
+				</div>
+				<div class="row">
+					<a href="/admin/product/create" class="col-4 modal__btn_product modal__btn--product" type="button">Basic Information</a>
+					<a href="/admin/product/classfys" class="col-4 modal__btn modal__btn--product" type="button">Classification of goods</a>
+					<a href="/admin/product/discount" class="col-4 modal__btn modal__btn--product" type="button">Discount information</a>
+			    </div>
+			</div>
+			<!-- end main title -->
+
+			<!-- form -->
+			<div class="col-12">
+				<form action="/admin/product/create" class="form" method="post" enctype="multipart/form-data" >
+					<div class="row">
+						<div class="col-12 col-md-5 form__cover">
+							<div class="row">
+								<div class="col-12 col-sm-6 col-md-12">
+									<div class="form__img">
+										<label for="form__img-upload">Upload cover (270 x 400)</label>
+										<input id="form__img-upload" name="img" type="file" accept=".png, .jpg, .jpeg">
+										<img id="form__img" src="#" alt=" ">
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-12 col-md-7 form__content">
+							<div class="row">
+								<div class="col-12">
+									<input type="text" class="form__input" placeholder="Name" name="name">
+								</div>
+
+								<div class="col-12">
+									<textarea id="text" name="describe" class="form__textarea" placeholder="Description"></textarea>
+								</div>
+								<div class="col-12">
+									<textarea id="text" name="content" class="form__textarea" placeholder="Information Product"></textarea>
+								</div>
+
+								<div class="col-12 col-sm-6 col-lg-6">
+									<input type="text" class="form__input" placeholder="Product Price" name="price">
+								</div>
+								<div class="col-12 col-sm-6 col-lg-6">
+									<select class="js-example-basic-single" id="category" name="category">
+										<option value=""></option>
+										<% for( var i=0; i< category.length ; i++){%>
+											<option value="<%=category[i].id %>"><%=category[i].name %></option>
+										<%}%>
+									</select>
+								</div>
+								<div class="col-12">
+									<button type="submit" class="form__btn">create</button>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+			<!-- end form -->
+		</div>
+	</div>
+</main>
+<!-- end main content -->
+
+<!-- JS -->
+<%- include('../../../layout/admin/js'); -%>
+</body>
+
+<!-- Mirrored from dmitryvolkov.me/demo/flixgo2.0/admin/add-item.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Mar 2022 10:07:55 GMT -->
+</html>

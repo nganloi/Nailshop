@@ -4,9 +4,9 @@ module.exports={
  ///////checkimg
  checkImg:async(anh,data)=>{
      var img
-     if(anh==undefined){
-        if(data.img!= undefined){
-            img= data.img
+     if(anh==undefined ){
+        if(data!= undefined){
+            img= data
         }else{
             img='/assets/images/blog-2.jpg'
         }

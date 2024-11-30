@@ -1,7 +1,7 @@
 <%- include('../../layout/admin/head'); -%>
-
 <body>
-    <!-- header -->
+
+<!-- header -->
 <%- include('../../layout/admin/header'); -%>
 <!-- end header -->
 
@@ -9,6 +9,82 @@
 <%- include('../../layout/admin/slidebar'); -%>
 <!-- end sidebar -->
 
+<!-- main content -->
+<main class="main">
+	<div class="container-fluid">
+		<div class="row">
+			<!-- main title -->
+			<div class="col-12">
+				<div class="main__title">
+					<h2>ADD BLOG</h2>
+				</div>
+			</div>
+			
+			<div class="col-12">
+				<form action="/admin/blog/create" class="form" method="post" enctype="multipart/form-data" >
+					<div class="row">
+						<div class="col-12 col-md-7 form__cover">
+							<div class="row">
+								<div class="col-12 col-sm-6 col-md-12">
+									<div class="form__img">
+										<label for="form__img-upload">Upload cover (270 x 400)</label>
+										<input id="form__img-upload" name="img" type="file"
+											accept=".svg,.png, .jpg, .jpeg">
+										<img id="form__img" src="" alt=" ">
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-12 col-md-5 form__content">
+							<div class="row">
+								<div class="col-12">
+									<label class="profile__label">Name</label>
+									<input type="text" class="form__input" name="name"
+										placeholder="Name" >
+								</div>
+								<div class="col-12">
+									<label class="profile__label">Description</label>
+									<input id="text" name="description" class="form__input"
+										placeholder="Description"></input>
+								</div>
+								<div class="col-12">
+									<label class="profile__label">Content</label>
+									<textarea id="text" name="content" class="form__input"
+										placeholder="Content"></textarea>
+								</div>
+								<div class="col-12">
+									<label class="profile__label">Time</label>
+									<input id="text" name="time" class="form__input"
+										placeholder="Time"></input>
+								</div>
+								<div class="col-12">
+									<label class="profile__label" for="rights">Add Tag</label>
+									<select class="js-example-basic-single" id="rights" name="tag"  >
+										<% for(var j=0; j< tag.length ; j++){%>
+											<option value="<%=tag[j].id %>"><%=tag[j].name %></option>
+										<%}%>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="col-12">
+							<button type="submit" class="form__btn">CREATE</button>
+						</div>
+					</div>
+				</form>
+			</div>
+
+			
+			
+		
+	</div>
+</main>
+	
+
+
+<!-- JS -->
 <%- include('../../layout/admin/js'); -%>
 </body>
+
 </html>

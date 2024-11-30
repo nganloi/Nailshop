@@ -3,9 +3,8 @@ const prisma = new PrismaClient();
 
 module.exports = {
    tag: async() => {
-    const data = await prisma.tag.findMany({
-     
-    });
+    const data = await prisma.tag.findMany();
     return data;
+
    },
 }

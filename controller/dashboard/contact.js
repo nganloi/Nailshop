@@ -1,10 +1,16 @@
 const express = require('express')
 const app = express()
-const contact = require('../../model/contact/contact.js')
+const contact = require('../../model/contact/contact.js');
+const  userr  = require('../../model/user/view.js');
 
 module.exports = {
     getContact: async(req,res) => {
-        res.render('./dashboard/contact')
+        const userid = parseInt(req.session.userId)
+        let user
+        if(userid >= 0) {
+            user = await userr.getUser(userid)
+        }
+        res.render('./dashboard/contact', {user:user})
     },
     postContact: async(req,res) => {
         const name = req.body.name;

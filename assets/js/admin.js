@@ -65,7 +65,14 @@ $(document).ready(function () {
 		placeholder: "Choose quality",
 		allowClear: true
 	});
-
+    $('#discount').select2({
+		placeholder: "Discount",
+		allowClear: true
+	});
+	$('#active').select2({
+		placeholder: "Status",
+		allowClear: true
+	});
 	$('#country').select2({
 		placeholder: "Choose country / countries"
 	});
@@ -73,8 +80,21 @@ $(document).ready(function () {
 	$('#genre').select2({
 		placeholder: "Choose genre / genres"
 	});
+	$('#subscription, #category').select2({
+		placeholder: "Choose category"
+	});
 
 	$('#subscription, #rights').select2({
+		multiple: true
+	});
+	$('#subscription, #rights1').select2({
+		multiple: true
+	});
+
+	$('#subscription, #rights2').select2({
+		multiple: true
+	});
+	$('#subscription, #rights3').select2({
 		multiple: true
 	});
 

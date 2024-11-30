@@ -8,6 +8,157 @@
 <!-- sidebar -->
 <%- include('../../layout/admin/slidebar'); -%>
 <!-- end sidebar -->
+<main class="main">
+	<div class="container-fluid">
+		<div class="row">
+			<!-- main title -->
+			<div class="col-12">
+				<div class="main__title">
+					<h2>Edit coupon</h2>
+				</div>
+			</div>
+			<!-- end main title -->
+
+			<!-- form -->
+			<div class="col-12">
+				<form action="/admin/coupon/edit/<%= data.id %>" method="post" class="form">
+					<div class="row ">
+						<div class="col-12 col-md-10 offset-1">
+							<div class="row">
+								<div class="col-4">
+									<input type="text" class="form__input" placeholder="Name" name="name" value="<%= data.name %>">
+								</div>
+								<div class="col-4">
+									<input type="text" class="form__input" placeholder="Buymin" name="buymin"  value="<%= data.buymin %>">
+								</div>
+								<div class="col-12 col-sm-6 col-lg-4">
+									<input type="text" class="form__input" placeholder="Quanlity" name="quanlity"  value="<%= data.quantity%>">
+								</div>
+								<div class="col-12 col-sm-6 col-lg-4">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <select class="js-example-basic-single" id="discount" name="discount">
+                                                <option value=""></option>
+                                                <option value="0"<%= parseInt(data.discountpercent) != 0 ? "selected" : "" %>>PERCENT</option>
+                                                <option value="1" <%= parseInt(data.discountprice) != 0 ? "selected" : "" %>>PRICE</option>
+                                            </select>        
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="text" class="form__input_discount" placeholder="value" name="value"  value="<%= parseInt(data.discountpercent) + parseInt(data.discountprice) %>">
+                                        </div>
+                                    </div>
+								</div>
+
+								<div class="col-12 col-lg-4">
+									<a href="#modal-status" class="form__btn form__btn--add open-modal">ADD USER</a>
+								</div>
+
+								<div class="col-12 col-lg-4">
+									<a href="#modal-view" class="form__btn form__btn--add open-modal">ADD PRODUCT</a>
+								</div>
+								<div class="col-12">
+									<button type="submit" class="form__btn">create</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="modal-status" class="zoom-anim-dialog mfp-hide modal">
+						<h6 class="modal__title">ADD NEW USER</h6>
+						<div class="form">
+							<div class="row">
+								<div class="col-12 mb-5">
+									<label class="profile__label" for="rights1">Add Typer</label>
+									<div class="col-12 col-lg-12">
+										<select class="js-example-basic-multiple" id="rights1" name="typer" multiple="multiple">
+											<% for (var j = 0; j < typer.length; j++) { %>
+												<% 
+												// Kiểm tra xem user[j] có nằm trong data.user hay không
+												let isSelected = data.typer.some(selectedUser => selectedUser.typerid === typer[j].id);
+												%>
+												<option value="<%= typer[j].id %>" 
+													<%= isSelected ? "selected" : "" %>>
+													<%= typer[j].name %>
+												</option>
+											<% } %>
+		
+										</select>
+									</div>
+								</div>
+								<div class="col-12 mb-4">
+									<label class="profile__label" for="rights">Add User</label>
+									<div class="col-12 col-lg-12">
+										<select class="js-example-basic-multiple" id="rights" name="user" multiple="multiple">
+											<% for (var j = 0; j < user.length; j++) { %>
+												<% 
+												// Kiểm tra xem user[j] có nằm trong data.user hay không
+												let isSelected = data.user.some(selectedUser => selectedUser.userid === user[j].id);
+												%>
+												<option value="<%= user[j].id %>" 
+													<%= isSelected ? "selected" : "" %>>
+													<%= user[j].name %>
+												</option>
+											<% } %>
+										</select>
+									</div>
+								</div>
+							</div>
+						    <div class="modal__btns">
+							    <button class="modal__btn modal__btn--dismiss" type="button">Apply</button>
+							    <button class="modal__btn modal__btn--dismiss" type="button">Dismiss</button>
+						    </div>
+					    </div>
+					</div>
+					<div id="modal-view" class="zoom-anim-dialog mfp-hide modal">
+						<h6 class="modal__title">ADD NEW PRODUCT</h6>
+						<div class="form">
+							<div class="row">
+								<div class="col-12 mb-5">
+									<label class="profile__label" for="rights2">Add Categori</label>
+									<div class="col-12 col-lg-12">
+										<select class="js-example-basic-multiple" id="rights2" name="category" multiple="multiple">
+											<% for (var j = 0; j < category.length; j++) { %>
+												<% 
+												// Kiểm tra xem user[j] có nằm trong data.user hay không
+												let isSelected = data.category.some(selectedUser => selectedUser.categoryid === category[j].id);
+												%>
+												<option value="<%= category[j].id %>" 
+													<%= isSelected ? "selected" : "" %>>
+													<%= category[j].name %>
+												</option>
+											<% } %>
+										</select>
+									</div>
+								</div>
+								<div class="col-12 mb-4">
+									<label class="profile__label" for="rights3">Add Product</label>
+									<div class="col-12 col-lg-12">
+										<select class="js-example-basic-multiple" id="rights3" name="product" multiple="multiple">
+											<% for (var j = 0; j < product.length; j++) { %>
+												<% 
+												// Kiểm tra xem user[j] có nằm trong data.user hay không
+												let isSelected = data.product.some(selectedUser => selectedUser.productid === product[j].id);
+												%>
+												<option value="<%= product[j].id %>" 
+													<%= isSelected ? "selected" : "" %>>
+													<%= product[j].name %>
+												</option>
+											<% } %>
+										</select>
+									</div>
+								</div>
+							</div>
+						    <div class="modal__btns">
+							    <button class="modal__btn modal__btn--dismiss" type="button">Apply</button>
+							    <button class="modal__btn modal__btn--dismiss" type="button">Dismiss</button>
+						    </div>
+					    </div>
+					</div>										
+				</form>
+			</div>
+			<!-- end form -->
+		</div>
+	</div>
+</main>
 
 <%- include('../../layout/admin/js'); -%>
 </body>

@@ -1,14 +1,12 @@
 const express = require('express')
 const app = express()
 const edit= require('../../../model/marketing-shop/edit');
-const viewUser=require('../../../model/user/view')
 const checkImg=require('../../../middlewea/checkimg')
 module.exports = {
     getEdit: async(req,res) => {
         const id = parseInt(req.params.ID);
         const data = await edit.getEdit(id)
-        const user=await viewUser.user()
-        res.render('./admin/marketing-shop/edit',{data:data[0],user:user})
+        res.render('./admin/marketing-shop/edit',{data:data[0]})
     },
     postEdit: async(req,res) => {
       const id = parseInt(req.params.ID);
