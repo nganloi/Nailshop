@@ -25,7 +25,6 @@ module.exports = {
         const user = req.body.user
         const category = req.body.category
         const product = req.body.product
-        console.log(discount)
         if(discount == 0){
             discountpercent = value
         }else{

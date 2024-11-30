@@ -134,6 +134,16 @@ a:hover {
   text-transform: capitalize;
   margin-bottom: 20px;
 }
+.h2-title-login {
+  font-size: 60px;
+  line-height: 70px;
+  font-weight: 500;
+  margin-left: 2px;
+  color: var(--dark-color);
+  text-transform: capitalize;
+  margin-top: 29px;
+
+}
 
 .h3-title {
   font-size: 25px;
@@ -2107,7 +2117,12 @@ overflow: hidden;
 .contact-form .h2-title {
   font-size: 50px;
 }
-
+.contact-form-login {
+  margin-top: 44px;
+}
+.contact-form-register {
+  margin-top: -83px;
+}
 .contact-info {
   position: relative;
   padding: 80px 0 0;
@@ -2129,6 +2144,23 @@ textarea.form-input {
   text-align: right;
   margin-top: 0px;
 }
+.submit-btn-login {
+  text-align: left;
+  margin-top: 0px;
+}
+.submit-btn-login .sec-btn:before {
+  background: var(--primary-color);
+}
+
+.submit-btn-login .sec-btn:hover {
+  color: var(--dark-color);
+  border-color: var(--primary-color);
+}
+.submit-btn-login .sec-btn {
+  background-color: var(--dark-color);
+  color: var(--white-color);
+  border: 2px solid var(--dark-color);
+}
 
 .submit-btn .sec-btn {
   background-color: var(--dark-color);
@@ -2144,6 +2176,8 @@ textarea.form-input {
   color: var(--dark-color);
   border-color: var(--primary-color);
 }
+
+
 
 .map iframe {
   width: 100%;
@@ -4382,3 +4416,5 @@ table.product-table {
 }
 }
 /*==========Responsive End==========*/
+
+
