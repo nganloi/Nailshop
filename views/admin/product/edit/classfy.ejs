@@ -1,0 +1,114 @@
+<%- include('../../../layout/admin/head'); -%>
+<body>
+
+<!-- header -->
+<%- include('../../../layout/admin/header'); -%>
+<!-- end header -->
+
+<!-- sidebar -->
+<%- include('../../../layout/admin/slidebar'); -%>
+<!-- end sidebar -->
+
+<!-- main content -->
+<main class="main">
+	<div class="container-fluid">
+		<div class="row">
+			<!-- main title -->
+			 
+			<div class="col-12">
+				<div class="main__title">
+					<h2>Add new item</h2>
+					<a href="#modal-status" class="main__title-link open-modal">ADD CLASSFY</a>
+				</div>
+				<div class="row">
+					<a href="/admin/product/edit/<%= data.id%>" class="col-4 modal__btn modal__btn--product" type="button">Basic Information</a>
+					<a href="/admin/product/classfys/<%= data.id%>" class="col-4 modal__btn_product modal__btn--product" type="button">Classification of goods</a>
+					<a href="/admin/product/discount/<%= data.id%>" class="col-4 modal__btn modal__btn--product" type="button">Discount information</a>
+			    </div>
+			</div>
+			<!-- end main title -->
+
+			<!-- form -->
+			<div class="col-12">
+				<div class="main__table-wrap">
+					<table class="main__table">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>NAME</th>
+								<th>QUANTITY</th>
+								<th>ACTIONS</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<%for(var i=0; i< data.classfy.length; i++){%>
+						<form action="/admin/product/edit/classfys/<%=data.classfy[i].id %>" method="post">
+							<tr>
+								<td>
+									<div class=" col-7 main__table-text form__input"><%= i%></div>
+								</td>
+								
+								<td>
+									<div class="main__table-text">
+										<input type="text" class="form__input" placeholder="Name" name="name<%=data.classfy[i].id %>" value="<%=data.classfy[i].name %>">
+									</div>
+								</td>
+								<td>
+									<div class="main__table-text">
+										<input type="text" class="form__input" placeholder="Name" name="quantity<%=data.classfy[i].id %>" value="<%=data.classfy[i].quantity %>">
+									</div>
+								</td>
+								<td>
+									<div class="main__table-btns">
+										<button type="submit">
+										<a class="main__table-btn main__table-btn--edit form__input">
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5,18H9.24a1,1,0,0,0,.71-.29l6.92-6.93h0L19.71,8a1,1,0,0,0,0-1.42L15.47,2.29a1,1,0,0,0-1.42,0L11.23,5.12h0L4.29,12.05a1,1,0,0,0-.29.71V17A1,1,0,0,0,5,18ZM14.76,4.41l2.83,2.83L16.17,8.66,13.34,5.83ZM6,13.17l5.93-5.93,2.83,2.83L8.83,16H6ZM21,20H3a1,1,0,0,0,0,2H21a1,1,0,0,0,0-2Z"></path></svg>
+										</a>
+									   </button>
+										<a href="/admin/product/delete/classfys/<%=data.classfy[i].id %>" class="col-4 main__table-btn main__table-btn--delete form__input">
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,6H16V5a3,3,0,0,0-3-3H11A3,3,0,0,0,8,5V6H4A1,1,0,0,0,4,8H5V19a3,3,0,0,0,3,3h8a3,3,0,0,0,3-3V8h1a1,1,0,0,0,0-2ZM10,5a1,1,0,0,1,1-1h2a1,1,0,0,1,1,1V6H10Zm7,14a1,1,0,0,1-1,1H8a1,1,0,0,1-1-1V8H17Z"/></svg>
+										</a>
+									</div>
+								</td>
+							</tr>
+						</form>
+							<%}%>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!-- end form -->
+		</div>
+	</div>
+</main>
+<div id="modal-status" class="zoom-anim-dialog mfp-hide modal">
+	<h6 class="modal__title">ADD CLASSFY CATEGORY</h6>
+    <form action="/admin/product/create/classfys/<%=data.id%>" method="post" class="form">
+					
+		<div class="row">
+			<div class="col-12">
+				<label class="profile__label">Name</label>
+				<input type="text"  name="name" class="form__input" placeholder="Name">
+			</div>
+			<div class="col-12">
+				<label class="profile__label">Quantity</label>
+				<input type="text"  name="quantity" class="form__input" placeholder="Quantity">
+			</div>
+		</div>
+	<div class="modal__btns">
+		<button class="modal__btn modal__btn--apply" type="submit">Apply</button>
+		<button class="modal__btn modal__btn--dismiss" type="button">Dismiss</button>
+	</div>
+</form>
+
+</div>
+
+<!-- end main content -->
+
+<!-- JS -->
+<%- include('../../../layout/admin/js'); -%>
+</body>
+
+<!-- Mirrored from dmitryvolkov.me/demo/flixgo2.0/admin/add-item.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Mar 2022 10:07:55 GMT -->
+</html>

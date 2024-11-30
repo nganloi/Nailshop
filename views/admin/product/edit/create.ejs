@@ -1,0 +1,95 @@
+<%- include('../../../layout/admin/head'); -%>
+<body>
+
+<!-- header -->
+<%- include('../../../layout/admin/header'); -%>
+<!-- end header -->
+
+<!-- sidebar -->
+<%- include('../../../layout/admin/slidebar'); -%>
+<!-- end sidebar -->
+
+<!-- main content -->
+<main class="main">
+	<div class="container-fluid">
+		<div class="row">
+			<!-- main title -->
+			<div class="col-12">
+				<div class="main__title">
+					<h2>EDIT PRODUCT</h2>
+				</div>
+				<div class="row">
+					<a href="/admin/product/edit/<%= data.id %>" class="col-4 modal__btn_product modal__btn--product" type="button">Basic Information</a>
+					<a href="/admin/product/classfys/<%= data.id %>" class="col-4 modal__btn modal__btn--product" type="button">Classification of goods</a>
+					<a href="/admin/product/discount/<%= data.id %>" class="col-4 modal__btn modal__btn--product" type="button">Discount information</a>
+			    </div>
+			</div>
+			<!-- end main title -->
+
+			<!-- form -->
+			<div class="col-12">
+				<form action="/admin/product/edit/<%= data.id %>" class="form" method="post" enctype="multipart/form-data" >
+					<div class="row">
+						<div class="col-12 col-md-5 form__cover">
+							<div class="row">
+								<div class="col-12 col-sm-6 col-md-12">
+									<div class="form__img">
+										<label for="form__img-upload">Upload cover (270 x 400)</label>
+										<input id="form__img-upload" name="img" type="file" accept=".png, .jpg, .jpeg">
+										<img id="form__img" src="<%= data.img[0] %>" alt=" ">
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-12 col-md-7 form__content">
+							<div class="row">
+								<div class="col-12">
+									<input type="text" class="form__input" placeholder="Name" name="name" value="<%= data.name%>">
+								</div>
+
+								<div class="col-12">
+									<textarea id="text" name="describe" class="form__textarea" placeholder="Description"><%= data.describe %></textarea>
+								</div>
+								<div class="col-12">
+									<textarea id="text" name="content" class="form__textarea" placeholder="Information Product"><%= data.content %></textarea>
+								</div>
+
+								<div class="col-12 col-sm-6 col-lg-6">
+									<input type="text" class="form__input" placeholder="Product Price" name="price" value="<%= data.price%>">
+								</div>
+								<div class="col-12 col-sm-6 col-lg-6">
+									<select class="js-example-basic-multiple" id="category" name="category">
+										<% for (var j = 0; j < category.length; j++) { %>
+											<% 
+											// Kiểm tra xem user[j] có nằm trong data.user hay không
+											let isSelected = data.category.some(selectedUser => selectedUser.categoryid === category[j].id);
+											%>
+											<option value="<%= category[j].id %>" 
+												<%= isSelected ? "selected" : "" %>>
+												<%= category[j].name %>
+											</option>
+										<% } %>
+									</select>
+								</div>
+								<div class="col-12">
+									<button type="submit" class="form__btn">edit</button>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+			<!-- end form -->
+		</div>
+	</div>
+</main>
+<!-- end main content -->
+
+<!-- JS -->
+<%- include('../../../layout/admin/js'); -%>
+</body>
+
+<!-- Mirrored from dmitryvolkov.me/demo/flixgo2.0/admin/add-item.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Mar 2022 10:07:55 GMT -->
+</html>

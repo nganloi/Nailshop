@@ -69,12 +69,19 @@ $(document).ready(function () {
 		placeholder: "Discount",
 		allowClear: true
 	});
+	$('#active').select2({
+		placeholder: "Status",
+		allowClear: true
+	});
 	$('#country').select2({
 		placeholder: "Choose country / countries"
 	});
 
 	$('#genre').select2({
 		placeholder: "Choose genre / genres"
+	});
+	$('#subscription, #category').select2({
+		placeholder: "Choose category"
 	});
 
 	$('#subscription, #rights').select2({

@@ -18,7 +18,7 @@ module.exports = {
     },
     postEditCoupon: async(req,res) => {
         const id = parseInt(req.params.ID)
-        const name = req.body.nameS
+        const name = req.body.name
         const buymin = req.body.buymin
         const quanlity = req.body.quanlity
         var discountpercent = '0'
