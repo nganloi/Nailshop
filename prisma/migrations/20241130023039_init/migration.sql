@@ -74,6 +74,8 @@ CREATE TABLE "product" (
     "content" TEXT,
     "sale" INTEGER NOT NULL,
     "view" INTEGER NOT NULL,
+    "discount" TEXT,
+    "active" INTEGER NOT NULL,
 
     CONSTRAINT "product_pkey" PRIMARY KEY ("id")
 );

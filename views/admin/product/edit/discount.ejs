@@ -1,0 +1,232 @@
+<%- include('../../../layout/admin/head'); -%>
+<body>
+
+<!-- header -->
+<%- include('../../../layout/admin/header'); -%>
+<!-- end header -->
+
+<!-- sidebar -->
+<%- include('../../../layout/admin/slidebar'); -%>
+<!-- end sidebar -->
+
+<!-- main content -->
+<main class="main">
+	<div class="container-fluid">
+		<div class="row">
+			<!-- main title -->
+			<div class="col-12">
+				<div class="main__title">
+					<h2>Add new item</h2>
+				</div>
+				<div class="row">
+					<a href="/admin/product/edit/<%= data.id %>" class="col-4 modal__btn modal__btn--product" type="button">Basic Information</a>
+					<a href="/admin/product/classfys/<%= data.id %>" class="col-4 modal__btn modal__btn--product" type="button">Classification of goods</a>
+					<a href="/admin/product/discount/<%= data.id %>" class="col-4 modal__btn_product modal__btn--product" type="button">Discount information</a>
+			    </div>
+			</div>
+			<!-- end main title -->
+
+			<!-- form -->
+			<div class="row">
+				<!-- password form -->
+				<div class="col-12 col-lg-12">
+					<form action="/admin/product/edit/discount/<%=data.id%>" class="profile__form" method="post">
+						<div class="row">
+							<div class="col-12">
+								<h4 style="color:white" class="">CHANGE DISCOUNT PRODUCT</h4>
+								<button class="main__title-link" type="submit">Change</button>
+							</div>
+							<div class="col-6">
+								<div class="profile__group">
+									<label class="profile__label" for="oldpass">Old Discount</label>
+									<input id="oldpass"  name="discount" class="profile__input" value="<%=data.discount%>">
+								</div>
+							</div>
+							<div class="col-6">
+								<label class="profile__label" for="oldpass">Status</label>
+								<select class="js-example-basic-multiple" id="active" name="active">
+										<option value="0" <%= data.active == 0 ? "selected" : "" %>>CLOSED</option>
+										<option value="1" <%= data.active != 0 ? "selected" : "" %>>OPEN</option>
+								</select>
+							</div>
+						</div>
+					</form>
+				</div>
+				<!-- end password form -->
+				<!-- details form -->
+				<div class="col-12 col-lg-6">
+					<div class="dashbox">
+						<div class="dashbox__title">
+							<h3><img src="img/award.svg" alt="">COUPON OF PRODUCT</h3>
+							<a href="#modal-status" class="main__title-link open-modal">ADD COUPON</a>
+						</div>
+	
+						<div class="dashbox__table-wrap mCustomScrollbar _mCS_2" style="overflow: visible;"><div id="mCSB_2" class="mCustomScrollBox mCS-custom-bar3 mCSB_horizontal mCSB_outside" tabindex="0" style="max-height: none;"><div id="mCSB_2_container" class="mCSB_container" style="position: relative; top: 0px; left: 0px; width: 501px; min-width: 100%; overflow-x: inherit;" dir="ltr">
+							<table class="main__table main__table--dash">
+								<thead>
+									<tr>
+										<th>ID</th>
+										<th>NAME</th>
+										<th>DISCOUNT</th>
+										<th>STATUS</th>
+										<th>ACTIONS</th>
+									</tr>
+								</thead>
+								<tbody>
+									<% for(var i=0; i < data.coupon.length; i++){%>
+									<tr>
+										<td>
+											<div class="main__table-text"><%= data.coupon[i].coupon.id%></div>
+										</td>
+										<td>
+											<div class="main__table-text"><%= data.coupon[i].coupon.name%></div>
+										</td>
+										<td>
+											<div class="main__table-text"><%if(parseInt(data.coupon[i].coupon.discountpercent) != 0){%>
+												<%=data.coupon[i].coupon.discountpercent%>%
+													<%}else{%>
+														$<%=data.coupon[i].coupon.discountprice%>
+													<%}%>
+											</div>
+										</td>
+										<td>
+											<%if(data.coupon[i].coupon.active==1){%>
+												<div class="main__table-text--green">OPEN</div>
+											<%}else{%>
+												<div class="main__table-text--red">CLOSED</div>
+												<%}%>
+										</td>
+										<td>
+											<a href="/admin/product/delete/discount-coupon/<%=data.coupon[i].id%>" class="main__table-btn main__table-btn--delete">
+												<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,6H16V5a3,3,0,0,0-3-3H11A3,3,0,0,0,8,5V6H4A1,1,0,0,0,4,8H5V19a3,3,0,0,0,3,3h8a3,3,0,0,0,3-3V8h1a1,1,0,0,0,0-2ZM10,5a1,1,0,0,1,1-1h2a1,1,0,0,1,1,1V6H10Zm7,14a1,1,0,0,1-1,1H8a1,1,0,0,1-1-1V8H17Z"/></svg>
+											</a>
+										</td>
+									</tr>
+									<%}%>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div id="mCSB_2_scrollbar_horizontal" class="mCSB_scrollTools mCSB_2_scrollbar mCS-custom-bar3 mCSB_scrollTools_horizontal" style="display: block;"><div class="mCSB_draggerContainer"><div id="mCSB_2_dragger_horizontal" class="mCSB_dragger" style="position: absolute; min-width: 30px; display: block; width: 0px;"><div class="mCSB_dragger_bar"></div><div class="mCSB_draggerRail"></div></div></div></div></div>
+					</div>
+				</div>	
+				<div class="col-12 col-lg-6">
+					<div class="dashbox">
+						<div class="dashbox__title">
+							<h3><img src="img/award.svg" alt="">COUPON OF CATEGORY <%=data.category[0].category.name%></h3>
+							<a href="#modal-status1" class="main__title-link open-modal">CHANGE TYPE</a>
+						</div>
+	
+						<div class="dashbox__table-wrap mCustomScrollbar _mCS_2" style="overflow: visible;"><div id="mCSB_2" class="mCustomScrollBox mCS-custom-bar3 mCSB_horizontal mCSB_outside" tabindex="0" style="max-height: none;"><div id="mCSB_2_container" class="mCSB_container" style="position: relative; top: 0px; left: 0px; width: 501px; min-width: 100%; overflow-x: inherit;" dir="ltr">
+							<table class="main__table main__table--dash">
+								<thead>
+									<tr>
+										<th>ID</th>
+										<th>NAME</th>
+										<th>DISCOUNT</th>
+										<th>STATUS</th>
+									</tr>
+								</thead>
+								<tbody>
+									<% for(var i=0; i < data.category[0].category.coupon.length; i++){%>
+									<tr>
+										<td>
+											<div class="main__table-text"><%= data.category[0].category.coupon[i].coupon.id%></div>
+										</td>
+										<td>
+											<div class="main__table-text"><%= data.category[0].category.coupon[i].coupon.name%></div>
+										</td>
+										<td>
+											<div class="main__table-text"><%if(parseInt(data.category[0].category.coupon[i].coupon.discountpercent) != 0){%>
+												<%=data.category[0].category.coupon[i].coupon.discountpercent%>%
+													<%}else{%>
+														$<%=data.category[0].category.coupon[i].coupon.discountprice%>
+													<%}%>
+											</div>
+										</td>
+										<td>
+											<%if(data.category[0].category.coupon[i].coupon.active==1){%>
+												<div class="main__table-text--green">OPEN</div>
+											<%}else{%>
+												<div class="main__table-text--red">CLOSED</div>
+												<%}%>
+										</td>
+									</tr>
+									<%}%>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div id="mCSB_2_scrollbar_horizontal" class="mCSB_scrollTools mCSB_2_scrollbar mCS-custom-bar3 mCSB_scrollTools_horizontal" style="display: block;"><div class="mCSB_draggerContainer"><div id="mCSB_2_dragger_horizontal" class="mCSB_dragger" style="position: absolute; min-width: 30px; display: block; width: 0px;"><div class="mCSB_dragger_bar"></div><div class="mCSB_draggerRail"></div></div></div></div></div>
+					</div>
+				</div>							
+				<!-- end details form -->
+			</div>			
+		</div>
+	</div>
+</main>
+<div id="modal-status" class="zoom-anim-dialog mfp-hide modal">
+	<h6 class="modal__title">ADD COUPON</h6>
+    <form action="/admin/product/edit/discount-coupon/<%=data.id%>" method="post" class="form">
+					
+		<div class="row">
+			<div class="col-12 mb-4">
+				<label class="profile__label" for="rights3">Add Coupon</label>
+				<div class="col-12 col-lg-12">
+					<select class="js-example-basic-multiple" id="rights3" name="coupon" multiple="multiple">
+						<% for (var j = 0; j < coupon.length; j++) { %>
+							<% 
+							// Kiểm tra xem user[j] có nằm trong data.user hay không
+							let isSelected = coupon[j].product.some(selectedUser => selectedUser.productid === data.id);
+							%>
+                    		<option value="<%= coupon[j].id %>" 
+								<%= isSelected ? "selected" : "" %>>
+								<%= coupon[j].name %>
+							</option>
+						<% } %>
+					</select>
+				</div>
+			</div>
+		</div>
+	<div class="modal__btns">
+		<button class="modal__btn modal__btn--apply" type="submit">Apply</button>
+		<button class="modal__btn modal__btn--dismiss" type="button">Dismiss</button>
+	</div>
+</form>
+
+</div>
+<div id="modal-status1" class="zoom-anim-dialog mfp-hide modal">
+	<h6 class="modal__title"> CHANGE CATEGORY</h6>
+    <form action="/admin/product/edit/discount-category/<%=data.id%>" method="post" class="form">
+					
+		<div class="row">
+			<div class="col-12 col-sm-12 col-lg-12">
+				<select class="js-example-basic-multiple" id="category" name="category">
+					<% for (var j = 0; j < category.length; j++) { %>
+						<% 
+						// Kiểm tra xem user[j] có nằm trong data.user hay không
+						let isSelected = data.category.some(selectedUser => selectedUser.categoryid === category[j].id);
+						%>
+						<option value="<%= category[j].id %>" 
+							<%= isSelected ? "selected" : "" %>>
+							<%= category[j].name %>
+						</option>
+					<% } %>
+				</select>
+			</div>
+		</div>
+	<div class="modal__btns">
+		<button class="modal__btn modal__btn--apply" type="submit">Apply</button>
+		<button class="modal__btn modal__btn--dismiss" type="button">Dismiss</button>
+	</div>
+</form>
+
+</div>
+<!-- end main content -->
+
+<!-- JS -->
+<%- include('../../../layout/admin/js'); -%>
+</body>
+
+<!-- Mirrored from dmitryvolkov.me/demo/flixgo2.0/admin/add-item.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Mar 2022 10:07:55 GMT -->
+</html>

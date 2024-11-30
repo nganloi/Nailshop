@@ -78,6 +78,8 @@ model product{
   category category_product[]
   sale Int
   view Int
+  discount String?
+  active Int // active để bật tắt chương trình sales
   productlike productlike[]
   marketing marketing_product[]
   coupon coupon_product[]
