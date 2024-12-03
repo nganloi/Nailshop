@@ -1,11 +1,23 @@
-const express = require('express')
+const express = require('express');
 const app = express()
+const  userr  = require('../../model/user/view.js');
 
 module.exports = {
     getBlog: async(req,res) => {
-        res.render('./dashboard/blog')
+        const userid = parseInt(req.session.userId)
+        let user
+        if(userid >= 0) {
+            user = await userr.getUser(userid)
+        }
+        
+        res.render('./dashboard/blog',{user:user})
     },
     getBlogDetail: async(req,res) => {
-        res.render('./dashboard/blog-detail')
+        const userid = req.session.userid;
+        let user
+        if(userid >= 0) {
+            user = await userr.getUser(userid)
+        }
+        res.render('./dashboard/blog-detail', {user:user})
     }
 }

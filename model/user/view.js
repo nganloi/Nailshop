@@ -6,4 +6,8 @@ module.exports = {
     const data = await prisma.user.findMany();
     return data;
    },
+   getUser: async(userid) => {
+      const data = await prisma.user.findUnique({where: {id:userid}})
+      return data;
+   }
 }
