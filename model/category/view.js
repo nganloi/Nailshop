@@ -5,7 +5,11 @@ module.exports = {
    category: async() => {
     const data = await prisma.category.findMany({
       include:{
-         product:true,
+         product:{
+            include:{
+               product:true,
+            }
+         },
       }
     });
     return data;

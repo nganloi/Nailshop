@@ -4,6 +4,7 @@ const prisma = new PrismaClient();
 module.exports = {
    delete: async(id) => {
       const data = await prisma.category_product.deleteMany({where: {categoryid:id}});
+      const data2= await prisma.category_coupon.deleteMany({where:{categoryid:id}})
       const data1 = await prisma.category.deleteMany({where: {id:id}});
      },
   
