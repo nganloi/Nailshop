@@ -18,7 +18,6 @@
                         <div class="header-mobile-menu">
                             <ul>
                                 <li><a href="/" title="Home">Home</a></li>
-                                <li><a href="/about" title="About">About</a></li>
                                 <li class="sub-items">
                                     <a href="javascript:void(0);" class="sub-menu">Services</a>
                                     <ul class="dropdown">
@@ -60,7 +59,7 @@
                                             <a href="/single-product" title="Product detail">Product detail</a>
                                         </li>
                                         <li>
-                                            <a href="404.html" title="404 Error">404 Error</a>
+                                            <a href="/error" title="404 Error">404 Error</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -97,15 +96,27 @@
                     <li class="sub-items">
                     <a href="javascript:void(0);" title="Login"><img src="assets/images/login.svg"
                             alt="Login"> </a>
+                            <% if (user != undefined) { %>
                             <ul class="dropdown">
+                                <li>
+                                    <a href="/profile" title="Login">Profile</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="/logout" title="Login">Logout</a>
+                                </li>
+                               
+                            </ul>
+                            <% } else { %>
+                                <ul class="dropdown">
                                 <li>
                                     <a href="/login" title="Login">Login</a>
                                 </li>
                                 <li>
                                     <a href="/register" title="Login">Register</a>
                                 </li>
-                               
                             </ul>
+                                <% } %>
                         </li>
                         <li class="sub-items">
 
