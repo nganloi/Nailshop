@@ -18,7 +18,7 @@
                                 <h1 class="h1-title">Blog</h1>
                                 <div class="banner-links">
                                     <ul>
-                                        <li><a href="index.html" title="Home">Home</a> /</li>
+                                        <li><a href="/" title="Home">Home</a> /</li>
                                         <li>Blog</li>
                                     </ul>
                                 </div>
@@ -34,156 +34,37 @@
             <div class="container lg-container">
                 <div class="blog-box-list">
                     <div class="row">
+                        <%for(var i = 0; i < blog.length; i++){%>
                         <div class="col-lg-4">
                             <div class="blog-box">
                                 <div class="blog-img">
-                                    <div class="back-img" style="background-image:url(assets/images/blog-1.jpg);"></div>
+                                    <div class="back-img" style="background-image:url('<%= blog[i].img %>')"></div>
                                 </div>
                                 <div class="blog-text">
-                                    <h3 class="h3-title">At vero eos et accusamus et iusto</h3>
+                                    <h3 class="h3-title"><%= blog[i].name %></h3>
                                     <div class="course-content">
                                         <div class="lessons">
                                             <i class="fas fa-calendar"></i>
-                                            <p>Jan 22 , 2023</p>
+                                            <p><%= blog[i].time %></p>
                                         </div>
                                         <div class="time">
                                             <i class="fas fa-comment"></i>
                                             <p>2 comments</p>
                                         </div>
                                     </div>
-                                    <p> dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempory sed do
-                                        eiusmod tempory...</p>
+                                    <p> <%= blog[i].describe %></p>
                                     <div class="blog-link">
-                                        <a href="blog-detail.html" title="Read more">Read more</a>
+                                        <a href="/blog-detail/<%= blog[i].id %>" title="Read more">Read more</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4">
-                            <div class="blog-box">
-                                <div class="blog-img">
-                                    <div class="back-img" style="background-image:url(assets/images/blog-2.jpg);"></div>
-                                </div>
-                                <div class="blog-text">
-                                    <h3 class="h3-title">At vero eos et accusamus et iusto</h3>
-                                    <div class="course-content">
-                                        <div class="lessons">
-                                            <i class="fas fa-calendar"></i>
-                                            <p>Jan 22 , 2023</p>
-                                        </div>
-                                        <div class="time">
-                                            <i class="fas fa-comment"></i>
-                                            <p>2 comments</p>
-                                        </div>
-                                    </div>
-                                    <p> dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempory sed do
-                                        eiusmod tempory...</p>
-                                    <div class="blog-link">
-                                        <a href="blog-detail.html" title="Read more">Read more</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="blog-box">
-                                <div class="blog-img">
-                                    <div class="back-img" style="background-image:url(assets/images/blog-3.jpg);"></div>
-                                </div>
-                                <div class="blog-text">
-                                    <h3 class="h3-title">At vero eos et accusamus et iusto</h3>
-                                    <div class="course-content">
-                                        <div class="lessons">
-                                            <i class="fas fa-calendar"></i>
-                                            <p>Jan 22 , 2023</p>
-                                        </div>
-                                        <div class="time">
-                                            <i class="fas fa-comment"></i>
-                                            <p>2 comments</p>
-                                        </div>
-                                    </div>
-                                    <p> dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempory sed do
-                                        eiusmod tempory...</p>
-                                    <div class="blog-link">
-                                        <a href="blog-detail.html" title="Read more">Read more</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="blog-box">
-                                <div class="blog-img">
-                                    <div class="back-img" style="background-image:url(assets/images/blog-2.jpg);"></div>
-                                </div>
-                                <div class="blog-text">
-                                    <h3 class="h3-title">At vero eos et accusamus et iusto</h3>
-                                    <div class="course-content">
-                                        <div class="lessons">
-                                            <i class="fas fa-calendar"></i>
-                                            <p>Jan 22 , 2023</p>
-                                        </div>
-                                        <div class="time">
-                                            <i class="fas fa-comment"></i>
-                                            <p>2 comments</p>
-                                        </div>
-                                    </div>
-                                    <p> dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempory sed do
-                                        eiusmod tempory...</p>
-                                    <div class="blog-link">
-                                        <a href="blog-detail.html" title="Read more">Read more</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="blog-box">
-                                <div class="blog-img">
-                                    <div class="back-img" style="background-image:url(assets/images/blog-3.jpg);"></div>
-                                </div>
-                                <div class="blog-text">
-                                    <h3 class="h3-title">At vero eos et accusamus et iusto</h3>
-                                    <div class="course-content">
-                                        <div class="lessons">
-                                            <i class="fas fa-calendar"></i>
-                                            <p>Jan 22 , 2023</p>
-                                        </div>
-                                        <div class="time">
-                                            <i class="fas fa-comment"></i>
-                                            <p>2 comments</p>
-                                        </div>
-                                    </div>
-                                    <p> dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempory sed do
-                                        eiusmod tempory...</p>
-                                    <div class="blog-link">
-                                        <a href="blog-detail.html" title="Read more">Read more</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="blog-box">
-                                <div class="blog-img">
-                                    <div class="back-img" style="background-image:url(assets/images/blog-1.jpg);"></div>
-                                </div>
-                                <div class="blog-text">
-                                    <h3 class="h3-title">At vero eos et accusamus et iusto</h3>
-                                    <div class="course-content">
-                                        <div class="lessons">
-                                            <i class="fas fa-calendar"></i>
-                                            <p>Jan 22 , 2023</p>
-                                        </div>
-                                        <div class="time">
-                                            <i class="fas fa-comment"></i>
-                                            <p>2 comments</p>
-                                        </div>
-                                    </div>
-                                    <p> dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempory sed do
-                                        eiusmod tempory...</p>
-                                    <div class="blog-link">
-                                        <a href="blog-detail.html" title="Read more">Read more</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <%}%>
+                       
+                       
+                       
+                       
+                     
                     </div>
                 </div>
                 <div class="blog-pagination">

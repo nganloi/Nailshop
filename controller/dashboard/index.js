@@ -1,8 +1,10 @@
 const express = require('express')
 const app = express()
+const blogg = require('../../model/blog/view.js')
 
 module.exports = {
     getShop: async(req,res) => {
-        res.render('./dashboard/index')
+        const blog = await blogg.Blog()
+        res.render('./dashboard/index', {blog:blog})
     }
 }
