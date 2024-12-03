@@ -7,17 +7,18 @@
 
     <!-- header sec end -->
     <!-- banner-sec start -->
+     <% for(var i =0 ; i < mrt_shop.length; i++){%>
+     <% if(mrt_shop[i].active ==1 ){%>    
     <section class="banner">
-        <div class="banner-bg" style="background-image: url(assets/images/banner-img.png)"></div>
+        <div class="banner-bg" style="background-image: url(<%=mrt_shop[i].img%>)"></div>
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="banner-text">
-                        <h1 class="h1-title">Get the skin You want to feel</h1>
-                        <p>the right formula cleanses your skin without stripping essential ,healthy oils. take it easy
-                            with exfoliatingscrubs</p>
+                        <h1 class="h1-title"><%=mrt_shop[i].name%></h1>
+                        <p><%=mrt_shop[i].describe%></p>
                         <div class="banner-btn">
-                            <a href="javascript:void(0);" class="sec-btn" title="Book Now">Book Now</a>
+                            <a href="<%=mrt_shop[i].link%>" class="sec-btn" title="Book Now">Book Now</a>
                             <a href="javascript:void(0);" class="video-btn">
                                 <span class="icon"> <i class="fas fa-play"></i> </span>Play Video</a>
                         </div>
@@ -26,6 +27,8 @@
             </div>
         </div>
     </section>
+    <%}%>
+    <%}%>
     <!-- banner-sec end -->
     <!-- about sec start -->
     <section class="about">
@@ -39,34 +42,18 @@
                 </div>
             </div>
             <div class="about-list">
-                <div class="row">
+                <div class="row justify-content-center">
+                    <% for(var i=0; i< service.length; i++){%>
                     <div class="col-lg-4">
                         <div class="about-box">
                             <div class="about-icon">
-                                <img src="assets/images/icon-1.svg" alt="free delivery" />
+                                <img src="<%=service[i].img%>" alt="free delivery"/>
                             </div>
-                            <h4 class="h4-title">free & fast shipping</h4>
-                            <p>we have delivery service that is fast , safe & free of charge shipping</p>
+                            <h4 class="h4-title"><%=service[i].name%></h4>
+                            <p><%=service[i].content%></p>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="about-box">
-                            <div class="about-icon">
-                                <img src="assets/images/icon-2.svg" alt="free delivery" />
-                            </div>
-                            <h4 class="h4-title">100% original brands</h4>
-                            <p>our products are 100% original brand we also have guarentee for product</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="about-box">
-                            <div class="about-icon">
-                                <img src="assets/images/icon-3.svg" alt="free delivery" />
-                            </div>
-                            <h4 class="h4-title">discount every weeks</h4>
-                            <p>Get attracive discount every weeks on weekend for all categories</p>
-                        </div>
-                    </div>
+                    <%}%>
                 </div>
             </div>
         </div>
@@ -90,104 +77,37 @@
                     <div class="portfolio-tabbing">
                         <ul id="filters">
                             <li>
-                                <span class="filter active"
-                                    data-filter=".all, .Make-up, .Hairstyle, .Nail-art, .massage"> All</span>
+                                <span class="filter-active" data-filter=".<%= category[0].id%>"><%= category[0].name%></span>
                             </li>
+                            <% for(var i=1 ; i < category.length ;i++){%>
                             <li>
-                                <span class="filter" data-filter=".Make-up">Make-up</span>
+                                <span class="filter" data-filter=".<%= category[i].id%>"><%= category[i].name%></span>
                             </li>
-                            <li>
-                                <span class="filter" data-filter=".Hairstyle">Hairstyle</span>
-                            </li>
-                            <li>
-                                <span class="filter" data-filter=".massage">massage</span>
-                            </li>
-                            <li>
-                                <span class="filter" data-filter=".Nail-art">Nail-art</span>
-                            </li>
+                            <%}%>
                         </ul>
                     </div>
 
                     <div class="portfolio-list-box">
                         <div class="portfoliolist bydefault_show" id="portfoliolist">
-                            <div class="portfolio Hairstyle" data-cat=".Hairstyle">
-                                <a href="/service-detail">
+                            <%for(var i=0; i< category.length ; i++){%>
+                                <% if(category[i].product.length > 0){%>
+                            <% for(var j=0; j< category[i].product.length; j++){%>
+                            <div class="portfolio <%= category[i].id%>" data-cat=".<%= category[i].id%>">
+                                <a href="">
                                     <div class="course-detail-box">
                                         <div class="course-image">
                                             <div class="course-img back-img"
-                                                style="background-image: url(assets/images/course-2.jpg)"></div>
+                                                style="background-image: url(<%=category[i].product[j].product.img[0]%>)"></div>
                                         </div>
                                         <div class="course-text">
-                                            <h3 class="h3-title">Hairstyle</h3>
+                                            <h3 class="h3-title"><%=category[i].product[j].product.name%></h3>
                                         </div>
                                     </div>
                                 </a>
                             </div>
-                            <div class="portfolio Make-up" data-cat=".Make-up">
-                                <a href="/service-detail">
-                                    <div class="course-detail-box">
-                                        <div class="course-image">
-                                            <div class="course-img back-img"
-                                                style="background-image: url(assets/images/make-up.jpg)"></div>
-                                        </div>
-                                        <div class="course-text">
-                                            <h3 class="h3-title">Make-up</h3>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="portfolio massage" data-cat=".massage">
-                                <a href="/service-detail">
-                                    <div class="course-detail-box">
-                                        <div class="course-image">
-                                            <div class="course-img back-img"
-                                                style="background-image: url(assets/images/course-1.jpg)"></div>
-                                        </div>
-                                        <div class="course-text">
-                                            <h3 class="h3-title">Face Massage</h3>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="portfolio Nail-art" data-cat=".Nail-art">
-                                <a href="/service-detail">
-                                    <div class="course-detail-box">
-                                        <div class="course-image">
-                                            <div class="course-img back-img"
-                                                style="background-image: url(assets/images/nail-art.jpg)"></div>
-                                        </div>
-                                        <div class="course-text">
-                                            <h3 class="h3-title">Nail-art</h3>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="portfolio massage" data-cat=".massage">
-                                <a href="/service-detail">
-                                    <div class="course-detail-box">
-                                        <div class="course-image">
-                                            <div class="course-img back-img"
-                                                style="background-image: url(assets/images/spa.jpg)"></div>
-                                        </div>
-                                        <div class="course-text">
-                                            <h3 class="h3-title">SPA</h3>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="portfolio Hairstyle" data-cat=".Hairstyle">
-                                <a href="/service-detail">
-                                    <div class="course-detail-box">
-                                        <div class="course-image">
-                                            <div class="course-img back-img"
-                                                style="background-image: url(assets/images/Hair-treatment.jpg)"></div>
-                                        </div>
-                                        <div class="course-text">
-                                            <h3 class="h3-title">Hair Treatment</h3>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
+                            <%}%>
+                            <%}%>
+                            <%}%>
                         </div>
                     </div>
                 </div>

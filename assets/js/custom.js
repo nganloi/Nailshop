@@ -30,13 +30,14 @@ $(document).ready(function($) {
 $(function () {
   var filterList = {
     init: function () {
+      var loadFilter = $(".filter-active").data("filter");
       $("#portfoliolist").mixItUp({
         selectors: {
           target: ".portfolio",
           filter: ".filter",
         },
         load: {
-          filter: ".all, .Make-up, .Hairstyle, .Nail-art, .massage",
+          filter: loadFilter,
         },
       });
     },
