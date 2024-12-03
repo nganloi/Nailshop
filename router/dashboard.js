@@ -1,6 +1,5 @@
 const express = require('express')
 const router = express.Router();
-
 const shop = require('./dashboard/index.js')
 const products = require('./dashboard/products.js')
 const productDetail = require('./dashboard/single-products.js')
@@ -16,15 +15,12 @@ const error = require('./dashboard/404.js')
 const login = require('./dashboard/login.js')
 const register = require('./dashboard/register.js')
 const logout = require('./dashboard/logout.js')
-
+const checklogin = require('../middlewea/admin/checkLogin.js')
 
 
 router.use('/', shop)
 //PRODUCT
 router.use('/product', products)
-
-//SINGLE-PRODUCT
-router.use('/single-product', productDetail)
 
 //SERVICE
 router.use('/service', service)
@@ -42,13 +38,13 @@ router.use('/blog-Detail', blogDetail)
 router.use('/cart', cart)
 
 //WISHLIST
-router.use('/wishlist', wishlist)
+router.use('/wishlist',checklogin.requireLogin, wishlist)
 
 //ERROR
 router.use('/error', error)
 
 //CHECKOUT
-router.use('/checkout', checkout)
+router.use('/checkout',checklogin.requireLogin,checkout)
 
 //CONTACT
 router.use('/contact', contact)
