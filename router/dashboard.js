@@ -3,10 +3,8 @@ const router = express.Router();
 
 const shop = require('./dashboard/index.js')
 const products = require('./dashboard/products.js')
-const productDetail = require('./dashboard/single-products.js')
 const service = require('./dashboard/service.js')
 const serviceDetail = require('./dashboard/service-detail.js')
-const blogDetail = require('./dashboard/blog-detail.js')
 const blog = require('./dashboard/blog.js')
 const cart = require('./dashboard/cart.js')
 const checkout = require('./dashboard/checkout.js')
@@ -23,8 +21,7 @@ router.use('/', shop)
 //PRODUCT
 router.use('/product', products)
 
-//SINGLE-PRODUCT
-router.use('/single-product', productDetail)
+
 
 //SERVICE
 router.use('/service', service)
@@ -35,8 +32,7 @@ router.use('/service-Detail', serviceDetail)
 //BLOG
 router.use('/blog', blog)
 
-//BLOG-DETAIL
-router.use('/blog-Detail', blogDetail)
+
 
 //CART
 router.use('/cart', cart)
