@@ -7,7 +7,16 @@ module.exports = {
     return data;
    },
    getUser: async(userid) => {
-      const data = await prisma.user.findUnique({where: {id:userid}})
+      const data = await prisma.user.findUnique({
+         where: {id:userid},
+         include:{
+            role:{
+               include:{
+                  role:true
+               }
+            },
+         }
+      })
       return data;
    }
 }

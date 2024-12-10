@@ -34,8 +34,10 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage }); 
 const dashboardRouter = require('./router/dashboard.js')
 const adminRouter = require('./router/admin.js')
+const checkadmin = require('./middlewea/role/checkposition.js')
+const checkLogin = require('./middlewea/admin/checkLogin.js')
 app.use('/', dashboardRouter)
-app.use('/admin', adminRouter)
+app.use('/admin',checkLogin.requireLogin,checkadmin.checkAdmin, adminRouter)
 
 
 app.listen(port, () => {

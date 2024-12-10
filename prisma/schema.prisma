@@ -10,7 +10,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = "postgresql://postgres:12345@localhost:5432/bcare?schema=public" 
+  url      = "postgresql://postgres:1@localhost:5432/shopnail/mydb?schema=public" 
 }
 
 // INFORMATION SHOP
@@ -195,6 +195,7 @@ model role_user{
 model role{
   id Int @id @default(autoincrement())
   position String?
+  active String[]
   user role_user[]
 }
 
