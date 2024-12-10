@@ -2,9 +2,10 @@ const {PrismaClient, Prisma} = require('@prisma/client');
 const prisma = new PrismaClient();
 
 module.exports = {
-   postCreate: async(name,mail,phone,address,pass,role) => {
+   postCreate: async(img,name,mail,phone,address,pass,role) => {
     const data = await prisma.user.create({
         data: {
+            img:img,
             name:name,
             email:mail,
             phone: phone,

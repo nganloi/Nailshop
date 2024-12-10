@@ -17,11 +17,10 @@ module.exports = {
     postLogin: async(req,res) => {
       const mail = req.body.mail;
       const pass1 = req.body.pass;
-      const pass = bcrypt.hashSync(pass1,5)
-      const user = await login.checkLogin(mail,pass)
-      const checkpass = bcrypt.compare(pass1, user[0].pass)
-        
-      if(user.length != 0  && checkpass){
+      const user = await login.checkLogin(mail)
+      const checkpass =await bcrypt.compare(pass1, user[0].pass)
+        console.log(user,checkpass)
+      if(user.length > 0  && checkpass){
         req.session.userId = user[0].id;
         res.redirect('/');
       } else{
