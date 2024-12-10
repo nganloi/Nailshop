@@ -24,15 +24,26 @@ module.exports = {
         res.render('./dashboard/blog', {blog:blog,user:user})
     },
     getBlogDetail: async(req,res) => {
+        const id = parseInt(req.params.ID);
         const userid = req.session.userid;
         let user
         if(userid >= 0) {
             user = await userr.getUser(userid)
         }
-        const id = parseInt(req.params.ID);
         const blog = await blogg.getBlog(id)
         const  tag = await tagg.tag()
         const social = await so.getSocial()
         res.render('./dashboard/blog-detail',{blog:blog, tag:tag, social:social,user:user})
+    },
+    postCom:  async(req,res) => {
+        const time = `${hours,day}`; 
+        const content = req.body.content;
+        const user = parseInt(req.session.userId);
+        const blog = parseInt(req.params.ID);
+
+        const createPro =  await comment.postCreateCom(time,content,user,blog);
+        return res.redirect(`/blog/${blog}`)
+      
+    
     }
 }

@@ -32,7 +32,7 @@ module.exports = {
 
    },
    getBlog: async(id) => {
-      const data = await prisma.blog.findMany({
+      const data = await prisma.blog.findUnique({
          where: {id:id},
          select: {
             id: true,
