@@ -19,6 +19,7 @@ module.exports = {
         if(userid >= 0) {
             user = await userr.getUser(userid)
         }
+        
        const blog = await blogg.getpageBlog((id-1)*2)
         res.render('./dashboard/blog', {blog:blog,user:user})
     },
@@ -32,17 +33,6 @@ module.exports = {
         const blog = await blogg.getBlog(id)
         const  tag = await tagg.tag()
         const social = await so.getSocial()
-        res.render('./dashboard/blog-detail',{blog:blog[0], tag:tag, social:social,user:user})
-    },
-
-    postCom:  async(req,res) => {
-        const blog = parseInt(req.params.ID);
-        const content = req.body.content;
-        const user = parseInt(req.session.userId);
-        const time=`${month} ${day},${year}`;
-        const createPro =  await comment.postCreateCom(content,user,blog,time);
-        return res.redirect(`/blog/${blog}`)
-      
-    
-    },
+        res.render('./dashboard/blog-detail',{blog:blog, tag:tag, social:social,user:user})
+    }
 }

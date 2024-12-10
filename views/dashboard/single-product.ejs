@@ -15,13 +15,8 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="banner-text">
-                                <h1 class="h1-title">Product detail</h1>
                                 <div class="banner-links">
-                                    <ul>
-                                        <li><a href="index.html" title="Home">Home</a> /</li>
-                                        <li><a href="product.html" title="Product">Product</a> /</li>
-                                        <li>Product Detail</li>
-                                    </ul>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -37,29 +32,29 @@
                     <div class="col-lg-5">
                         <div class="product-details-left">
                             <div class="lg-image">
-                                <img src="assets/images/single-product.jpg" alt="product-img">
-                                <a href="assets/images/single-product.jpg" class="popup-img venobox vbox-item"
+                                <img src="<%=product.img[0]%>" alt="product-img">
+                                <a href="<%=product.img[0]%>" class="popup-img venobox vbox-item"
                                     data-gall="myGallery" tabindex="0"><i class="fa fa-expand"></i></a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-7">
                         <div class="product-detail-content">
-                            <h3 class="h3-title">Shampoo</h3>
-                            <h2 class="h2-title">$ 2500.00</h2>
+                            <h3 class="h3-title"><%=product.name%></h3>
+                            <h2 class="h2-title">$<%=product.price%>.00</h2>
                             <div class="product-text">
-                                <p>when an unknown printer took a galley of type and scrambled it to make a type
-                                    specimen book. It has survived not only five centuries, but also the leap into
-                                    electronic typesetting, remaining </p>
+                                <p><%=product.describe%></p>
                             </div>
                             <table class="product-table">
+                                <%if(product.active==1 && parseInt(product.discount)>0){%>
                                 <tr>
-                                    <td>pricing</td>
-                                    <td>$50</td>
+                                    <td>Discount</td>
+                                    <td><%=product.discount%>%</td>
                                 </tr>
+                                <%}%>
                                 <tr>
                                     <td>stock availability</td>
-                                    <td>available</td>
+                                    <td><%=product.discount%></td>
                                 </tr>
                                 <tr>
                                     <td>rating</td>
@@ -73,7 +68,7 @@
                             <div class="product-btns">
                                 <div class="product-quantity">
                                     <div class="sp-quantity">
-                                        <div class="container" style=" font-size:14px; ">
+                                        <div class="container" id="quantity-product" style=" font-size:14px; ">
                                             <div class="sp-minus fff"> <a class="ddd" href="javascript:void(0);">-</a>
                                             </div>
                                             <div class="sp-input">
@@ -118,14 +113,16 @@
                     <div class="col-lg-12">
                         <div class="related-swiper">
                             <div class="swiper-wrapper">
+                                <%for(var i=0; i< dataproduct.length;i++){%>
                                 <div class="swiper-slide">
                                     <div class="single-product mb-30">
                                         <div class="product-img">
-                                            <a href="single-product.html">
-                                                <img src="assets/images/product1.png" alt="product1">
+                                            <a href="/product/<%=dataproduct[i].id%>">
+                                                <img src="<%=dataproduct[i].img[0]%>" alt="product1">
                                             </a>
+                                            
                                             <span class="descount-sticker">sold-out</span>
-                                            <span class="sticker">New</span>
+                                            <!-- <span class="sticker">New</span> -->
 
                                             <div class="product-action d-flex justify-content-between">
                                                 <a class="product-btn" href="javascript:void(0);">Add to Cart</a>
@@ -140,7 +137,7 @@
                                             </div>
                                         </div>
                                         <div class="product-content">
-                                            <h3><a href="single-product.html">hair shampoo</a></h3>
+                                            <h3><a href="/product/<%=dataproduct[i].id%>"><%=dataproduct[i].name%></a></h3>
                                             <div class="ratting">
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
@@ -148,144 +145,11 @@
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                             </div>
-                                            <h4 class="price"><span class="new">$50.00</span></h4>
+                                            <h4 class="price"><span class="new">$<%=dataproduct[i].price%>.00</span></h4>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="swiper-slide">
-                                    <div class="single-product mb-30">
-                                        <div class="product-img">
-                                            <a href="single-product.html">
-                                                <img src="assets/images/product2.png" alt="product2">
-                                            </a>
-                                            <span class="descount-sticker">10% off</span>
-
-                                            <div class="product-action d-flex justify-content-between">
-                                                <a class="product-btn" href="javascript:void(0);">Add to Cart</a>
-                                                <ul class="d-flex">
-                                                    <li><a href="#quick-view-modal-container" data-bs-toggle="modal"
-                                                            title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                                    <li><a href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-                                                    </li>
-                                                    <li><a href="javascript:void(0);"><i class="fa fa-exchange"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h3><a href="single-product.html">hair shampoo</a></h3>
-                                            <div class="ratting">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </div>
-                                            <h4 class="price"><span class="new">$50.00</span></h4>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="single-product mb-30">
-                                        <div class="product-img">
-                                            <a href="single-product.html">
-                                                <img src="assets/images/product3.png" alt="product3">
-                                            </a>
-                                            <span class="sticker">New</span>
-
-                                            <div class="product-action d-flex justify-content-between">
-                                                <a class="product-btn" href="javascript:void(0);">Add to Cart</a>
-                                                <ul class="d-flex">
-                                                    <li><a href="#quick-view-modal-container" data-bs-toggle="modal"
-                                                            title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                                    <li><a href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-                                                    </li>
-                                                    <li><a href="javascript:void(0);"><i class="fa fa-exchange"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h3><a href="single-product.html">hair shampoo</a></h3>
-                                            <div class="ratting">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </div>
-                                            <h4 class="price"><span class="new">$50.00</span></h4>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="single-product mb-30">
-                                        <div class="product-img">
-                                            <a href="single-product.html">
-                                                <img src="assets/images/product4.png" alt="product4">
-                                            </a>
-                                            <span class="descount-sticker">20% off</span>
-                                            <span class="sticker">New</span>
-
-                                            <div class="product-action d-flex justify-content-between">
-                                                <a class="product-btn" href="javascript:void(0);">Add to Cart</a>
-                                                <ul class="d-flex">
-                                                    <li><a href="#quick-view-modal-container" data-bs-toggle="modal"
-                                                            title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                                    <li><a href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-                                                    </li>
-                                                    <li><a href="javascript:void(0);"><i class="fa fa-exchange"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h3><a href="single-product.html">hair shampoo</a></h3>
-                                            <div class="ratting">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </div>
-                                            <h4 class="price"><span class="new">$50.00</span></h4>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="single-product mb-30">
-                                        <div class="product-img">
-                                            <a href="single-product.html">
-                                                <img src="assets/images/product1.png" alt="product1">
-                                            </a>
-                                            <span class="descount-sticker">sold-out</span>
-                                            <span class="sticker">New</span>
-
-                                            <div class="product-action d-flex justify-content-between">
-                                                <a class="product-btn" href="javascript:void(0);">Add to Cart</a>
-                                                <ul class="d-flex">
-                                                    <li><a href="#quick-view-modal-container" data-bs-toggle="modal"
-                                                            title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                                    <li><a href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-                                                    </li>
-                                                    <li><a href="javascript:void(0);"><i class="fa fa-exchange"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h3><a href="single-product.html">hair shampoo</a></h3>
-                                            <div class="ratting">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </div>
-                                            <h4 class="price"><span class="new">$50.00</span></h4>
-                                        </div>
-                                    </div>
-                                </div>
+                                <%}%>
                             </div>
                         </div>
                     </div>
@@ -297,61 +161,47 @@
         <section class="single-product-info">
             <div class="container">
                 <div class="row">
+                     <div class="col-lg-12">
+                        <div id="description" class="w3-container city">
+                            <h2 class="h2-title">Description</h2>
+                            <p><%=product.describe%></p>
+                        </div>
+                     </div>
+                </div>
+                <div class="row">
                     <div class="col-lg-12">
                         <h2 class="h2-title">Reviews</h2>
-
                     </div>
                 </div>
                 <div class="comment-boxes">
                     <div class="row">
                         <div class="col-lg-12">
-
                             <div id="review" class="reviews">
+                                <% for(var i=0 ; i< product.review.length; i++){%>
                                 <div class="service-box">
                                     <div class="service-icon">
-                                        <img src="assets/images/expert3.jpg" alt="expert3" width="105" height="105">
+                                        <img src="<%=product.review[i].user.img%>" alt="expert3" width="105" height="105">
                                     </div>
                                     <div class="service-text">
-                                        <h3 class="h3-title">Cobus Bester </h3>
-                                        <p>when an unknown printer took a galley of type and scrambled it to make a type
-                                            specimen book. It has survived not only five centuries, but also the leap
-                                            into electronic typesetting, remaining </p>
+                                        <h3 class="h3-title"><%=product.review[i].user.name%></h3>
+                                        <p><%=product.review[i].content%></p>
                                     </div>
                                 </div>
-                                <div class="service-box">
-                                    <div class="service-icon">
-                                        <img src="assets/images/expert3.jpg" alt="expert3" width="105" height="105">
-                                    </div>
-                                    <div class="service-text">
-                                        <h3 class="h3-title">Cobus Bester </h3>
-                                        <p>when an unknown printer took a galley of type and scrambled it to make a type
-                                            specimen book. It has survived not only five centuries, but also the leap
-                                            into electronic typesetting, remaining </p>
-                                    </div>
-                                </div>
+                                <%}%>
                             </div>
-
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div id="description" class="w3-container city">
-                            <h2 class="h2-title">Description</h2>
-
-                            <p>when an unknown printer took a galley of type and scrambled it to make a type specimen
-                                book. It has survived not only five centuries, but also the leap into electronic
-                                typesetting, remaining when an unknown printer took a galley of type and scrambled it to
-                                make a type specimen book. It has survived not only five centuries, but also the leap
-                                into electronic typesetting, remaining </p>
-                            <p>when an unknown printer took a galley of type and scrambled it to make a type specimen
-                                book. It has survived not only five centuries, but also the leap into electronic
-                                typesetting, remaining when an unknown printer took a galley of type and scrambled it to
-                                make a type specimen book. It has survived not only five centuries, but also the leap
-                                into electronic typesetting, remaining </p>
-                        </div>
+                <form action="/product/review/<%=product.id%>" method="post">
+                <div class="col-7">
+                    <textarea class="form-input" style="height: 58px;" cols="30" name="message" rows="20" placeholder="Type Message Here...."></textarea>
+                </div>
+                <div class="col-7">
+                    <div class="submit-btn">
+                        <button type="submit" class="sec-btn"><span>Submit</span></button>
                     </div>
                 </div>
+                </form>
             </div>
         </section>
         <!-- single product-info -->

@@ -137,19 +137,22 @@
                     </div>
                     <div class="product-grid-view">
                         <div class="row">
+                            <% for(var i=0 ; i < product.length ; i++){%>
                             <div class="col-lg-4 col-md-6 col-sm-6">
                                 <div class="single-product mb-30">
                                     <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="assets/images/product1.png" alt="product1">
+                                        <a href="/product/<%=product[i].id%>">
+                                            <img src="<%=product[i].img[0]%>" alt="product1">
                                         </a>
-                                        <span class="descount-sticker">sold-out</span>
+                                        <% if(product[i].active==1 && parseInt(product[i].discount)>0){%>
+                                        <span class="descount-sticker"><%=product[i].discount%>%</span>
+                                        <%}%>
                                         <span class="sticker">New</span>
 
                                         <div class="product-action d-flex justify-content-between">
                                             <a class="product-btn" href="javascript:void(0);">Add to Cart</a>
                                             <ul class="d-flex">
-                                                <li><a href="#quick-view-modal-container" data-bs-toggle="modal"
+                                                <li><a href="/product/<%=product[i].id%>" data-bs-toggle="modal"
                                                         title="Quick View"><img src="assets/images/eye.svg"
                                                             alt="wishlist"></a></li>
                                                 <li><a href="javascript:void(0);"><img src="assets/images/like.svg"
@@ -160,7 +163,7 @@
                                         </div>
                                     </div>
                                     <div class="product-content">
-                                        <h3><a href="single-product.html">hair shampoo</a></h3>
+                                        <h3><a href="/product/<%=product[i].id%>"><%=product[i].name%></a></h3>
                                         <div class="ratting">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
@@ -168,181 +171,11 @@
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                         </div>
-                                        <h4 class="price"><span class="new">$50.00</span></h4>
+                                        <h4 class="price"><span class="new">$<%=product[i].price%>.00</span></h4>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="single-product mb-30">
-                                    <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="assets/images/product3.png" alt="product3">
-                                        </a>
-
-                                        <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="javascript:void(0);">Add to Cart</a>
-                                            <ul class="d-flex">
-                                                <li><a href="#quick-view-modal-container" data-bs-toggle="modal"
-                                                        title="Quick View"><img src="assets/images/eye.svg"
-                                                            alt="wishlist"></a></li>
-                                                <li><a href="javascript:void(0);"><img src="assets/images/like.svg"
-                                                            alt="wishlist"></a></li>
-                                                <li><a href="javascript:void(0);"><img src="assets/images/exchange.svg"
-                                                            alt="wishlist"></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3><a href="single-product.html">Facial creams</a></h3>
-                                        <div class="ratting">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
-                                        <h4 class="price"><span class="new">$100.00</span></h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="single-product mb-30">
-                                    <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="assets/images/product2.png" alt="product2">
-                                        </a>
-                                        <span class="descount-sticker">20% off</span>
-                                        <span class="sticker">New</span>
-
-                                        <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="javascript:void(0);">Add to Cart</a>
-                                            <ul class="d-flex">
-                                                <li><a href="#quick-view-modal-container" data-bs-toggle="modal"
-                                                        title="Quick View"><img src="assets/images/eye.svg"
-                                                            alt="wishlist"></a></li>
-                                                <li><a href="javascript:void(0);"><img src="assets/images/like.svg"
-                                                            alt="wishlist"></a></li>
-                                                <li><a href="javascript:void(0);"><img src="assets/images/exchange.svg"
-                                                            alt="wishlist"></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3><a href="single-product.html">Body Lotion</a></h3>
-                                        <div class="ratting">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
-                                        <h4 class="price"><span class="new">$80.00</span></h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="single-product mb-30">
-                                    <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="assets/images/product1.png" alt="product1">
-                                        </a>
-                                        <span class="descount-sticker">10% off</span>
-                                        <span class="sticker">New</span>
-
-                                        <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="javascript:void(0);">Add to Cart</a>
-                                            <ul class="d-flex">
-                                                <li><a href="#quick-view-modal-container" data-bs-toggle="modal"
-                                                        title="Quick View"><img src="assets/images/eye.svg"
-                                                            alt="wishlist"></a></li>
-                                                <li><a href="javascript:void(0);"><img src="assets/images/like.svg"
-                                                            alt="wishlist"></a></li>
-                                                <li><a href="javascript:void(0);"><img src="assets/images/exchange.svg"
-                                                            alt="wishlist"></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3><a href="single-product.html">hair shampoo</a></h3>
-                                        <div class="ratting">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
-                                        <h4 class="price"><span class="new">$50.00</span></h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="single-product mb-30">
-                                    <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="assets/images/product3.png" alt="product3">
-                                        </a>
-
-                                        <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="javascript:void(0);">Add to Cart</a>
-                                            <ul class="d-flex">
-                                                <li><a href="#quick-view-modal-container" data-bs-toggle="modal"
-                                                        title="Quick View"><img src="assets/images/eye.svg"
-                                                            alt="wishlist"></a></li>
-                                                <li><a href="javascript:void(0);"><img src="assets/images/like.svg"
-                                                            alt="wishlist"></a></li>
-                                                <li><a href="javascript:void(0);"><img src="assets/images/exchange.svg"
-                                                            alt="wishlist"></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3><a href="single-product.html">Facial creams</a></h3>
-                                        <div class="ratting">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
-                                        <h4 class="price"><span class="new">$100.00</span></h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="single-product mb-30">
-                                    <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="assets/images/product2.png" alt="product2">
-                                        </a>
-                                        <span class="descount-sticker">sold-out</span>
-                                        <span class="sticker">New</span>
-
-                                        <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="javascript:void(0);">Add to Cart</a>
-                                            <ul class="d-flex">
-                                                <li><a href="#quick-view-modal-container" data-bs-toggle="modal"
-                                                        title="Quick View"><img src="assets/images/eye.svg"
-                                                            alt="wishlist"></a></li>
-                                                <li><a href="javascript:void(0);"><img src="assets/images/like.svg"
-                                                            alt="wishlist"></a></li>
-                                                <li><a href="javascript:void(0);"><img src="assets/images/exchange.svg"
-                                                            alt="wishlist"></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3><a href="single-product.html">Body Lotion</a></h3>
-                                        <div class="ratting">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
-                                        <h4 class="price"><span class="new">$80.00</span></h4>
-                                    </div>
-                                </div>
-                            </div>
+                            <%}%>
                         </div>
                     </div>
                     <div class="product-pagination">

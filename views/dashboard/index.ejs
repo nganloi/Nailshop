@@ -93,7 +93,7 @@
                                 <% if(category[i].product.length > 0){%>
                             <% for(var j=0; j< category[i].product.length; j++){%>
                             <div class="portfolio <%= category[i].id%>" data-cat=".<%= category[i].id%>">
-                                <a href="">
+                                <a href="/product/<%=category[i].product[j].product.id%>">
                                     <div class="course-detail-box">
                                         <div class="course-image">
                                             <div class="course-img back-img"
