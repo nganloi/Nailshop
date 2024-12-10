@@ -70,6 +70,12 @@ module.exports = {
       });
       
       return data;
-     }
+     },
+     getdeleCom: async(id) => {
+      const data1 =await prisma.comment.deleteMany({where: {id:id}})
+     return {data1};
+  },
+
+
      
 }
