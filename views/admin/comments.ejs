@@ -57,35 +57,34 @@
 						<thead>
 							<tr>
 								<th>ID</th>
-								<th>ITEM</th>
-								<th>AUTHOR</th>
-								<th>TEXT</th>
-								<th>LIKE / DISLIKE</th>
-								<th>CRAETED DATE</th>
-								<th>ACTIONS</th>
+								<th>Content</th>
+								<th>Time</th>
+								<th>User</th>
+								<th>Blog</th>
+								
 							</tr>
 						</thead>
 
 						<tbody>
+							<% for(var i=0 ; i < comment.length ; i++){%>
+
 							<tr>
 								<td>
-									<div class="main__table-text">23</div>
+									<div class="main__table-text"><%=comment[i].id %></div>
 								</td>
 								<td>
-									<div class="main__table-text">I Dream in Another Language</div>
+									<div class="main__table-text"><%=comment[i].content %></div>
 								</td>
 								<td>
-									<div class="main__table-text">John Doe</div>
+									<div class="main__table-text"><%=comment[i].time %></div>
 								</td>
 								<td>
-									<div class="main__table-text">Lorem Ipsum is simply dummy text...</div>
+									<div class="main__table-text"><%=comment[i].user.name %></div>
 								</td>
 								<td>
-									<div class="main__table-text">12 / 7</div>
+									<div class="main__table-text"><%=comment[i].blog.name %></div>
 								</td>
-								<td>
-									<div class="main__table-text">24 Oct 2019</div>
-								</td>
+							
 								<td>
 									<div class="main__table-btns">
 										<a href="#modal-view" class="main__table-btn main__table-btn--view open-modal">
@@ -97,275 +96,7 @@
 									</div>
 								</td>
 							</tr>
-							<tr>
-								<td>
-									<div class="main__table-text">24</div>
-								</td>
-								<td>
-									<div class="main__table-text">Benched</div>
-								</td>
-								<td>
-									<div class="main__table-text">John Doe</div>
-								</td>
-								<td>
-									<div class="main__table-text">Lorem Ipsum is simply dummy text...</div>
-								</td>
-								<td>
-									<div class="main__table-text">67 / 22</div>
-								</td>
-								<td>
-									<div class="main__table-text">24 Oct 2019</div>
-								</td>
-								<td>
-									<div class="main__table-btns">
-										<a href="#modal-view" class="main__table-btn main__table-btn--view open-modal">
-											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.92,11.6C19.9,6.91,16.1,4,12,4S4.1,6.91,2.08,11.6a1,1,0,0,0,0,.8C4.1,17.09,7.9,20,12,20s7.9-2.91,9.92-7.6A1,1,0,0,0,21.92,11.6ZM12,18c-3.17,0-6.17-2.29-7.9-6C5.83,8.29,8.83,6,12,6s6.17,2.29,7.9,6C18.17,15.71,15.17,18,12,18ZM12,8a4,4,0,1,0,4,4A4,4,0,0,0,12,8Zm0,6a2,2,0,1,1,2-2A2,2,0,0,1,12,14Z"/></svg>
-										</a>
-										<a href="#modal-delete" class="main__table-btn main__table-btn--delete open-modal">
-											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,6H16V5a3,3,0,0,0-3-3H11A3,3,0,0,0,8,5V6H4A1,1,0,0,0,4,8H5V19a3,3,0,0,0,3,3h8a3,3,0,0,0,3-3V8h1a1,1,0,0,0,0-2ZM10,5a1,1,0,0,1,1-1h2a1,1,0,0,1,1,1V6H10Zm7,14a1,1,0,0,1-1,1H8a1,1,0,0,1-1-1V8H17Z"/></svg>
-										</a>
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="main__table-text">25</div>
-								</td>
-								<td>
-									<div class="main__table-text">Whitney</div>
-								</td>
-								<td>
-									<div class="main__table-text">John Doe</div>
-								</td>
-								<td>
-									<div class="main__table-text">Lorem Ipsum is simply dummy text...</div>
-								</td>
-								<td>
-									<div class="main__table-text">44 / 5</div>
-								</td>
-								<td>
-									<div class="main__table-text">24 Oct 2019</div>
-								</td>
-								<td>
-									<div class="main__table-btns">
-										<a href="#modal-view" class="main__table-btn main__table-btn--view open-modal">
-											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.92,11.6C19.9,6.91,16.1,4,12,4S4.1,6.91,2.08,11.6a1,1,0,0,0,0,.8C4.1,17.09,7.9,20,12,20s7.9-2.91,9.92-7.6A1,1,0,0,0,21.92,11.6ZM12,18c-3.17,0-6.17-2.29-7.9-6C5.83,8.29,8.83,6,12,6s6.17,2.29,7.9,6C18.17,15.71,15.17,18,12,18ZM12,8a4,4,0,1,0,4,4A4,4,0,0,0,12,8Zm0,6a2,2,0,1,1,2-2A2,2,0,0,1,12,14Z"/></svg>
-										</a>
-										<a href="#modal-delete" class="main__table-btn main__table-btn--delete open-modal">
-											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,6H16V5a3,3,0,0,0-3-3H11A3,3,0,0,0,8,5V6H4A1,1,0,0,0,4,8H5V19a3,3,0,0,0,3,3h8a3,3,0,0,0,3-3V8h1a1,1,0,0,0,0-2ZM10,5a1,1,0,0,1,1-1h2a1,1,0,0,1,1,1V6H10Zm7,14a1,1,0,0,1-1,1H8a1,1,0,0,1-1-1V8H17Z"/></svg>
-										</a>
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="main__table-text">26</div>
-								</td>
-								<td>
-									<div class="main__table-text">Blindspotting</div>
-								</td>
-								<td>
-									<div class="main__table-text">John Doe</div>
-								</td>
-								<td>
-									<div class="main__table-text">Lorem Ipsum is simply dummy text...</div>
-								</td>
-								<td>
-									<div class="main__table-text">20 / 6</div>
-								</td>
-								<td>
-									<div class="main__table-text">24 Oct 2019</div>
-								</td>
-								<td>
-									<div class="main__table-btns">
-										<a href="#modal-view" class="main__table-btn main__table-btn--view open-modal">
-											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.92,11.6C19.9,6.91,16.1,4,12,4S4.1,6.91,2.08,11.6a1,1,0,0,0,0,.8C4.1,17.09,7.9,20,12,20s7.9-2.91,9.92-7.6A1,1,0,0,0,21.92,11.6ZM12,18c-3.17,0-6.17-2.29-7.9-6C5.83,8.29,8.83,6,12,6s6.17,2.29,7.9,6C18.17,15.71,15.17,18,12,18ZM12,8a4,4,0,1,0,4,4A4,4,0,0,0,12,8Zm0,6a2,2,0,1,1,2-2A2,2,0,0,1,12,14Z"/></svg>
-										</a>
-										<a href="#modal-delete" class="main__table-btn main__table-btn--delete open-modal">
-											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,6H16V5a3,3,0,0,0-3-3H11A3,3,0,0,0,8,5V6H4A1,1,0,0,0,4,8H5V19a3,3,0,0,0,3,3h8a3,3,0,0,0,3-3V8h1a1,1,0,0,0,0-2ZM10,5a1,1,0,0,1,1-1h2a1,1,0,0,1,1,1V6H10Zm7,14a1,1,0,0,1-1,1H8a1,1,0,0,1-1-1V8H17Z"/></svg>
-										</a>
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="main__table-text">27</div>
-								</td>
-								<td>
-									<div class="main__table-text">I Dream in Another Language</div>
-								</td>
-								<td>
-									<div class="main__table-text">John Doe</div>
-								</td>
-								<td>
-									<div class="main__table-text">Lorem Ipsum is simply dummy text...</div>
-								</td>
-								<td>
-									<div class="main__table-text">8 / 132</div>
-								</td>
-								<td>
-									<div class="main__table-text">24 Oct 2019</div>
-								</td>
-								<td>
-									<div class="main__table-btns">
-										<a href="#modal-view" class="main__table-btn main__table-btn--view open-modal">
-											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.92,11.6C19.9,6.91,16.1,4,12,4S4.1,6.91,2.08,11.6a1,1,0,0,0,0,.8C4.1,17.09,7.9,20,12,20s7.9-2.91,9.92-7.6A1,1,0,0,0,21.92,11.6ZM12,18c-3.17,0-6.17-2.29-7.9-6C5.83,8.29,8.83,6,12,6s6.17,2.29,7.9,6C18.17,15.71,15.17,18,12,18ZM12,8a4,4,0,1,0,4,4A4,4,0,0,0,12,8Zm0,6a2,2,0,1,1,2-2A2,2,0,0,1,12,14Z"/></svg>
-										</a>
-										<a href="#modal-delete" class="main__table-btn main__table-btn--delete open-modal">
-											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,6H16V5a3,3,0,0,0-3-3H11A3,3,0,0,0,8,5V6H4A1,1,0,0,0,4,8H5V19a3,3,0,0,0,3,3h8a3,3,0,0,0,3-3V8h1a1,1,0,0,0,0-2ZM10,5a1,1,0,0,1,1-1h2a1,1,0,0,1,1,1V6H10Zm7,14a1,1,0,0,1-1,1H8a1,1,0,0,1-1-1V8H17Z"/></svg>
-										</a>
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="main__table-text">28</div>
-								</td>
-								<td>
-									<div class="main__table-text">Benched</div>
-								</td>
-								<td>
-									<div class="main__table-text">John Doe</div>
-								</td>
-								<td>
-									<div class="main__table-text">Lorem Ipsum is simply dummy text...</div>
-								</td>
-								<td>
-									<div class="main__table-text">6 / 1</div>
-								</td>
-								<td>
-									<div class="main__table-text">24 Oct 2019</div>
-								</td>
-								<td><div class="main__table-btns">
-										<a href="#modal-view" class="main__table-btn main__table-btn--view open-modal">
-											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.92,11.6C19.9,6.91,16.1,4,12,4S4.1,6.91,2.08,11.6a1,1,0,0,0,0,.8C4.1,17.09,7.9,20,12,20s7.9-2.91,9.92-7.6A1,1,0,0,0,21.92,11.6ZM12,18c-3.17,0-6.17-2.29-7.9-6C5.83,8.29,8.83,6,12,6s6.17,2.29,7.9,6C18.17,15.71,15.17,18,12,18ZM12,8a4,4,0,1,0,4,4A4,4,0,0,0,12,8Zm0,6a2,2,0,1,1,2-2A2,2,0,0,1,12,14Z"/></svg>
-										</a>
-										<a href="#modal-delete" class="main__table-btn main__table-btn--delete open-modal">
-											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,6H16V5a3,3,0,0,0-3-3H11A3,3,0,0,0,8,5V6H4A1,1,0,0,0,4,8H5V19a3,3,0,0,0,3,3h8a3,3,0,0,0,3-3V8h1a1,1,0,0,0,0-2ZM10,5a1,1,0,0,1,1-1h2a1,1,0,0,1,1,1V6H10Zm7,14a1,1,0,0,1-1,1H8a1,1,0,0,1-1-1V8H17Z"/></svg>
-										</a>
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="main__table-text">29</div>
-								</td>
-								<td>
-									<div class="main__table-text">Whitney</div>
-								</td>
-								<td>
-									<div class="main__table-text">John Doe</div>
-								</td>
-								<td>
-									<div class="main__table-text">Lorem Ipsum is simply dummy text...</div>
-								</td>
-								<td>
-									<div class="main__table-text">10 / 0</div>
-								</td>
-								<td>
-									<div class="main__table-text">24 Oct 2019</div>
-								</td>
-								<td>
-									<div class="main__table-btns">
-										<a href="#modal-view" class="main__table-btn main__table-btn--view open-modal">
-											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.92,11.6C19.9,6.91,16.1,4,12,4S4.1,6.91,2.08,11.6a1,1,0,0,0,0,.8C4.1,17.09,7.9,20,12,20s7.9-2.91,9.92-7.6A1,1,0,0,0,21.92,11.6ZM12,18c-3.17,0-6.17-2.29-7.9-6C5.83,8.29,8.83,6,12,6s6.17,2.29,7.9,6C18.17,15.71,15.17,18,12,18ZM12,8a4,4,0,1,0,4,4A4,4,0,0,0,12,8Zm0,6a2,2,0,1,1,2-2A2,2,0,0,1,12,14Z"/></svg>
-										</a>
-										<a href="#modal-delete" class="main__table-btn main__table-btn--delete open-modal">
-											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,6H16V5a3,3,0,0,0-3-3H11A3,3,0,0,0,8,5V6H4A1,1,0,0,0,4,8H5V19a3,3,0,0,0,3,3h8a3,3,0,0,0,3-3V8h1a1,1,0,0,0,0-2ZM10,5a1,1,0,0,1,1-1h2a1,1,0,0,1,1,1V6H10Zm7,14a1,1,0,0,1-1,1H8a1,1,0,0,1-1-1V8H17Z"/></svg>
-										</a>
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="main__table-text">30</div>
-								</td>
-								<td>
-									<div class="main__table-text">Blindspotting</div>
-								</td>
-								<td>
-									<div class="main__table-text">John Doe</div>
-								</td>
-								<td>
-									<div class="main__table-text">Lorem Ipsum is simply dummy text...</div>
-								</td>
-								<td>
-									<div class="main__table-text">13 / 14</div>
-								</td>
-								<td>
-									<div class="main__table-text">24 Oct 2019</div>
-								</td>
-								<td>
-									<div class="main__table-btns">
-										<a href="#modal-view" class="main__table-btn main__table-btn--view open-modal">
-											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.92,11.6C19.9,6.91,16.1,4,12,4S4.1,6.91,2.08,11.6a1,1,0,0,0,0,.8C4.1,17.09,7.9,20,12,20s7.9-2.91,9.92-7.6A1,1,0,0,0,21.92,11.6ZM12,18c-3.17,0-6.17-2.29-7.9-6C5.83,8.29,8.83,6,12,6s6.17,2.29,7.9,6C18.17,15.71,15.17,18,12,18ZM12,8a4,4,0,1,0,4,4A4,4,0,0,0,12,8Zm0,6a2,2,0,1,1,2-2A2,2,0,0,1,12,14Z"/></svg>
-										</a>
-										<a href="#modal-delete" class="main__table-btn main__table-btn--delete open-modal">
-											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,6H16V5a3,3,0,0,0-3-3H11A3,3,0,0,0,8,5V6H4A1,1,0,0,0,4,8H5V19a3,3,0,0,0,3,3h8a3,3,0,0,0,3-3V8h1a1,1,0,0,0,0-2ZM10,5a1,1,0,0,1,1-1h2a1,1,0,0,1,1,1V6H10Zm7,14a1,1,0,0,1-1,1H8a1,1,0,0,1-1-1V8H17Z"/></svg>
-										</a>
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="main__table-text">31</div>
-								</td>
-								<td>
-									<div class="main__table-text">I Dream in Another Language</div>
-								</td>
-								<td>
-									<div class="main__table-text">John Doe</div>
-								</td>
-								<td>
-									<div class="main__table-text">Lorem Ipsum is simply dummy text...</div>
-								</td>
-								<td>
-									<div class="main__table-text">12 / 7</div>
-								</td>
-								<td>
-									<div class="main__table-text">24 Oct 2019</div>
-								</td>
-								<td>
-									<div class="main__table-btns">
-										<a href="#modal-view" class="main__table-btn main__table-btn--view open-modal">
-											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.92,11.6C19.9,6.91,16.1,4,12,4S4.1,6.91,2.08,11.6a1,1,0,0,0,0,.8C4.1,17.09,7.9,20,12,20s7.9-2.91,9.92-7.6A1,1,0,0,0,21.92,11.6ZM12,18c-3.17,0-6.17-2.29-7.9-6C5.83,8.29,8.83,6,12,6s6.17,2.29,7.9,6C18.17,15.71,15.17,18,12,18ZM12,8a4,4,0,1,0,4,4A4,4,0,0,0,12,8Zm0,6a2,2,0,1,1,2-2A2,2,0,0,1,12,14Z"/></svg>
-										</a>
-										<a href="#modal-delete" class="main__table-btn main__table-btn--delete open-modal">
-											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,6H16V5a3,3,0,0,0-3-3H11A3,3,0,0,0,8,5V6H4A1,1,0,0,0,4,8H5V19a3,3,0,0,0,3,3h8a3,3,0,0,0,3-3V8h1a1,1,0,0,0,0-2ZM10,5a1,1,0,0,1,1-1h2a1,1,0,0,1,1,1V6H10Zm7,14a1,1,0,0,1-1,1H8a1,1,0,0,1-1-1V8H17Z"/></svg>
-										</a>
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="main__table-text">32</div>
-								</td>
-								<td>
-									<div class="main__table-text">Benched</div>
-								</td>
-								<td>
-									<div class="main__table-text">John Doe</div>
-								</td>
-								<td>
-									<div class="main__table-text">Lorem Ipsum is simply dummy text...</div>
-								</td>
-								<td>
-									<div class="main__table-text">67 / 22</div>
-								</td>
-								<td>
-									<div class="main__table-text">24 Oct 2019</div>
-								</td>
-								<td>
-									<div class="main__table-btns">
-										<a href="#modal-view" class="main__table-btn main__table-btn--view open-modal">
-											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.92,11.6C19.9,6.91,16.1,4,12,4S4.1,6.91,2.08,11.6a1,1,0,0,0,0,.8C4.1,17.09,7.9,20,12,20s7.9-2.91,9.92-7.6A1,1,0,0,0,21.92,11.6ZM12,18c-3.17,0-6.17-2.29-7.9-6C5.83,8.29,8.83,6,12,6s6.17,2.29,7.9,6C18.17,15.71,15.17,18,12,18ZM12,8a4,4,0,1,0,4,4A4,4,0,0,0,12,8Zm0,6a2,2,0,1,1,2-2A2,2,0,0,1,12,14Z"/></svg>
-										</a>
-										<a href="#modal-delete" class="main__table-btn main__table-btn--delete open-modal">
-											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,6H16V5a3,3,0,0,0-3-3H11A3,3,0,0,0,8,5V6H4A1,1,0,0,0,4,8H5V19a3,3,0,0,0,3,3h8a3,3,0,0,0,3-3V8h1a1,1,0,0,0,0-2ZM10,5a1,1,0,0,1,1-1h2a1,1,0,0,1,1,1V6H10Zm7,14a1,1,0,0,1-1,1H8a1,1,0,0,1-1-1V8H17Z"/></svg>
-										</a>
-									</div>
-								</td>
-							</tr>
+							<%}%>
 						</tbody>
 					</table>
 				</div>
@@ -398,7 +129,7 @@
 <!-- end main content -->
 
 <!-- modal view -->
-<div id="modal-view" class="zoom-anim-dialog mfp-hide modal modal--view">
+<div id="modal-vie  w" class="zoom-anim-dialog mfp-hide modal modal--view">
 	<div class="comments__autor">
 		<img class="comments__avatar" src="img/user.svg" alt="">
 		<span class="comments__name">John Doe</span>

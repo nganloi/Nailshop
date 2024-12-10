@@ -1,8 +1,10 @@
 const express = require('express')
 const app = express()
+const commentt = require('../../model/blog/view.js')
 
 module.exports = {
     getComment: async(req,res) => {
-        res.render('./admin/comments')
+        const comment = await commentt.getComment()
+        res.render('./admin/comments', {comment:comment})
     }
 }
