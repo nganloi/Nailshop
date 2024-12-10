@@ -2135,10 +2135,11 @@ overflow: hidden;
   left: -220px;
 }
 
-textarea.form-input {
-  height: 160px;
-  resize: none;
-}
+/* textarea.form-input {
+    min-height: 58px;
+    max-height: 500px;
+    resize: none;
+    overflow: hidden; } */
 
 .submit-btn {
   text-align: right;

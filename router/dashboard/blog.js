@@ -3,6 +3,7 @@ const router = express.Router();
 
 const blogController = require('../../controller/dashboard/blog.js')
 
+router.get('/:ID', blogController.getBlogDetail)
 router.get('/', blogController.getBlog)
 
 module.exports = router;

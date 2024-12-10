@@ -27,6 +27,11 @@ module.exports = {
                }
              },   // Bao gồm quan hệ `coupon`
              classfy: true,
+             review:{
+               include:{
+                  user:true,
+               }
+             },
            },
          });
          return data;       
