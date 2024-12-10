@@ -27,4 +27,14 @@ module.exports = {
        }
     return data;
    },
+   createReview:async(userid,productid,message,time)=>{
+      const crete = await prisma.review.create({
+         data:{
+            userid:userid,
+            productid:productid,
+            time:time,
+            content:message,
+         }
+      })
+   }
 }
