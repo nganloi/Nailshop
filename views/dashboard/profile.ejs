@@ -1,0 +1,108 @@
+<%- include('../layout/dashboard/head'); -%>
+
+
+<body>
+
+    <!-- header sec start -->
+    <%- include('../layout/dashboard/header'); -%>
+
+    <!-- header sec end -->
+    <!-- banner-sec start -->
+    <section class="banner inner-banner">
+        <div class="inner-shape">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="banner-text">
+                            <h1 class="h1-title">Profile</h1>
+                            <div class="banner-links">
+                                <ul>
+                                    <li><a href="/" title="Home">Home</a> /</li>
+                                    <li>Profile</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- banner-sec end -->
+    <!-- checkout-start -->
+    <section class="checkout">
+        <div class="container">
+           
+            <div class="row">
+                <form action="/profile" method="post" enctype="multipart/form-data">
+                    <h2 class="h2-title">Profile Information</h2>
+                    <div class="profile-container d-flex">
+                        <!-- Phần thông tin -->
+                        <div class="col-lg-7">
+                            <div class="checkout-form">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <input type="text" class="form-input" placeholder="Name" value="<%= profile.name%>" name="name">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <input type="email" class="form-input" placeholder="Email" value="<%= profile.email%>" name="mail">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <input type="text" class="form-input" placeholder="Phone" value="<%= profile.phone%>" name="phone">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <input type="text" class="form-input" placeholder="Address" value="<%= profile.address%>" name="address">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <input type="text" class="form-input" placeholder="Password" value="<%= profile.pass%>" name="pass">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Phần ảnh -->
+                        <div class="col-lg-5 text-center">
+                            <label for="form__img-upload">  <img src="<%= profile.img %>"  class="profile-img" ></label>
+                            <input id="form__img-upload" name="img" type="file" accept=".png, .jpg, .jpeg" src="#">                          
+                        </div>
+                    </div>
+                    <div class="submit-btn-profile">
+                        <button href="javascript:void(0);" class="sec-btn" type="submit">Edit Profile</button>
+                    </div>
+                  
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- checkout-end -->
+    <!-- footer start -->
+    <section class="subscribe">
+        <div class="container lg-container">
+            <div class="sub-sec back-img" style="background-image:url(assets/images/subscribe-bg.jpg);">
+                <div class="row">
+                    <div class="col-xl-6 col-12 m-auto">
+                        <div class="title">
+                            <h2 class="h2-title lg-title">subscribe to get our latest updated</h2>
+                        </div>
+                        <div class="subscribe-from">
+                            <div class="form-box">
+                                <form>
+                                    <input type="email" class="form-input-2" name="email" placeholder="Email Address..."
+                                        required="">
+                                    <button type="submit" class="sec-btn"><span>Subscribe</span></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <%- include('../layout/dashboard/footer'); -%>
+
+    <!-- footer end -->
+    <!-- Scroll To Top Start -->
+    <%- include('../layout/dashboard/js'); -%>
+
+
+</body>
+
+</html>

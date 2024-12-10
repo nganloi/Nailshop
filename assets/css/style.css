@@ -232,6 +232,7 @@ a:hover {
   font-family: var(--title-font);
 }
 
+
 .sec-btn:before {
   content: "";
   position: absolute;
@@ -2161,6 +2162,10 @@ overflow: hidden;
   text-align: right;
   margin-top: 0px;
 }
+.submit-btn-profile {
+  margin-top: 26px;
+  margin-right: 941px;
+}
 .submit-btn-login {
   text-align: left;
   margin-top: 0px;
@@ -3850,7 +3855,10 @@ li.list-name:last-child {
   .banner {
     height: auto;
   }
-
+.form.img {
+  height: 44px;
+  max-width: 100%;
+}
   .banner-text {
     padding: 200px 0 140px;
     padding-right: 200px;
@@ -4434,4 +4442,16 @@ table.product-table {
 }
 /*==========Responsive End==========*/
 
+.profile-container {
+  display: flex;
+  align-items: center; /* Căn giữa dọc */
+  justify-content: space-between; /* Căn đều khoảng cách giữa form và ảnh */
+  gap: 20px; /* Khoảng cách giữa các phần */
+}
 
+.profile-img {
+  width: 199px;
+  height: 199px;
+  margin-top: -53px;
+  margin-left: 69px;
+}

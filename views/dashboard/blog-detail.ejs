@@ -75,9 +75,9 @@
                         <div class="share-btns">
                             <h3 class="h3-title">Share :</h3>
                             <div class="social-icons footer-social">
-                                <a href="<%= social[1].link%>" title="Instagram"><i class="fab fa-instagram"></i></a>
-                                <a href="<%= social[0].link%>" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                                <a href="javascript:void(0);" title="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                                <% for(var i = 0; i< social.length;i++){%>
+                                <a href="<%= social[i].link%>" title="<%= social[i].name%>"><i class="<%= social[i].img%>"></i></a>
+                                <% }%> 
                             </div>
                         </div>
                     </div>
@@ -95,7 +95,7 @@
                         <div class="col-lg-12">
                             <div class="service-box">
                                 <div class="service-icon">
-                                    <img src="../../assets/upload/icon-04.png" alt="images" width="105" height="105">
+                                    <img src="<%= blog.comment[0].user.img%>" alt="images" width="105" height="105">
                                 </div>
                                 <div class="service-text">
                                     <h3 class="h3-title"><%= blog.comment[i].user.name %></h3>
