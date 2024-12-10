@@ -30,6 +30,17 @@ module.exports = {
                    }
                 })   
              }
-         }
-      },
-  }
+      }
+   },
+   postCreateCom: async(time,content,user,blog) => {
+      const create =  await prisma.comment.create({
+          data: {
+              content: content,
+              time:time,
+              userid: parseInt(user),
+              blogid: parseInt(blog)
+          }
+      })
+      return create;
+   }
+}
