@@ -18,7 +18,7 @@ module.exports={
  checkProfile:async(anh,data)=>{
     var img
      if(anh==undefined ){
-        if(data!= undefined){
+        if(data.length!= 0){
             img= data
         }else{
             img='/assets/upload/icon-04.png'

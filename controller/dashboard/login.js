@@ -19,7 +19,6 @@ module.exports = {
       const pass1 = req.body.pass;
       const user = await login.checkLogin(mail)
       const checkpass =await bcrypt.compare(pass1, user[0].pass)
-        console.log(user,checkpass)
       if(user.length > 0  && checkpass){
         req.session.userId = user[0].id;
         res.redirect('/');
