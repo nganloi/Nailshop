@@ -37,11 +37,11 @@
                     <div class="col-lg-12">
                         <div class="service-info-text">
                             <div class="service-info-img back-img"
-                                style="background-image:url('<%= blog[0].img%>');"></div>
+                                style="background-image:url('<%= blog.img%>');"></div>
                             <div class="course-content">
                                 <div class="lessons">
                                     <i class="fas fa-calendar" aria-hidden="true"></i>
-                                    <p><%= blog[0].time%></p>
+                                    <p><%= blog.time%></p>
                                 </div>
                                 <div class="time">
                                     <i class="fas fa-comment" aria-hidden="true"></i>
@@ -49,8 +49,8 @@
                                 </div>
                             </div>
                             <div class="blog-text">
-                                <h2 class="h2-title"><%= blog[0].name%> </h2>
-                                <%= blog[0].content %>
+                                <h2 class="h2-title"><%= blog.name%> </h2>
+                                <%= blog.content %>
                             </div>
                         </div>
                     </div>
@@ -89,34 +89,22 @@
                 <div class="comment-boxes">
                     <div class="row">
                         <div class="col-lg-12">
-                            <h3 class="h3-title">comments</h3>
+                            <h3 class="h3-title">Comments (<%=blog.comment.length%>)</h3>
                         </div>
+                        <% for (var i =0 ; i < blog.comment.length; i++) {%>
                         <div class="col-lg-12">
                             <div class="service-box">
                                 <div class="service-icon">
-                                    <img src="assets/images/expert3.jpg" alt="expert3" width="105" height="105">
+                                    <img src="../../assets/upload/icon-04.png" alt="images" width="105" height="105">
                                 </div>
                                 <div class="service-text">
-                                    <h3 class="h3-title">Cobus Bester </h3>
-                                    <p>when an unknown printer took a galley of type and scrambled it to make a type
-                                        specimen book. It has survived not only five centuries, but also the leap into
-                                        electronic typesetting, remaining </p>
+                                    <h3 class="h3-title"><%= blog.comment[i].user.name %></h3>
+                                    <p><%= blog.comment[i].content %> </p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-12">
-                            <div class="service-box">
-                                <div class="service-icon">
-                                    <img src="assets/images/expert3.jpg" alt="expert3" width="105" height="105">
-                                </div>
-                                <div class="service-text">
-                                    <h3 class="h3-title">Cobus Bester </h3>
-                                    <p>when an unknown printer took a galley of type and scrambled it to make a type
-                                        specimen book. It has survived not only five centuries, but also the leap into
-                                        electronic typesetting, remaining </p>
-                                </div>
-                            </div>
-                        </div>
+                        <%}%>
+                      
                     </div>
                 </div>
             </div>
@@ -132,17 +120,11 @@
                 </div>
                 <div class="row form-comment">
                     <div class="col-lg-12">
-                        <form>
+                        <form class="form" action="/blog/comment/<%= blog.id%>" method="post">
                             <div class="row">
-                                <div class="col-lg-6">
-                                    <input type="text" class="form-input" placeholder="Full Name">
-                                </div>
-                                <div class="col-lg-6">
-                                    <input type="email" class="form-input" placeholder="E-mail Address" required>
-                                </div>
                                 <div class="col-12">
-                                    <textarea class="form-input" cols="30" rows="20"
-                                        placeholder="Type Message Here...."></textarea>
+                                    <textarea class="form-input-comment" cols="50" rows="20"
+                                        placeholder="Type Message Here...." name="content"></textarea>
                                 </div>
                                 <div class="col-12">
                                     <div class="submit-btn">

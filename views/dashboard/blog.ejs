@@ -37,9 +37,11 @@
                         <%for(var i = 0; i < blog.length; i++){%>
                         <div class="col-lg-4">
                             <div class="blog-box">
+                                <a href="/blog/<%= blog[i].id %>">
                                 <div class="blog-img">
                                     <div class="back-img" style="background-image:url('<%= blog[i].img %>')"></div>
                                 </div>
+                                </a>
                                 <div class="blog-text">
                                     <h3 class="h3-title"><%= blog[i].name %></h3>
                                     <div class="course-content">
@@ -54,7 +56,7 @@
                                     </div>
                                     <p> <%= blog[i].describe %></p>
                                     <div class="blog-link">
-                                        <a href="/blog-detail/<%= blog[i].id %>" title="Read more">Read more</a>
+                                        <a href="/blog/<%= blog[i].id %>" title="Read more">Read more</a>
                                     </div>
                                 </div>
                             </div>
