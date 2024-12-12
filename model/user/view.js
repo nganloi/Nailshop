@@ -24,5 +24,23 @@ module.exports = {
          }
       })
       return data;
-   }
+   },
+   getProfile: async(userid) => {
+      const data = await prisma.user.findUnique({
+         where: {id:userid},
+         select: {
+            id: true,
+            name: true,
+            img: true,
+            email: true,
+            phone: true,
+            address: true,
+            pass:true
+          
+         }
+      })
+      return data;
+   },
+  
+  
 }

@@ -233,6 +233,7 @@ a:hover {
 }
 
 
+
 .sec-btn:before {
   content: "";
   position: absolute;
@@ -2288,6 +2289,10 @@ overflow: hidden;
   margin-top: 26px;
   margin-right: 941px;
 }
+.submit-btn-profile {
+  margin-top: 26px;
+  margin-right: 941px;
+}
 .submit-btn-login {
   text-align: left;
   margin-top: 0px;
@@ -3977,6 +3982,10 @@ li.list-name:last-child {
   .banner {
     height: auto;
   }
+.form.img {
+  height: 44px;
+  max-width: 100%;
+}
 .form.img {
   height: 44px;
   max-width: 100%;
