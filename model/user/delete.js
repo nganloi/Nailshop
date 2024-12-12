@@ -1,4 +1,5 @@
 const {PrismaClient, Prisma} = require('@prisma/client');
+const { deleteWish } = require('../../controller/dashboard/wishlist');
 const prisma = new PrismaClient();
 
 module.exports = {
@@ -15,5 +16,10 @@ module.exports = {
       const data9 = await prisma.user.deleteMany({where: {id:id}});
 
      },
+     deletWish:async(id)=>{
+      const del = await prisma.productlike({
+         where:{id:id}
+      })
+     }
   
 }

@@ -127,4 +127,61 @@ document.addEventListener('DOMContentLoaded', async () => {
   
     await initialize();
   });
-    
+  
+///CHUC NANG CUA CART
+function changes(button) {
+  const productId = button.id
+  console.log(productId)
+  const row = document.getElementById(productId);
+  const input =row.querySelector('.quantity-input'); // Lấy ô input tương ứng
+  const p = button.getAttribute('data-type');
+  var quantity=0
+  
+  if(p == 'plus'){
+      console.log(1)
+  quantity = parseInt(input.value) +1 || 0;
+  row.querySelector('.quantity-input').value = quantity;
+
+  }else{
+      if(parseInt(input.value) > 1){
+          quantity = parseInt(input.value)-1 || 0; // Kiểm tra nếu nhập không phải số thì mặc định là 0
+      }else{
+          quantity=1
+      }
+      row.querySelector('.quantity-input').value = quantity;
+
+  }
+  console.log(parseInt(row.querySelector('.quantity-input').value))
+  const quantityLast = parseInt(row.querySelector('.quantity-input').value); // Lấy ô input tương ứng
+  console.log(quantityLast)
+  console.log(parseInt(row.querySelector('.quantity-input').value))
+  const price = parseFloat(row.querySelector('.price span').textContent);
+  const totalAmount = (quantityLast) * price;
+  row.querySelector('.total-amount span').textContent = totalAmount;
+  updateCheckedRows()
+}
+
+function updateCheckedRows() {
+   // Lấy tất cả các thẻ <tr>
+  const rows = document.querySelectorAll('tr');
+  const checkedRows = [];
+
+  var total=0;
+  rows.forEach(row => {
+      // Tìm checkbox trong <tr>
+      const checkbox = row.querySelector('input[type="checkbox"]');
+      console.log(checkbox)
+      if (checkbox && checkbox.checked) {
+          const price = parseFloat(row.querySelector('.price span').textContent); 
+          const quantityInput = row.querySelector('.quantity-input'); 
+          const quantity = parseInt(quantityInput.value) || 1; 
+          total=total+price*(quantity)           
+      }
+  });
+       document.querySelector('.total-pro .h4-title').textContent= '$'+total.toFixed(2)
+
+  // Nếu không có <tr> nào được chọn
+  if (checkedRows.length === 0) {
+      console.log('No products selected.');
+  }
+}

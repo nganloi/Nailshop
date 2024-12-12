@@ -3054,6 +3054,18 @@ h4.price .new {
   margin: 0 7px;
 }
 
+.quantity-item-cart .product-btns{
+  margin:0px;
+}
+
+.quantity-item-cart .sp-quantity{
+  background-color: #ffffff;
+}
+
+.content p{
+  margin-bottom: 0px;
+
+}
 .product-btns {
   margin-top: 40px;
 }

@@ -69,5 +69,12 @@ module.exports = {
       const id = parseInt(req.params.ID) ////ID của bảng user_product
       const del = await deleteProduct.deleteCart(id)
       res.redirect(`/product/${idpage}`)
+    },
+    /////SAN PHAM YEU THICH
+    creatWish:async(req,res)=>{
+      const userid = parseInt(req.session.userId);
+      const productid = parseInt(req.params.ID)
+      const cret = await createProduct.creatWish(userid,productid)
+      res.redirect(`/product/${productid}`)
     }
 }
