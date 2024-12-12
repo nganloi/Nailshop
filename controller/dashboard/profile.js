@@ -33,7 +33,7 @@ module.exports = {
         const userid = parseInt(req.session.userId)
         const oldpass = req.body.oldpass;
         const newpass1 = req.body.newpass;
-         const data = await userr.getPass(userid)
+         const data = await userr.getProfile(userid)
          const data1 = await bcrypt.compare(oldpass, data.pass)
         if (!data1) {
             return res.redirect(`/profile?error`)
