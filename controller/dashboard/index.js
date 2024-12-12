@@ -5,6 +5,7 @@ const userr = require('../../model/user/view.js')
 const marketing_shop= require('../../model/marketing-shop/view')
 const services = require('../../model/service/view')
 const category = require('../../model/category/view')
+const dataCart = require('../../model/user/view.js')
 module.exports = {
     getShop: async(req,res) => {
         const userid = parseInt(req.session.userId)

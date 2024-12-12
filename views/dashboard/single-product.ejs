@@ -65,24 +65,32 @@
                                     </td>
                                 </tr>
                             </table>
+                            <form action="/product/cart/<%=product.id%>" method="post">
+                            <div class="row">
+                                <label for="variant">Loại sản phẩm:</label>
+                                <input type="text" id="variant" style="display: none;" name="product" autocomplete="off"/>
+                                <ul id="options" class="options-list"></ul>
+                                <div id="quantity" class="quantity">Số lượng: </div>
+                              </div>
                             <div class="product-btns">
                                 <div class="product-quantity">
                                     <div class="sp-quantity">
                                         <div class="container" id="quantity-product" style=" font-size:14px; ">
-                                            <div class="sp-minus fff"> <a class="ddd" href="javascript:void(0);">-</a>
+                                            <div class="sp-minus fff"> <a type="button" class="ddd">-</a>
                                             </div>
                                             <div class="sp-input">
-                                                <input type="text" class="quantity-input" value="1">
+                                                <input type="text" class="quantity-input" value="1" name="quantity">
                                             </div>
-                                            <div class="sp-plus fff"> <a class="ddd" href="javascript:void(0);">+</a>
+                                            <div class="sp-plus fff"> <a type="button" class="ddd">+</a>
                                             </div>
                                         </div>
                                     </div>
                                     <a href="javascript:void(0);" class="sec-btn"><i class="fas fa-shopping-bag"></i>
                                         Buy Now</a>
-                                    <a href="javascript:void(0);" class="sec-btn"><i
-                                            class="fas fa-shopping-cart"></i>Add to Cart</a>
+                                    <button type="submit" class="sec-btn"><i
+                                            class="fas fa-shopping-cart"></i>Add to Cart</button>
                                 </div>
+                            </form>
                                 <div class="share-btns">
                                     <h3 class="h3-title">Share :</h3>
                                     <div class="social-icons footer-social">
@@ -123,7 +131,7 @@
                                             
                                             <span class="descount-sticker">sold-out</span>
                                             <!-- <span class="sticker">New</span> -->
-
+                                                  
                                             <div class="product-action d-flex justify-content-between">
                                                 <a class="product-btn" href="javascript:void(0);">Add to Cart</a>
                                                 <ul class="d-flex">

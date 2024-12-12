@@ -3,8 +3,7 @@
         <div class="row align-items-center">
             <div class="col-lg-2">
                 <div class="site-branding">
-                    <a href="/"><img src="/assets/images/logo.png" width="160" height="85"
-                            alt="site-logo" /></a>
+                    <a href="/"><img src="/assets/images/logo.png" width="160" height="85" alt="site-logo" /></a>
                 </div>
             </div>
             <div class="col-lg-8">
@@ -39,20 +38,7 @@
                                     </ul>
                                 </li>
                                 <li><a href="/blog" title="Blog">Blog</a></li>
-                                <li class="sub-items">
-                                    <a href="javascript:void(0);" class="sub-menu">Pages</a>
-                                    <ul class="dropdown">
-                                        <li>
-                                            <a href="/product" title="Products">Products</a>
-                                        </li>
-                                        <li>
-                                            <a href="/single-product" title="Product detail">Product detail</a>
-                                        </li>
-                                        <li>
-                                            <a href="/error" title="404 Error">404 Error</a>
-                                        </li>
-                                    </ul>
-                                </li>
+                                <li><a href="/product" title="Blog">Product</a></li>
                                 <li class="sub-items">
                                     <a href="javascript:void(0);" class="sub-menu" title="Shop">Shop</a>
                                     <ul class="dropdown">
@@ -81,40 +67,68 @@
                 <div class="header-menu">
                     <nav class="main-navigation">
 
-                <div class="header-mobile-menu">
-                <ul>
-                    <li class="sub-items">
-                    <a href="javascript:void(0);" ><img src="/assets/images/login.svg"
-                            alt="Login"> </a>
-                            <% if (user != undefined) { %>
-                            <ul class="dropdown">
-                                <li>
-                                    <a href="/profile" title="Profile">Profile</a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/logout" title="Logout">Logout</a>
-                                </li>
-                               
-                            </ul>
-                            <% } else { %>
-                                <ul class="dropdown">
-                                <li>
-                                    <a href="/login" title="Login">Login</a>
-                                </li>
-                                <li>
-                                    <a href="/register" title="Register">Register</a>
-                                </li>
-                            </ul>
-                                <% } %>
-                        </li>
-                        <li class="sub-items">
+                        <div class="header-mobile-menu">
+                            <ul>
+                                <li class="sub-items">
+                                    <a href="javascript:void(0);"><img src="/assets/images/login.svg" alt="Login"> </a>
+                                    <% if (user !=undefined) { %>
+                                        <ul class="dropdown">
+                                            <li>
+                                                <a href="/profile" title="Profile">Profile</a>
+                                            </li>
 
-                    <a href="product" class="Cart" title="Buy"><img src="/assets/images/buy.svg"
-                            alt="Buy" /></a>
-                        </li>
-              </ul>
-                </div>
+                                            <li>
+                                                <a href="/logout" title="Logout">Logout</a>
+                                            </li>
+
+                                        </ul>
+                                        <% } else { %>
+                                            <ul class="dropdown">
+                                                <li>
+                                                    <a href="/login" title="Login">Login</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/register" title="Register">Register</a>
+                                                </li>
+                                            </ul>
+                                            <% } %>
+                                </li>
+                                <li id="icon-cart">
+                                    <a  href="" title="Buy"><img src="/assets/images/buy.svg" alt="Buy" /></a>
+                                    <ul id="cart1">
+                                        <li id="item-header">
+                                            <span><% if(user !=undefined){user.product.length}%> Items</span>
+                                            <a>View Cart</a>
+                                        </li>
+                                        <% if(user !=undefined){%>
+                                            <% for(var i=0; i < user.product.length ;i++){%>
+                                        <li id="item-product" >
+                                         <a class="item-img" href="#"><img src="<%=user.product[i].product.img[0]%>" alt="Buy" /></a>
+                                         <a class="remove-item" href="/product/cart/delete/<%=user.product[i].id%>"><i class="fas fa-times" aria-hidden="true"></i></a>
+                                         <h5>
+                                            <a href="#"><%=user.product[i].product.name%></a>
+                                            <p class="classfy-item"><%=user.product[i].classfy.name%></p>
+                                            <p class="quantity-item"><%=user.product[i].quantity%> X <%=user.product[i].product.price%>$</p>   
+                                        </h5>
+                                        </li>
+                                        <%}%>
+                                        <%}%>
+                                        <li id="item-bottom">
+                                            <span>Total</span>
+                                            <span class="total">
+                                                <%var sum =0 %>
+                                                <% if(user !=undefined){%>
+                                                    <% for(var i=0; i < user.product.length ;i++){%>
+                                                        <% sum =sum + user.product[i].quantity*parseInt(user.product[i].product.price)%>
+                                                    <%}%>
+                                                <%}%>   
+                                                <%=sum%>$             
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
                     </nav>
                 </div>
             </div>

@@ -13,4 +13,9 @@ module.exports = {
       const data7 = await prisma.productlike.deleteMany({where: {productid:id}});
       const data8 = await prisma.product.deleteMany({where: {id:id}});
    },
+   deleteCart:async(id)=>{
+      const del= await prisma.user_product.deleteMany({
+         where:{id:id}
+      })
+   }
 }
