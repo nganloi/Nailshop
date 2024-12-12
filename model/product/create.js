@@ -33,4 +33,34 @@ module.exports = {
          }
     return data;
    },
+   /////Tạo cart cho user
+   creatCart:async(userid,productid,classfyid,quantity)=>{
+      var data1 = await prisma.user_product.findMany({
+         where:{
+            productid:productid,
+            userid:userid,
+            classfyid:classfyid
+         }
+      })
+      if(data1.length > 0){
+        const quantityOld = data1[0].quantity;
+        const updat = await prisma.user_product.update({
+         where:{
+            id:data1[0].id
+         },
+         data:{
+            quantity:parseInt(quantity)+quantityOld
+         }
+        })
+      }else{
+         const creat = await prisma.user_product.create({
+            data:{
+               productid:productid,
+               userid:userid,
+               classfyid:classfyid,
+               quantity:parseInt(quantity)
+            }
+         }) 
+      }
+   }
 }

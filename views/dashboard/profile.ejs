@@ -39,20 +39,20 @@
                             <h2 class="h2-title mb-4 text-center">Profile Information</h2>
                             <form action="/profile" method="post" enctype="multipart/form-data">
                                 <div class="mb-3">
-                                    <input type="text" class="form-input form-control uniform-input" placeholder="Name" value="<%= profile.name %>" name="name">
+                                    <input type="text" class="form-input form-control uniform-input" placeholder="Name" value="<%= user.name %>" name="name">
                                 </div>
                                 <div class="mb-3">
-                                    <input type="email" class="form-input form-control uniform-input" placeholder="Email" value="<%= profile.email %>" name="mail">
+                                    <input type="email" class="form-input form-control uniform-input" placeholder="Email" value="<%= user.email %>" name="mail">
                                 </div>
                                 <div class="mb-3">
-                                    <input type="text" class="form-input form-control uniform-input" placeholder="Phone" value="<%= profile.phone %>" name="phone">
+                                    <input type="text" class="form-input form-control uniform-input" placeholder="Phone" value="<%= user.phone %>" name="phone">
                                 </div>
                                 <div class="mb-3">
-                                    <input type="text" class="form-input form-control uniform-input" placeholder="Address" value="<%= profile.address %>" name="address">
+                                    <input type="text" class="form-input form-control uniform-input" placeholder="Address" value="<%= user.address %>" name="address">
                                 </div>
                                 <div class="text-center mb-3">
                                     <label for="form__img-upload">
-                                        <img src="<%= profile.img %>" class="profile-img rounded-circle border" alt="Profile Image">
+                                        <img src="<%= user.img %>" class="profile-img rounded-circle border" alt="Profile Image">
                                     </label>
                                     <input id="form__img-upload" name="img" type="file" accept=".png, .jpg, .jpeg" class="form-control mt-2">
                                 </div>

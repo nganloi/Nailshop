@@ -15,6 +15,12 @@ module.exports = {
                   role:true
                }
             },
+            product:{
+               include:{
+                  product:true,
+                  classfy:true,
+               }
+            }
          }
       })
       return data;

@@ -161,6 +161,7 @@ model user_product{
   userid Int
   classfy classfy @relation(fields: [classfyid], references: [id])
   classfyid Int
+  quantity Int
 }
 
 // INFORMATION USER
