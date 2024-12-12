@@ -14,6 +14,7 @@ const login = require('./dashboard/login.js')
 const register = require('./dashboard/register.js')
 const logout = require('./dashboard/logout.js')
 const checklogin = require('../middlewea/admin/checkLogin.js')
+const profile = require('./dashboard/profile.js')
 
 router.use('/', shop)
 //PRODUCT
@@ -51,4 +52,7 @@ router.use('/register', register)
 
 //LOGOUT
 router.use('/logout', logout)
+
+//PROFILE
+router.use('/profile',checklogin.requireLogin, profile)
 module.exports = router;
