@@ -21,7 +21,7 @@ module.exports={
         if(data.length!= 0){
             img= data
         }else{
-            img='/assets/upload/icon-04.png'
+            img='/assets/images/icon-04.png'
         }
      }else{
         img= '/assets/upload/'+anh.filename

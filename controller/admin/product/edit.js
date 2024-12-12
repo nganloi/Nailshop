@@ -22,7 +22,6 @@ module.exports = {
             }
         }else{
             anh=undefined
-            console.log(1)
             img.push(await checkimg.checkImg(anh,data[0].img[0]))
         }
         const name = req.body.name;

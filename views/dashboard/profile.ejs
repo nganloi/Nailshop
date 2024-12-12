@@ -1,0 +1,121 @@
+<%- include('../layout/dashboard/head'); -%>
+
+
+<body>
+
+    <!-- header sec start -->
+    <%- include('../layout/dashboard/header'); -%>
+
+    <!-- header sec end -->
+    <!-- banner-sec start -->
+    <section class="banner inner-banner">
+        <div class="inner-shape">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="banner-text">
+                            <h1 class="h1-title">Profile</h1>
+                            <div class="banner-links">
+                                <ul>
+                                    <li><a href="/" title="Home">Home</a> /</li>
+                                    <li>Profile</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- banner-sec end -->
+    <!-- checkout-start -->
+    <section class="checkout">
+        <div class="container">
+            <div class="container py-5">
+                <div class="row g-4">
+                    <!-- Cột thông tin profile -->
+                    <div class="col-lg-6">
+                        <div class="card p-4 shadow">
+                            <h2 class="h2-title mb-4 text-center">Profile Information</h2>
+                            <form action="/profile" method="post" enctype="multipart/form-data">
+                                <div class="mb-3">
+                                    <input type="text" class="form-input form-control uniform-input" placeholder="Name" value="<%= profile.name %>" name="name">
+                                </div>
+                                <div class="mb-3">
+                                    <input type="email" class="form-input form-control uniform-input" placeholder="Email" value="<%= profile.email %>" name="mail">
+                                </div>
+                                <div class="mb-3">
+                                    <input type="text" class="form-input form-control uniform-input" placeholder="Phone" value="<%= profile.phone %>" name="phone">
+                                </div>
+                                <div class="mb-3">
+                                    <input type="text" class="form-input form-control uniform-input" placeholder="Address" value="<%= profile.address %>" name="address">
+                                </div>
+                                <div class="text-center mb-3">
+                                    <label for="form__img-upload">
+                                        <img src="<%= profile.img %>" class="profile-img rounded-circle border" alt="Profile Image">
+                                    </label>
+                                    <input id="form__img-upload" name="img" type="file" accept=".png, .jpg, .jpeg" class="form-control mt-2">
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary w-100">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card p-4 shadow">
+                            <h2 class="h2-title mb-4 text-center">Change Password</h2>
+                            <form action="/profile/pass" method="post">
+                                <div class="mb-3">
+                                    <input type="password" class="form-input form-control uniform-input" placeholder="Old Password" name="oldpass">
+                                </div>
+                                <div class="mb-3">
+                                    <input type="password" class="form-input form-control uniform-input" placeholder="New Password" name="newpass">
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary w-100">Change</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+        </div>
+    </section>
+    <!-- checkout-end -->
+    <!-- footer start -->
+    <section class="subscribe">
+        <div class="container lg-container">
+            <div class="sub-sec back-img" style="background-image:url(assets/images/subscribe-bg.jpg);">
+                <div class="row">
+                    <div class="col-xl-6 col-12 m-auto">
+                        <div class="title">
+                            <h2 class="h2-title lg-title">subscribe to get our latest updated</h2>
+                        </div>
+                        <div class="subscribe-from">
+                            <div class="form-box">
+                                <form>
+                                    <input type="email" class="form-input-2" name="email" placeholder="Email Address..."
+                                        required="">
+                                    <button type="submit" class="sec-btn"><span>Subscribe</span></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <%- include('../layout/dashboard/footer'); -%>
+
+    <!-- footer end -->
+    <!-- Scroll To Top Start -->
+    <%- include('../layout/dashboard/js'); -%>
+
+
+</body>
+
+</html>
