@@ -29,8 +29,19 @@ module.exports = {
             email: true,
             phone: true,
             address: true,
+            pass:true
+          
+         }
+      })
+      return data;
+   },
+   getPass: async(userid) => {
+      const data = await prisma.user.findUnique({
+         where: {id:userid},
+         select: {
             pass: true
          }
+        
       })
       return data;
    },

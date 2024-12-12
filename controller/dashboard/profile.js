@@ -22,15 +22,28 @@ module.exports = {
         const name = req.body.name;
          const mail = req.body.mail;
          const phone = req.body.phone;
-         const add = req.body.address;
-         const pass1 = req.body.pass;
-         const pass =  bcrypt.hashSync(pass1,5)
+         const add = req.body.address;      
          var anh = req.files;
          const data = await userr.getProfile(userid)
          const img= await checkImg.checkProfile(anh,data)
-         console.log(img)
-        const viewPro =  await  edit.postProfile(userid,name,mail,phone,add,pass,img.img)
+        const viewPro =  await  edit.postProfile(userid,name,mail,phone,add,img.img)
         return res.redirect(`/profile`)
+      },
+      postPass: async(req,res) => {
+        const userid = parseInt(req.session.userId)
+        const oldpass = req.body.oldpass;
+        const newpass1 = req.body.newpass;
+         const data = await userr.getPass(userid)
+         const data1 = await bcrypt.compare(oldpass, data.pass)
+        if (!data1) {
+            return res.redirect(`/profile?error`)
+      } else{
+        const newpass = await bcrypt.hash(newpass1,5)
+        const viewPro =  await  edit.postPass(userid,newpass)
+        return res.redirect(`/profile`)
+
+      }
+      
       },
 
 

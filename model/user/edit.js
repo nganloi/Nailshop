@@ -7,7 +7,7 @@ module.exports = {
     const data = await prisma.user.findUnique({where: {id:genId}});
     return data;
    },
-   postProfile: async(userid,name,mail,phone,add,pass,img) => {
+   postProfile: async(userid,name,mail,phone,add,img) => {
       const data = await prisma.user.update({
        where: {id:userid},
          data: {
@@ -15,11 +15,20 @@ module.exports = {
             email: mail,
             phone: phone,
             address: add,
-            pass:pass,
             img: img,
          }
       })
       return data;
+
+   },
+   postPass: async(userid,newpass) => {
+     const data = await prisma.user.update({
+      where: {id: userid},
+      data: {
+         pass: newpass
+      }
+     })
+     return data;
 
    }
 

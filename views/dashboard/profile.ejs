@@ -31,45 +31,58 @@
     <!-- checkout-start -->
     <section class="checkout">
         <div class="container">
-           
-            <div class="row">
-                <form action="/profile" method="post" enctype="multipart/form-data">
-                    <h2 class="h2-title">Profile Information</h2>
-                    <div class="profile-container d-flex">
-                        <!-- Phần thông tin -->
-                        <div class="col-lg-7">
-                            <div class="checkout-form">
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <input type="text" class="form-input" placeholder="Name" value="<%= profile.name%>" name="name">
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <input type="email" class="form-input" placeholder="Email" value="<%= profile.email%>" name="mail">
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <input type="text" class="form-input" placeholder="Phone" value="<%= profile.phone%>" name="phone">
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <input type="text" class="form-input" placeholder="Address" value="<%= profile.address%>" name="address">
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <input type="text" class="form-input" placeholder="Password" value="<%= profile.pass%>" name="pass">
-                                    </div>
+            <div class="container py-5">
+                <div class="row g-4">
+                    <!-- Cột thông tin profile -->
+                    <div class="col-lg-6">
+                        <div class="card p-4 shadow">
+                            <h2 class="h2-title mb-4 text-center">Profile Information</h2>
+                            <form action="/profile" method="post" enctype="multipart/form-data">
+                                <div class="mb-3">
+                                    <input type="text" class="form-input form-control uniform-input" placeholder="Name" value="<%= profile.name %>" name="name">
                                 </div>
-                            </div>
-                        </div>
-                        <!-- Phần ảnh -->
-                        <div class="col-lg-5 text-center">
-                            <label for="form__img-upload">  <img src="<%= profile.img %>"  class="profile-img" ></label>
-                            <input id="form__img-upload" name="img" type="file" accept=".png, .jpg, .jpeg" src="#">                          
+                                <div class="mb-3">
+                                    <input type="email" class="form-input form-control uniform-input" placeholder="Email" value="<%= profile.email %>" name="mail">
+                                </div>
+                                <div class="mb-3">
+                                    <input type="text" class="form-input form-control uniform-input" placeholder="Phone" value="<%= profile.phone %>" name="phone">
+                                </div>
+                                <div class="mb-3">
+                                    <input type="text" class="form-input form-control uniform-input" placeholder="Address" value="<%= profile.address %>" name="address">
+                                </div>
+                                <div class="text-center mb-3">
+                                    <label for="form__img-upload">
+                                        <img src="<%= profile.img %>" class="profile-img rounded-circle border" alt="Profile Image">
+                                    </label>
+                                    <input id="form__img-upload" name="img" type="file" accept=".png, .jpg, .jpeg" class="form-control mt-2">
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary w-100">Save</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
-                    <div class="submit-btn-profile">
-                        <button href="javascript:void(0);" class="sec-btn" type="submit">Edit Profile</button>
+                    <div class="col-lg-6">
+                        <div class="card p-4 shadow">
+                            <h2 class="h2-title mb-4 text-center">Change Password</h2>
+                            <form action="/profile/pass" method="post">
+                                <div class="mb-3">
+                                    <input type="password" class="form-input form-control uniform-input" placeholder="Old Password" name="oldpass">
+                                </div>
+                                <div class="mb-3">
+                                    <input type="password" class="form-input form-control uniform-input" placeholder="New Password" name="newpass">
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary w-100">Change</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                  
-                </form>
+                </div>
             </div>
+            
+            
+            
         </div>
     </section>
     <!-- checkout-end -->
