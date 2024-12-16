@@ -7,10 +7,11 @@ module.exports = {
     const data = await prisma.category.findMany({where: {id:id},include:{product:{include:{product:true}}}});
     return data;
    },
-   postEdit: async(id,name,product) => {
+   postEdit: async(id,name,content,product) => {
       const data = await prisma.category.update({where: {id:id},
       data: {
          name: name,
+         content: content
       }});
       
       ////Kiểm tra có sự thay đổi của product được chọn cho category

@@ -13,8 +13,9 @@ module.exports = {
     postEdit: async(req,res) => {
       const id = parseInt(req.params.ID);
       const name = req.body.name;
+      const content = req.body.content;
       const product= req.body.product
-      const update = await edit.postEdit(id,name,product);
+      const update = await edit.postEdit(id,name,content,product);
       res.redirect(`/admin/category`)
     },
 }

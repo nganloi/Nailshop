@@ -4653,3 +4653,31 @@ table.product-table {
   cursor: pointer; /* Hiển thị con trỏ chuột như thể clickable */
   white-space: nowrap; /* Ngăn từ trong mỗi mục xuống dòng */
 }
+#Search {
+  border: 1px solid #333; /* Tạo viền với màu #333 */
+  border-radius: 10px;
+}
+#Search input{
+  font-size: 16px;
+ border: none;
+ outline: none;
+}
+
+#search-icon {
+  font-size: 16px; 
+  color: #333;
+  border: none; 
+  background: none; 
+ 
+}
+
+.btnn {
+  border: none;
+  background: none; 
+  padding: 0; 
+  cursor: pointer; 
+  margin-left: 10px;
+}
+
+ 
+

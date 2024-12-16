@@ -2,14 +2,17 @@ const {PrismaClient, Prisma} = require('@prisma/client');
 const prisma = new PrismaClient();
 
 module.exports = {
-    postCreate: async(name,product) => {
+    postCreate: async(name,content,product) => {
         const creat = await prisma.category.create({
         data: {
-           name: name
+           name: name,
+           content: content
         }});
         ////Lấy thông tin category vừa tạo
         const data = await prisma.category.findMany({
-         where:{name:name}
+         where:{name:name,
+            content:content
+         }
         });
         ////Nếu có product được chọn thì thay đổi
         if(product != undefined){

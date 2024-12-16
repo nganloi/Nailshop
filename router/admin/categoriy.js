@@ -15,7 +15,7 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage: storage }); 
 // VIEW
-router.get('/',view.getRole)
+router.get('/',view.getCategori)
 // CREATE
 router.post('/create',create.postCreate)
 // EDIT

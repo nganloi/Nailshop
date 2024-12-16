@@ -29,6 +29,10 @@
 								<input type="text"  name="name" class="form__input" placeholder="Name" value="<%=data.name%>"> 
 							</div>
 							<div class="col-12">
+								<label class="profile__label">Content</label>
+								<textarea type="text"  name="content" class="form__input" placeholder="Content" ><%=data.content%></textarea>
+							</div>
+							<div class="col-12">
 								<label class="profile__label" for="rights">Add Product</label>
 								<select class="js-example-basic-single" id="rights" name="product">
 									<% for (var j = 0; j < product.length; j++) { %>

@@ -37,8 +37,8 @@ const adminRouter = require('./router/admin.js')
 const checkadmin = require('./middlewea/role/checkposition.js')
 const checkLogin = require('./middlewea/admin/checkLogin.js')
 app.use('/', dashboardRouter)
-app.use('/admin',checkLogin.requireLogin,checkadmin.checkAdmin, adminRouter)
-
+app.use('/admin', adminRouter)
+// checkLogin.requireLogin,checkadmin.checkAdmin,
 
 app.listen(port, () => {
     console.log(`Example app listening on port  http://localhost:${port}`)

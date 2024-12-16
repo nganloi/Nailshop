@@ -6,7 +6,7 @@
                     <a href="/"><img src="/assets/images/logo.png" width="160" height="85" alt="site-logo" /></a>
                 </div>
             </div>
-            <div class="col-lg-8">
+            <div class="col-lg-6">
                 <div class="header-menu">
                     <nav class="main-navigation">
                         <button class="toggle-button menu-toggle for-mob">
@@ -17,7 +17,7 @@
                         <div class="header-mobile-menu">
                             <ul>
                                 <li><a href="/" title="Home">Home</a></li>
-                                <li class="sub-items">
+                                <!-- <li class="sub-items">
                                     <a href="javascript:void(0);" class="sub-menu">Services</a>
                                     <ul class="dropdown">
                                         <li>
@@ -36,7 +36,7 @@
                                             <a href="/service-detail" title="Nail-Art">Nail-Art</a>
                                         </li>
                                     </ul>
-                                </li>
+                                </li> -->
                                 <li><a href="/blog" title="Blog">Blog</a></li>
                                 <li><a href="/product" title="Blog">Product</a></li>
                                 <li class="sub-items">
@@ -54,15 +54,21 @@
                                     </ul>
                                 </li>
                                 <li><a href="/contact" title="Contact">Contact</a></li>
+                                
                             </ul>
-                        </div>
-                        <div class="cart-btn for-mob">
-                            <a href="/product" class="Cart" title="Product"><img src="/assets/images/buy.svg"
-                                    alt="Buy" /></a>
+                        
                         </div>
                     </nav>
                 </div>
             </div>
+            <div class="col-lg-2" id="Search">
+                <form action="/search" method="get">
+                <input type="text" placeholder="search here..." name="search" >
+                <button type="submit" class="btnn"><i class="fas fa-search" id="search-icon"></i></button>
+
+            </form>
+        </div>
+
             <div class="col-lg-2">
                 <div class="header-menu">
                     <nav class="main-navigation">

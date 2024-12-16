@@ -6,6 +6,7 @@ const  singleProduct = require('../../model/product/edit.js')
 const  userReview = require('../../model/user/create.js')
 const  createProduct = require('../../model/product/create.js')
 const deleteProduct = require('../../model/product/delete.js')
+const category = require('../../model/category/view.js')
 const now = new Date();
 const day = now.getDate();
 const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -16,12 +17,27 @@ module.exports = {
     getProducts: async(req,res) => {
         const userid = parseInt(req.session.userId)
         const product = await dataProduct.product();
+        const cate = await category.category()
         let user
         if(userid >= 0) {
             user = await userr.getUser(userid)
         }
-        res.render('./dashboard/product', {user:user,product:product})
+        res.render('./dashboard/product', {user:user,product:product, cate:cate,selected:product })
     },
+    getSearch: async(req,res) => {
+      const search = req.query.search;
+      const userid = parseInt(req.session.userId)
+      const products = await dataProduct.product();
+      const cate = await category.category()
+      let user
+      if(userid >= 0) {
+          user = await userr.getUser(userid)
+      }
+      var product = products.filter((name) => {
+        return name.name.toLowerCase().indexOf(search.toLowerCase()) !== -1
+    })
+      res.render('./dashboard/product', {user:user,product:product, cate:cate, selected:products})
+  },
     getSignProducts: async (req, res) => {
         const userid = parseInt(req.session.userId);
         let user;
@@ -69,5 +85,31 @@ module.exports = {
       const id = parseInt(req.params.ID) ////ID của bảng user_product
       const del = await deleteProduct.deleteCart(id)
       res.redirect(`/product/${idpage}`)
+    },
+
+    getSearchCate: async(req,res) => {
+      const categ = parseInt(req.query.category);
+      const userid = parseInt(req.session.userId)
+      const cate = await category.category()
+      let user
+      if(userid >= 0) {
+          user = await userr.getUser(userid)
+      }
+      const product = await dataProduct.getSearchCate(categ)
+     
+      res.render('./dashboard/product', {user:user,product:product, cate:cate, selected: categ})
+  },
+  getSearchPrice: async(req,res) => {
+    const price1 = parseInt(req.query.price1) || 0;
+    const price2= parseInt(req.query.price2) || Infinity;
+    const userid = parseInt(req.session.userId)
+    const cate = await category.category()
+    let user
+    if(userid >= 0) {
+        user = await userr.getUser(userid)
     }
+    const product = await dataProduct.getSearchPrice(price1,price2)
+   
+    res.render('./dashboard/product', {user:user,product:product, cate:cate, selected:product})
+},
 }

@@ -17,7 +17,7 @@
                             <h1 class="h1-title">Products</h1>
                             <div class="banner-links">
                                 <ul>
-                                    <li><a href="index.html" title="Home">Home</a> /</li>
+                                    <li><a href="/" title="Home">Home</a> /</li>
                                     <li>Product</li>
                                 </ul>
                             </div>
@@ -37,46 +37,17 @@
                         <div class="category-box">
                             <h3 class="sidebar-title">category</h3>
                             <div class="boxaccordion">
+                                <% for(var i =0 ; i < cate.length; i++){%>
                                 <div class="wrapper">
-                                    <button class="toggle">facial cream<i class="fas fa-plus icon"></i></button>
+                                    <button class="toggle"><%= cate[i].name%><i class="fas fa-plus icon"></i></button>
                                     <div class="content">
-                                        <p>FAQs accordion is a great way to help you build authority and trust, and at
-                                            the same time bestow a bit of personality on the website. It also helps you
-                                            answer frequently asked questions, produce additional content quickly, and
-                                            reduce bounce rates.</p>
+                                        <p><%= cate[i].content%></p>
                                     </div>
                                 </div>
-                                <div class="wrapper">
-                                    <button class="toggle">Body cream<i class="fas fa-plus icon"></i></button>
-                                    <div class="content">
-                                        <p>Benefit of FAQs accordion for blogger is that it helps your blog visitors to
-                                            find what they are looking for in less time.</p>
-                                    </div>
-                                </div>
-                                <div class="wrapper">
-                                    <button class="toggle">Make Up<i class="fas fa-plus icon"></i></button>
-                                    <div class="content">
-                                        <ul>
-                                            <li>creamy conceller</li>
-                                            <li>liquid foundation</li>
-                                            <li>Compact powder</li>
-                                            <li>makeup primer</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="wrapper">
-                                    <button class="toggle">Hair products<i class="fas fa-plus icon"></i></button>
-                                    <div class="content">
-                                        <ul>
-                                            <li>Hair Shampoo</li>
-                                            <li>Hair Mask</li>
-                                            <li>Conditioner</li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                <%}%>
                             </div>
                         </div>
-                        <div class="availability-box">
+                        <!-- <div class="availability-box">
                             <h3 class="sidebar-title">availability</h3>
                             <div class="new">
                                 <form>
@@ -94,19 +65,22 @@
                                 <a href="javascript:void(0);" class="seec-btn">clear</a>
                                 <a href="javascript:void(0);" class="seec-btn">apply</a>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="price-box">
                             <h3 class="sidebar-title">category</h3>
                             <p>highest price is $200</p>
+                            <form action="/search/price" method="get">
                             <div class="price-btn available-btns">
-                                <span>$</span><input type="text" class="seec-btn" placeholder="From">
-                                <input type="text" class="seec-btn" placeholder="To">
+                                <span>$</span><input type="text" class="seec-btn" placeholder="From" name="price1">
+                                <input type="text" class="seec-btn" placeholder="To" name="price2">
                             </div>
                             <div class="available-btns">
-                                <a href="javascript:void(0);" class="seec-btn">clear</a>
-                                <a href="javascript:void(0);" class="seec-btn">apply</a>
+                                <a href="/product" class="seec-btn">clear</a>
+                                <button href="javascript:void(0);" class="seec-btn" type="submit" style="border: none;">apply</button>
                             </div>
+                          </form>
                         </div>
+                       
                     </div>
                 </div>
                 <div class="col-lg-9">
@@ -121,17 +95,21 @@
                                     <a data-bs-toggle="tab" href="#list" class="" aria-selected="false" tabindex="-1"
                                         role="tab"><i class="fa fa-th-list"></i></a>
                                 </li>
+                                
                             </ul>
                         </div>
                         <div class="toolbar-short-area d-md-flex align-items-center">
-                            <div class="toolbar-shorter ">
+                            <div class="toolbar-shorter">
                                 <label>Sort By:</label>
-                                <select class="wide">
-                                    <option data-display="Featured">Featured</option>
-                                    <option value="Facial products">Facial products</option>
-                                    <option value="Hair Products">Hair Products</option>
-                                    <option value="Makeup Products">Makeup Products</option>
-                                </select>
+                                <form method="GET" action="/search/cate">
+                                    <select class="wide" name="category" onchange="this.form.submit()">
+                                         <% for (var i = 0; i < cate.length; i++) { %>
+                                            <option value="<%= cate[i].id %>" <%= cate[i].id == selected ? 'selected' : '' %>>
+                                                <%= cate[i].name %>
+                                            </option>
+                                        <% } %>
+                                    </select>
+                                </form>
                             </div>
                         </div>
                     </div>
