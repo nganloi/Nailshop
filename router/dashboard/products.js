@@ -9,8 +9,5 @@ const checkCart = require('../../middlewea/check/cart.js')
  router.post('/review/:ID',checklogin.requireLogin,productsController.userReview)
  router.post('/cart/:ID',checklogin.requireLogin,checkCart.cart,productsController.cart)
  router.get('/cart/delete/:ID',checklogin.requireLogin,productsController.deleteCart)
-
-
-
- 
+ router.get('/wishlist/:ID',checklogin.requireLogin,productsController.creatWish)
  module.exports = router;

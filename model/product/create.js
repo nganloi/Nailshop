@@ -1,4 +1,5 @@
 const {PrismaClient, Prisma} = require('@prisma/client');
+const { createWislist } = require('../../controller/dashboard/products');
 const prisma = new PrismaClient();
 
 module.exports = {
@@ -61,6 +62,30 @@ module.exports = {
                quantity:parseInt(quantity)
             }
          }) 
+      }
+   },
+   /////THEM SAN PHAM YEU THICH
+   creatWish:async(userid,productid)=>{
+      const data = await prisma.productlike.findMany({
+         where:{
+            userid:userid,
+            productid:productid,
+         }
+      });
+      if(data.length >0){
+      const del = await prisma.productlike.deleteMany({
+         where:{
+            userid:userid,
+            productid:productid,
+         }
+      })
+      }else{
+         const crat = await prisma.productlike.create({
+            data:{
+               userid:userid,
+               productid:productid,
+            }
+         })
       }
    }
 }

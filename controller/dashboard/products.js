@@ -86,30 +86,11 @@ module.exports = {
       const del = await deleteProduct.deleteCart(id)
       res.redirect(`/product/${idpage}`)
     },
-
-    getSearchCate: async(req,res) => {
-      const categ = parseInt(req.query.category);
-      const userid = parseInt(req.session.userId)
-      const cate = await category.category()
-      let user
-      if(userid >= 0) {
-          user = await userr.getUser(userid)
-      }
-      const product = await dataProduct.getSearchCate(categ)
-     
-      res.render('./dashboard/product', {user:user,product:product, cate:cate, selected: categ})
-  },
-  getSearchPrice: async(req,res) => {
-    const price1 = parseInt(req.query.price1) || 0;
-    const price2= parseInt(req.query.price2) || Infinity;
-    const userid = parseInt(req.session.userId)
-    const cate = await category.category()
-    let user
-    if(userid >= 0) {
-        user = await userr.getUser(userid)
+    /////SAN PHAM YEU THICH
+    creatWish:async(req,res)=>{
+      const userid = parseInt(req.session.userId);
+      const productid = parseInt(req.params.ID)
+      const cret = await createProduct.creatWish(userid,productid)
+      res.redirect(`/product/${productid}`)
     }
-    const product = await dataProduct.getSearchPrice(price1,price2)
-   
-    res.render('./dashboard/product', {user:user,product:product, cate:cate, selected:product})
-},
 }

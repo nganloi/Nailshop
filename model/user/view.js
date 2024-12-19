@@ -20,6 +20,11 @@ module.exports = {
                   product:true,
                   classfy:true,
                }
+            },
+            productlike:{
+               include:{
+                  product:true,
+               }
             }
          }
       })
