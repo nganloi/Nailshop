@@ -35,34 +35,16 @@
                 <div class="col-lg-7">
                     <h2 class="h2-title">billing information</h2>
                     <div class="checkout-form">
-                        <form action="javascript:void(0);">
+                        <form action="/checkout/oder/<%= dataoder.id %>">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <input type="text" class="form-input" placeholder="First Name">
+                                    <div type="text" name="phone" class="form-input" placeholder="Phone Number"><%=user.phone%></div>
                                 </div>
                                 <div class="col-lg-6">
-                                    <input type="text" class="form-input" placeholder="Last Name">
-                                </div>
-                                <div class="col-lg-6">
-                                    <input type="text" class="form-input" placeholder="Phone Number">
-                                </div>
-                                <div class="col-lg-6">
-                                    <input type="email" class="form-input" placeholder="E-mail Address">
-                                </div>
-                                <div class="col-lg-6">
-                                    <input type="text" class="form-input" placeholder="Country">
-                                </div>
-                                <div class="col-lg-6">
-                                    <input type="text" class="form-input" placeholder="State/City">
-                                </div>
-                                <div class="col-lg-6">
-                                    <input type="text" class="form-input" placeholder="Town">
-                                </div>
-                                <div class="col-lg-6">
-                                    <input type="text" class="form-input" placeholder="Pin Code">
+                                    <div type="text" name="phone" class="form-input" placeholder="Phone Number"><%=user.email%></div>
                                 </div>
                                 <div class="col-12">
-                                    <textarea class="form-input" cols="30" rows="20" placeholder="Address"></textarea>
+                                    <textarea name="address" class="form-input" cols="30" rows="20" placeholder="Address"><%=dataoder.address%></textarea>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
@@ -72,7 +54,7 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="submit-btn">
-                                        <a href="javascript:void(0);" class="sec-btn" title="Deliver Here">Deliver
+                                        <button type="submit" class="sec-btn" title="Deliver Here">Deliver
                                             Here</a>
                                     </div>
                                 </div>
@@ -85,24 +67,23 @@
                         <h2 class="h2-title">your order</h2>
                         <div class="order-list">
                             <ul>
+                                <% var sum=0 %>
+                                <% for( var i=0; i< dataoder.product.length ; i++){%>
+                                    <% sum = sum + parseInt(dataoder.product[i].product.price)*parseInt(dataoder.product[i].quantity)%>
                                 <li class="list-name">
-                                    <p>L’Oreal Hair Spa Nourishing Creambath</p> <span>$65</span>
+                                    <p><%= dataoder.product[i].product.name %>/ <%= dataoder.product[i].classfy.name %> / SL: <%= dataoder.product[i].quantity %>/price:<%= dataoder.product[i].product.price %> </p> <span>$<%= parseInt(dataoder.product[i].product.price)*parseInt(dataoder.product[i].quantity) %></span>
+                                </li>
+                                <%}%>
+                                <li class="list-name">
+                                    <p><b>cart subtotal</b></p> <span>$<%= sum%></span>
                                 </li>
                                 <li class="list-name">
-                                    <p>Swedish Spa Beauty Wonder Oil By Oriflame</p> <span>$55</span>
+                                    <p><b>coupon</b></p><span>$55</span>
                                 </li>
                                 <li class="list-name">
-                                    <p>Bio Argan Oil By Lakme</p> <span>$25</span>
+                                    <p><b>cart total</b></p><span>$<%= sum%></span>
                                 </li>
-                                <li class="list-name">
-                                    <p><b>cart subtotal</b></p> <span>$145</span>
-                                </li>
-                                <li class="list-name">
-                                    <p><b>shipping</b></p><span>$55</span>
-                                </li>
-                                <li class="list-name">
-                                    <p><b>cart total</b></p><span>$200</span>
-                                </li>
+                                
                             </ul>
                         </div>
                     </div>

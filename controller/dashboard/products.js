@@ -109,7 +109,7 @@ getSearchPrice: async(req,res) => {
       const idpage = previousURL.split("/").pop();
       const id = parseInt(req.params.ID) ////ID của bảng user_product
       const del = await deleteProduct.deleteCart(id)
-      res.redirect(`/product/${idpage}`)
+      res.redirect(`${previousURL}`)
     },
 
     /////SAN PHAM YEU THICH

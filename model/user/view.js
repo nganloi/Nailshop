@@ -46,6 +46,30 @@ module.exports = {
       })
       return data;
    },
-  
+  getCart:async(iduser)=>{
+   const data = await prisma.user_product.findMany({
+      where:{userid:iduser},
+      include:{
+         product:true,
+         user:true,
+         classfy:true,
+      }
+   })
+   return data
+  },
+  getOderConfirm:async(userid)=>{
+   const data =await prisma.order.findMany({
+      where:{userid:userid,active:1},
+      include:{
+         product:{
+            include:{
+               product:true,
+               classfy:true,
+            }
+         }
+      }
+   })
+   return data
+  }
   
 }

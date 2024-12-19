@@ -1,0 +1,164 @@
+<%- include('../../layout/admin/head'); -%>
+<body>
+
+<!-- header -->
+<%- include('../../layout/admin/header'); -%>
+<!-- end header -->
+
+<!-- sidebar -->
+<%- include('../../layout/admin/slidebar'); -%>
+<!-- end sidebar -->
+
+<!-- main content -->
+<main class="main">
+	<div class="container-fluid">
+		<div class="row">
+			<!-- main title -->
+			<div class="col-12">
+				<div class="main__title">
+					<h2>Order Not Confirmed Yet</h2>
+
+					<span class="main__title-stat"><%= data.length%> Total</span>
+
+					<div class="main__title-wrap">
+						<!-- filter sort -->
+						<div class="filter" id="filter__sort">
+							<span class="filter__item-label">Sort by:</span>
+
+							<div class="filter__item-btn dropdown-toggle" role="navigation" id="filter-sort" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<input type="button" value="Date created">
+								<span></span>
+							</div>
+
+							<ul class="filter__item-menu dropdown-menu scrollbar-dropdown" aria-labelledby="filter-sort">
+								<li>Date created</li>
+								<li>Rating</li>
+							</ul>
+						</div>
+						<!-- end filter sort -->
+
+						<!-- search -->
+						<form action="#" class="main__title-form">
+							<input type="text" placeholder="Key word..">
+							<button type="button">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.71,20.29,18,16.61A9,9,0,1,0,16.61,18l3.68,3.68a1,1,0,0,0,1.42,0A1,1,0,0,0,21.71,20.29ZM11,18a7,7,0,1,1,7-7A7,7,0,0,1,11,18Z"></path></svg>
+							</button>
+						</form>
+						<!-- end search -->
+					</div>
+				</div>
+			</div>
+			<!-- end main title -->
+
+			<!-- reviews -->
+			<div class="col-12">
+				<div class="main__table-wrap">
+					<table class="main__table">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>AUTHOR</th>
+								<th>PRODUCT</th>
+								<th>PRICE</th>
+								<th>QUANTITY</th>
+								<th>ADDRESS</th>
+								<th>TOTAL</th>
+								<th>ACTIONS</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<%for(var i =0 ; i< data.length ; i++){%>
+							<tr>
+								<td>
+									<div class="main__table-text"><%= data[i].id %></div>
+								</td>
+								<td>
+									<div class="main__table-text"><%= data[i].user.name %></div>
+								</td>
+								<td>
+									<% for(var j=0; j < data[i].product.length; j++){%>
+                                        <div class="main__table-text"><%= data[i].product[j].product.name%> / <%= data[i].product[j].classfy.name%></div>
+                                    <%}%>
+									
+								</td>
+								<td>
+									<% for(var j=0; j < data[i].product.length; j++){%>
+                                        <div class="main__table-text"><%= data[i].product[j].product.price %></div>
+                                    <%}%>
+								</td>
+								<td>
+									<% for(var j=0; j < data[i].product.length; j++){%>
+                                        <div class="main__table-text"><%= data[i].product[j].quantity %></div>
+                                    <%}%>
+								</td>
+								<td>
+									<div class="main__table-text"><%= data[i].address %></div>
+								</td>
+								<td>
+									<% var sum=0 %>
+									<% for(var j=0; j < data[i].product.length; j++){%>
+										<% sum =  sum + parseInt(data[i].product[j].product.price)*parseInt(data[i].product[j].quantity)%>
+									<%}%>
+									<div class="main__table-text"><%= sum %></div>
+								</td>
+								<td>
+									<div class="main__table-btns">
+										<a href="/admin/oder/<%= data[i].id %>" class="main__table-btn main__table-btn--view">
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5,18H9.24a1,1,0,0,0,.71-.29l6.92-6.93h0L19.71,8a1,1,0,0,0,0-1.42L15.47,2.29a1,1,0,0,0-1.42,0L11.23,5.12h0L4.29,12.05a1,1,0,0,0-.29.71V17A1,1,0,0,0,5,18ZM14.76,4.41l2.83,2.83L16.17,8.66,13.34,5.83ZM6,13.17l5.93-5.93,2.83,2.83L8.83,16H6ZM21,20H3a1,1,0,0,0,0,2H21a1,1,0,0,0,0-2Z"/></svg>
+										</a>
+									</div>
+								</td>
+							</tr>
+							<%}%>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!-- end reviews -->
+
+			<!-- paginator -->
+			<div class="col-12">
+				<div class="paginator-wrap">
+					<span>10 from 9 071</span>
+
+					<ul class="paginator">
+						<li class="paginator__item paginator__item--prev">
+							<a href="#"><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24"><path d="M8.5,12.8l5.7,5.6c0.4,0.4,1,0.4,1.4,0c0,0,0,0,0,0c0.4-0.4,0.4-1,0-1.4l-4.9-5l4.9-5c0.4-0.4,0.4-1,0-1.4c-0.2-0.2-0.4-0.3-0.7-0.3c-0.3,0-0.5,0.1-0.7,0.3l-5.7,5.6C8.1,11.7,8.1,12.3,8.5,12.8C8.5,12.7,8.5,12.7,8.5,12.8z"></path></svg></a>
+						</li>
+						<li class="paginator__item"><a href="#">1</a></li>
+						<li class="paginator__item paginator__item--active"><a href="#">2</a></li>
+						<li class="paginator__item"><a href="#">3</a></li>
+						<li class="paginator__item"><a href="#">4</a></li>
+						<li class="paginator__item paginator__item--next">
+							<a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.54,11.29,9.88,5.64a1,1,0,0,0-1.42,0,1,1,0,0,0,0,1.41l4.95,5L8.46,17a1,1,0,0,0,0,1.41,1,1,0,0,0,.71.3,1,1,0,0,0,.71-.3l5.66-5.65A1,1,0,0,0,15.54,11.29Z"></path></svg></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- end paginator -->
+		</div>
+	</div>
+</main>
+<!-- end main content -->
+
+
+<!-- modal delete -->
+<div id="modal-delete" class="zoom-anim-dialog mfp-hide modal">
+	<h6 class="modal__title">Review delete</h6>
+
+	<p class="modal__text">Are you sure to permanently delete this review?</p>
+
+	<div class="modal__btns">
+		<button class="modal__btn modal__btn--apply" type="button">Delete</button>
+		<button class="modal__btn modal__btn--dismiss" type="button">Dismiss</button>
+	</div>
+</div>
+<!-- end modal delete -->
+
+<!-- JS -->
+<%- include('../../layout/admin/js'); -%>
+</body>
+
+<!-- Mirrored from dmitryvolkov.me/demo/flixgo2.0/admin/reviews.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Mar 2022 10:07:55 GMT -->
+</html>
