@@ -29,6 +29,7 @@
 							<tr>
 								<th>ID</th>
 								<th>NAME</th>
+								<th>CONTENT</th>
 								<th>QUANTITY PRODUCT</th>
 								<th>ACTIONS</th>
 							</tr>
@@ -41,6 +42,9 @@
 								</td>
 								<td>
 									<div class="main__table-text"><%=data[i].name %></div>
+								</td>
+								<td>
+									<div class="main__table-text"><%=data[i].content.slice(0,20) %>...</div>
 								</td>
 								<td>
 									<div class="main__table-text main__table-text--rate"><%=data[i].product.length %></div>
@@ -97,6 +101,10 @@
 			<div class="col-12">
 				<label class="profile__label">Name</label>
 				<input type="text"  name="name" class="form__input" placeholder="Name">
+			</div>
+			<div class="col-12">
+				<label class="profile__label">Content</label>
+				<input type="text"  name="content" class="form__input" placeholder="Content">
 			</div>
 			<div class="col-12">
 				<label class="profile__label" for="rights">Add product</label>

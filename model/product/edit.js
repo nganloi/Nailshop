@@ -3,6 +3,7 @@ const prisma = new PrismaClient();
 
 module.exports = {
       getEditInfproduct: async (id) => {
+         console.log(id)
          const data = await prisma.product.findMany({
            where: {
              id: id, // ID sản phẩm
