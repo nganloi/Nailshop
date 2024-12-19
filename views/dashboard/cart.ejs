@@ -33,7 +33,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="title">
-                        <h2 class="h2-title">your wishlist</h2>
+                        <h2 class="h2-title">your cart</h2>
                     </div>
                 </div>
             </div>
@@ -43,26 +43,51 @@
                         <table class="table check-tbl">
                             <thead>
                                 <tr>
+                                    <th>Options</th>
                                     <th class="image">Image</th>
                                     <th>Product name</th>
-                                    <th class="stock">Stock Status</th>
                                     <th class="p-price">Price</th>
+                                    <th class="stock">Quantity</th>
+                                    <th class="p-price">Total</th>
                                     <th class="remove">Remove</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="alert">
+                                <% for(var i=0 ; i < user.product.length;i++){%>
+                                <tr class="alert" id="<%= user.product[i].id %>">
+                                    <td><input type="checkbox"  id="<%= user.product[i].id %>"" onchange="updateCheckedRows()"></td>
                                     <td class="product-item-img image">
-                                        <img src="assets/images/wish3.jpg" alt="wish3" />
+                                        <img src="<%= user.product[i].product.img[0] %>" alt="wish3" />
                                     </td>
-                                    <td class="product-item-name">Prduct Item 3</td>
-                                    <td class="product-item-quantity stock">In Stock</td>
-                                    <td class="product-item-price p-price">$80.00</td>
-                                    <td class="product-item-close remove">
-                                        <a href="javascript:void(0);" data-bs-dismiss="alert" aria-label="close"
+                                    <td class="content">
+                                        <p><%= user.product[i].product.name%></p>
+                                        <p><%= user.product[i].classfy.name %></p>
+                                    </td>
+                                    <td class="price">$<span><%= user.product[i].product.price%></span></td>
+                                    <td class="quantity-item-cart">
+                                        <div class="product-btns">
+                                            <div class="product-quantity">
+                                                <div class="sp-quantity">
+                                                    <div class="container" id="quantity-product" style=" font-size:14px; ">
+                                                        <div class="sp-minus fff" data-type="minus" id="<%= user.product[i].id %>" onclick="changes(this)"> <a type="button" class="ddd">-</a>
+                                                        </div>
+                                                        <div class="sp-input">
+                                                            <input type="text" class="quantity-input" id="<%= user.product[i].id %>" value="<%= user.product[i].quantity %>" name="quantity">
+                                                        </div>
+                                                        <div class="sp-plus fff" data-type="plus" id="<%= user.product[i].id %>"onclick="changes(this)"> <a type="button" class="ddd">+</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>        
+                                    </td>
+                                    <td class="total-amount">$ <span><%= (user.product[i].quantity)*parseInt(user.product[i].product.price) %></span></td>
+                                    <td class="product-item-close remove" onclick="updateCheckedRows()">
+                                        <a href="" data-bs-dismiss="alert" aria-label="close"
                                             class="ti-close"><i class="fas fa-times"></i></a>
                                     </td>
                                 </tr>
+                                <%}%>
                             </tbody>
                         </table>
                     </div>
@@ -70,7 +95,7 @@
             </div>
             <div class="total-pro">
                 <h3 class="h3-title">total price</h3>
-                <h4 class="h4-title">$230.00</h4>
+                <h4 class="h4-title">$0.00</h4>
             </div>
             <div class="pro-btns">
                 <a href="javascript:void(0);" class="sec-btn" title="Update Cart">Update Cart</a>
@@ -314,7 +339,6 @@
     <!-- footer end -->
     <!-- Scroll To Top Start -->
     <%- include('../layout/dashboard/js'); -%>
-
 </body>
 
 </html>
