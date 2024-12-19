@@ -65,6 +65,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const fetchProductData = async (id) => {
       try {
         if(id >=0){
+          console.log('sodai',id)
           var response = await fetch(`/product/${id}?format=json`);
         }
         if (!response.ok) {

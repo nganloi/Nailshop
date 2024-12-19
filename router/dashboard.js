@@ -15,11 +15,12 @@ const register = require('./dashboard/register.js')
 const logout = require('./dashboard/logout.js')
 const checklogin = require('../middlewea/admin/checkLogin.js')
 const profile = require('./dashboard/profile.js')
+const search = require('./dashboard/search.js')
 
 router.use('/', shop)
 //PRODUCT
 router.use('/product', products)
-
+router.use('/search',search)
 //SERVICE
 router.use('/service', service)
 
