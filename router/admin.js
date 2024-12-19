@@ -18,6 +18,7 @@ const tag = require('./admin/tag.js')
 const category = require('./admin/categoriy.js')
 const typer = require('./admin/typer.js')
 const marketingproduct=require('./admin/marketingProduct.js')
+const oder = require('./admin/oder.js')
 // ADMIN
 router.use('/',admin)
 
@@ -72,4 +73,6 @@ router.use('/typer', typer)
 //MARKETING PRODUCT
 router.use('/marketing-product',marketingproduct)
 
+//ODER
+router.use('/oder',oder)
 module.exports = router;

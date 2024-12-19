@@ -20,10 +20,10 @@ module.exports = {
          const mail = req.body.mail;
          const phone = req.body.phone;
          const add = req.body.address;      
-         var anh = req.files;
+         var anh = req.file;
          const data = await userr.getProfile(userid)
-         const img= await checkImg.checkProfile(anh,data)
-        const viewPro =  await  edit.postProfile(userid,name,mail,phone,add,img.img)
+         const img= await checkImg.checkImg(anh,data.img)
+        const viewPro =  await  edit.postProfile(userid,name,mail,phone,add,img)
         return res.redirect(`/profile`)
       },
       postPass: async(req,res) => {

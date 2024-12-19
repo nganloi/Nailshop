@@ -7,6 +7,7 @@
 
     <!-- header sec end -->
     <!-- banner-sec start -->
+     <% if(user.product.length != 0){%>
     <section class="banner inner-banner">
         <div class="inner-shape">
             <div class="container">
@@ -16,7 +17,7 @@
                             <h1 class="h1-title">shopping cart</h1>
                             <div class="banner-links">
                                 <ul>
-                                    <li><a href="index.html" title="Home">Home</a> /</li>
+                                    <li><a href="/" title="Home">Home</a> /</li>
                                     <li>Shopping Cart</li>
                                 </ul>
                             </div>
@@ -29,6 +30,7 @@
     <!-- banner-sec end -->
     <!-- wishlist sec start -->
     <section class="wishlist">
+        <form action="/checkout" method="post">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -55,7 +57,7 @@
                             <tbody>
                                 <% for(var i=0 ; i < user.product.length;i++){%>
                                 <tr class="alert" id="<%= user.product[i].id %>">
-                                    <td><input type="checkbox"  id="<%= user.product[i].id %>"" onchange="updateCheckedRows()"></td>
+                                    <td><input name="products" type="checkbox" value="<%= user.product[i].id %>" id="<%= user.product[i].id %>" onchange="updateCheckedRows()"></td>
                                     <td class="product-item-img image">
                                         <img src="<%= user.product[i].product.img[0] %>" alt="wish3" />
                                     </td>
@@ -72,7 +74,7 @@
                                                         <div class="sp-minus fff" data-type="minus" id="<%= user.product[i].id %>" onclick="changes(this)"> <a type="button" class="ddd">-</a>
                                                         </div>
                                                         <div class="sp-input">
-                                                            <input type="text" class="quantity-input" id="<%= user.product[i].id %>" value="<%= user.product[i].quantity %>" name="quantity">
+                                                            <input type="text" class="quantity-input" id="<%= user.product[i].id %>" value="<%= user.product[i].quantity %>" name="quantity<%= user.product[i].id %>">
                                                         </div>
                                                         <div class="sp-plus fff" data-type="plus" id="<%= user.product[i].id %>"onclick="changes(this)"> <a type="button" class="ddd">+</a>
                                                         </div>
@@ -83,7 +85,7 @@
                                     </td>
                                     <td class="total-amount">$ <span><%= (user.product[i].quantity)*parseInt(user.product[i].product.price) %></span></td>
                                     <td class="product-item-close remove" onclick="updateCheckedRows()">
-                                        <a href="" data-bs-dismiss="alert" aria-label="close"
+                                        <a href="/product/cart/delete/<%=user.product[i].id%>" data-bs-dismiss="alert"
                                             class="ti-close"><i class="fas fa-times"></i></a>
                                     </td>
                                 </tr>
@@ -98,11 +100,29 @@
                 <h4 class="h4-title">$0.00</h4>
             </div>
             <div class="pro-btns">
-                <a href="javascript:void(0);" class="sec-btn" title="Update Cart">Update Cart</a>
-                <a href="product.html" class="sec-btn" title="Continue Shopping">Continue Shopping</a>
+                <button type="submit" class="sec-btn" title="Continue Shopping">Checkout</button>
+                <a href="/product" class="sec-btn" title="Continue Shopping">Continue Shopping</a>
             </div>
         </div>
+    </form>
     </section>
+    <%}else{%>
+        <div class="main-404">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="box-404 wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.2s">
+                            <img src="assets/images/no-products.png" width="600" alt="Page Not FOund">
+                        </div>
+                    </div>
+                    <div class="pro-btns">
+                        <a href="/product" class="sec-btn" title="Continue Shopping">Continue Shopping</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <%}%>
     <!-- wishlist sec end -->
     <!-- related product start-->
     <section class="related-products">
@@ -116,33 +136,27 @@
                 <div class="col-lg-12">
                     <div class="related-swiper">
                         <div class="swiper-wrapper">
+                            <%for(var i=0; i< dataproduct.length;i++){%>
                             <div class="swiper-slide">
                                 <div class="single-product mb-30">
                                     <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="assets/images/product1.png" alt="product1" />
+                                        <a href="/product/<%=dataproduct[i].id%>">
+                                            <img src="<%=dataproduct[i].img[0]%>" alt="product1">
                                         </a>
+                                        
                                         <span class="descount-sticker">sold-out</span>
-                                        <span class="sticker">New</span>
-
+                                        <!-- <span class="sticker">New</span> -->
+                                              
                                         <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="javascript:void(0);">Add to Cart</a>
+                                            <a class="product-btn" href="/product/<%=dataproduct[i].id%>">Add to Cart</a>
                                             <ul class="d-flex">
-                                                <li>
-                                                    <a href="#quick-view-modal-container" data-bs-toggle="modal"
-                                                        title="Quick View"><i class="fa fa-eye"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);"><i class="fa fa-exchange"></i></a>
+                                                <li><a href="/product/wishlist/<%=dataproduct[i].id%>"><i class="fa fa-heart-o"></i></a>
                                                 </li>
                                             </ul>
                                         </div>
                                     </div>
                                     <div class="product-content">
-                                        <h3><a href="single-product.html">hair shampoo</a></h3>
+                                        <h3><a href="/product/<%=dataproduct[i].id%>"><%=dataproduct[i].name%></a></h3>
                                         <div class="ratting">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
@@ -150,160 +164,11 @@
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                         </div>
-                                        <h4 class="price"><span class="new">$50.00</span></h4>
+                                        <h4 class="price"><span class="new">$<%=dataproduct[i].price%>.00</span></h4>
                                     </div>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
-                                <div class="single-product mb-30">
-                                    <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="assets/images/product2.png" alt="product2" />
-                                        </a>
-                                        <span class="descount-sticker">10% off</span>
-
-                                        <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="javascript:void(0);">Add to Cart</a>
-                                            <ul class="d-flex">
-                                                <li>
-                                                    <a href="#quick-view-modal-container" data-bs-toggle="modal"
-                                                        title="Quick View"><i class="fa fa-eye"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);"><i class="fa fa-exchange"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3><a href="single-product.html">hair shampoo</a></h3>
-                                        <div class="ratting">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
-                                        <h4 class="price"><span class="new">$50.00</span></h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="single-product mb-30">
-                                    <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="assets/images/product3.png" alt="product3" />
-                                        </a>
-                                        <span class="sticker">New</span>
-
-                                        <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="javascript:void(0);">Add to Cart</a>
-                                            <ul class="d-flex">
-                                                <li>
-                                                    <a href="#quick-view-modal-container" data-bs-toggle="modal"
-                                                        title="Quick View"><i class="fa fa-eye"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);"><i class="fa fa-exchange"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3><a href="single-product.html">hair shampoo</a></h3>
-                                        <div class="ratting">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
-                                        <h4 class="price"><span class="new">$50.00</span></h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="single-product mb-30">
-                                    <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="assets/images/product4.png" alt="product4" />
-                                        </a>
-                                        <span class="descount-sticker">20% off</span>
-                                        <span class="sticker">New</span>
-
-                                        <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="javascript:void(0);">Add to Cart</a>
-                                            <ul class="d-flex">
-                                                <li>
-                                                    <a href="#quick-view-modal-container" data-bs-toggle="modal"
-                                                        title="Quick View"><i class="fa fa-eye"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);"><i class="fa fa-exchange"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3><a href="single-product.html">hair shampoo</a></h3>
-                                        <div class="ratting">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
-                                        <h4 class="price"><span class="new">$50.00</span></h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="single-product mb-30">
-                                    <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="assets/images/product1.png" alt="product1" />
-                                        </a>
-                                        <span class="descount-sticker">sold-out</span>
-                                        <span class="sticker">New</span>
-
-                                        <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="javascript:void(0);">Add to Cart</a>
-                                            <ul class="d-flex">
-                                                <li>
-                                                    <a href="#quick-view-modal-container" data-bs-toggle="modal"
-                                                        title="Quick View"><i class="fa fa-eye"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);"><i class="fa fa-exchange"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3><a href="single-product.html">hair shampoo</a></h3>
-                                        <div class="ratting">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
-                                        <h4 class="price"><span class="new">$50.00</span></h4>
-                                    </div>
-                                </div>
-                            </div>
+                            <%}%>
                         </div>
                     </div>
                 </div>

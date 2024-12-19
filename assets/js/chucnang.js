@@ -4,13 +4,13 @@
 //Chức năng tăng giảm số lượng sản phẩm//
 
 // Lấy tất cả các container chứa chức năng tăng/giảm
-const containers = document.querySelectorAll('#quantity-product');
+const containers = document.querySelectorAll('#quantity-product1');
 
 containers.forEach(container => {
     // Lấy các phần tử con trong từng container
     const minusButton = container.querySelector('.sp-minus .ddd');
-    const plusButton = container.querySelector('.sp-plus .ddd');
-    const quantityInput = container.querySelector('.quantity-input');
+    const plusButton = container.querySelector('.sp-plus1 .ddd');
+    const quantityInput = container.querySelector('.quantity-input1');
 
     // Gán sự kiện click cho nút giảm
     minusButton.addEventListener('click', () => {

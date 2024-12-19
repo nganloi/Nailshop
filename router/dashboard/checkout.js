@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router();
-
 const checkoutController = require('../../controller/dashboard/checkout.js')
-
-router.get('/', checkoutController.getCheckout)
+const check = require('../../middlewea/check/order.js')
+router.post('/',check.order,checkoutController.getCheckout)
+router.get('/oder/:ID',checkoutController.oder)
 module.exports = router;
