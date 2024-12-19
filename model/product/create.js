@@ -1,5 +1,4 @@
 const {PrismaClient, Prisma} = require('@prisma/client');
-const { createWislist } = require('../../controller/dashboard/products');
 const prisma = new PrismaClient();
 
 module.exports = {

@@ -21,8 +21,9 @@ module.exports = {
          const phone = req.body.phone;
          const add = req.body.address;      
          var anh = req.file;
+         var anh = req.file;
          const data = await userr.getProfile(userid)
-         const img= await checkImg.checkProfile(anh,data)
+         const img= await checkImg.checkImg(anh,data.img)
         const viewPro =  await  edit.postProfile(userid,name,mail,phone,add,img)
         return res.redirect(`/profile`)
       },

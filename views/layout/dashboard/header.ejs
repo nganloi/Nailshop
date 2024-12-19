@@ -17,26 +17,7 @@
                         <div class="header-mobile-menu">
                             <ul>
                                 <li><a href="/" title="Home">Home</a></li>
-                                <!-- <li class="sub-items">
-                                    <a href="javascript:void(0);" class="sub-menu">Services</a>
-                                    <ul class="dropdown">
-                                        <li>
-                                            <a href="/service" title="Services list">Services list</a>
-                                        </li>
-                                        <li>
-                                            <a href="/service-detail" title="Make-Up">Make-Up</a>
-                                        </li>
-                                        <li>
-                                            <a href="/service-detail" title="Hairstyle">Hairstyle</a>
-                                        </li>
-                                        <li>
-                                            <a href="/service-detail" title="Massage">Massage</a>
-                                        </li>
-                                        <li>
-                                            <a href="/service-detail" title="Nail-Art">Nail-Art</a>
-                                        </li>
-                                    </ul>
-                                </li> -->
+                                <!-- <li><a href="/service" title="Blog">Service</a></li> -->
                                 <li><a href="/blog" title="Blog">Blog</a></li>
                                 <li><a href="/product" title="Blog">Product</a></li>
                                 <li class="sub-items">
@@ -46,7 +27,7 @@
                                             <a href="/wishlist" title="Wishlist">Wishlist</a>
                                         </li>
                                         <li>
-                                            <a href="/checkout" title="Check Out">Check Out</a>
+                                            <a href="/cart/oder-confirm" title="Check Out">Check Oder </a>
                                         </li>
                                         <li>
                                             <a href="/cart" title="Shopping Cart">Shopping Cart</a>
@@ -103,16 +84,16 @@
                                     <a  href="" title="Buy"><img src="/assets/images/buy.svg" alt="Buy" /></a>
                                     <ul id="cart1">
                                         <li id="item-header">
-                                            <span><% if(user !=undefined){user.product.length}%> Items</span>
-                                            <a>View Cart</a>
+                                            <span ><% if(user !=undefined){user.product.length}%> Items</span>
+                                            <a href="/cart">View Cart</a>
                                         </li>
                                         <% if(user !=undefined){%>
                                             <% for(var i=0; i < user.product.length ;i++){%>
                                         <li id="item-product" >
-                                         <a class="item-img" href="#"><img src="<%=user.product[i].product.img[0]%>" alt="Buy" /></a>
+                                         <a class="item-img" href="/product/<%=user.product[i].product.id%>"><img src="<%=user.product[i].product.img[0]%>" alt="Buy" /></a>
                                          <a class="remove-item" href="/product/cart/delete/<%=user.product[i].id%>"><i class="fas fa-times" aria-hidden="true"></i></a>
                                          <h5>
-                                            <a href="#"><%=user.product[i].product.name%></a>
+                                            <a href="/product/<%=user.product[i].product.id%>"><%=user.product[i].product.name%></a>
                                             <p class="classfy-item"><%=user.product[i].classfy.name%></p>
                                             <p class="quantity-item"><%=user.product[i].quantity%> X <%=user.product[i].product.price%>$</p>   
                                         </h5>

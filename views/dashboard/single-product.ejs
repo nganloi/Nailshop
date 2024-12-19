@@ -75,13 +75,13 @@
                             <div class="product-btns">
                                 <div class="product-quantity">
                                     <div class="sp-quantity">
-                                        <div class="container" id="quantity-product" style=" font-size:14px; ">
-                                            <div class="sp-minus fff"> <a type="button" class="ddd">-</a>
+                                        <div class="container" id="quantity-product1" style=" font-size:14px; ">
+                                            <div class="sp-minus fff"><a type="button" class="ddd">-</a>
                                             </div>
                                             <div class="sp-input">
-                                                <input type="text" class="quantity-input" value="1" name="quantity">
+                                                <input type="text" class="quantity-input1" value="1" name="quantity">
                                             </div>
-                                            <div class="sp-plus fff"> <a type="button" class="ddd">+</a>
+                                            <div class="sp-plus1 fff"> <a type="button" class="ddd">+</a>
                                             </div>
                                         </div>
                                     </div>
@@ -133,13 +133,9 @@
                                             <!-- <span class="sticker">New</span> -->
                                                   
                                             <div class="product-action d-flex justify-content-between">
-                                                <a class="product-btn" href="javascript:void(0);">Add to Cart</a>
+                                                <a class="product-btn" href="/product/<%=dataproduct[i].id%>">Add to Cart</a>
                                                 <ul class="d-flex">
-                                                    <li><a href="#quick-view-modal-container" data-bs-toggle="modal"
-                                                            title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                                    <li><a href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-                                                    </li>
-                                                    <li><a href="javascript:void(0);"><i class="fa fa-exchange"></i></a>
+                                                    <li><a href="/product/wishlist/<%=dataproduct[i].id%>"><i class="fa fa-heart-o"></i></a>
                                                     </li>
                                                 </ul>
                                             </div>
