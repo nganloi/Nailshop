@@ -2,8 +2,18 @@ const {PrismaClient, Prisma} = require('@prisma/client');
 const prisma = new PrismaClient();
 
 module.exports = {
+  product2: async(page) => {
+    const data = await prisma.product.findMany({
+      where:{classfy:{some:{}}},
+      skip:page,
+      take:4,
+    });
+    return data;
+   },
    product: async() => {
-    const data = await prisma.product.findMany({where:{classfy:{some:{}}}});
+    const data = await prisma.product.findMany({
+      where:{classfy:{some:{}}}
+    });
     return data;
    },
    product1: async() => {

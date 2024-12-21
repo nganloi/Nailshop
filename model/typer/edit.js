@@ -16,7 +16,7 @@ module.exports = {
       ////Kiểm tra có sự thay đổi của user được chọn cho typer
       if(user != undefined){
          ////Xóa dữ liệu cũ trong bảng typer_user
-         const dele=await prisma.typer_user.deleteMany({where:{roleid:id}})
+         const dele=await prisma.typer_user.deleteMany({where:{typerid:id}})
          ////Taọ mới dữ liệu userid và typerid trong bảng typer_user
          for(var i=0 ; i< user.length ; i++){
             const creat1=await prisma.typer_user.create({

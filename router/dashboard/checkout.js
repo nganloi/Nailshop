@@ -4,6 +4,7 @@ const checkoutController = require('../../controller/dashboard/checkout.js')
 const check = require('../../middlewea/check/order.js')
 router.post('/',check.order,checkoutController.getCheckout)
 router.get('/oder/:ID',checkoutController.oder)
+router.post('/coupon/:ID',checkoutController.postCoupon)
 router.get('/',checkoutController.getCheckoutcoupon)
 
 

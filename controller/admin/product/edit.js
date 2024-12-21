@@ -15,15 +15,18 @@ module.exports = {
         const id = parseInt(req.params.ID)
         var anh = req.files;
         const data = await edit.getEditInfproduct(id)
+        var img1
         const img=[]
         if(anh.length != 0){
             for(var i=0; i< anh.length ; i++){
-                img.push(await checkimg.checkImg(anh[i],data[0].img[0]))
+                img1= await checkimg.checkImg(anh[i],data[0])
+                img.push(img1[0])
             }
         }else{
             anh=undefined
-            img.push(await checkimg.checkImg(anh,data[0].img[0]))
-        }
+            img1= await checkimg.checkImg(anh,data[0])
+            img.push(img1[0])
+    }
         const name = req.body.name;
         const describe = req.body.describe;
         const content = req.body.content;

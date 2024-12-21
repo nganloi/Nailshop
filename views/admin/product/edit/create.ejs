@@ -59,7 +59,7 @@
 									<input type="text" class="form__input" placeholder="Product Price" name="price" value="<%= data.price%>">
 								</div>
 								<div class="col-12 col-sm-6 col-lg-6">
-									<select class="js-example-basic-multiple" id="category" name="category">
+									<select class="js-example-basic-multiple" id="category" name="category" required>
 										<% for (var j = 0; j < category.length; j++) { %>
 											<% 
 											// Kiểm tra xem user[j] có nằm trong data.user hay không

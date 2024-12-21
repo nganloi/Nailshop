@@ -8,6 +8,7 @@ module.exports = {
             name:name,
             describe:describe,
             content:content,
+            discount:'0',
             price:price,
             img:img,
             active:0, //active bật tắt chương trình giảm giá 
