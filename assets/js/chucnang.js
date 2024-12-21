@@ -186,3 +186,77 @@ function updateCheckedRows() {
       console.log('No products selected.');
   }
 }
+
+
+////PHÂN TRANG PRODUT
+document.addEventListener("DOMContentLoaded", () => {
+  const paginationElement = document.querySelector(".pagination");
+  const totalPages = parseInt(paginationElement.dataset.totalPages, 10);
+  let currentPage = parseInt(paginationElement.dataset.currentPage, 10);
+  const pageType = paginationElement.dataset.pageType; // Lấy giá trị của pageType (product hoặc blog)
+  const pagesContainer = document.getElementById("pages");
+  const prevButton = document.getElementById("prev");
+  const nextButton = document.getElementById("next");
+
+  // Hàm tạo đường dẫn phân trang
+  const createPageLink = (pageNumber) => {
+    return `/${pageType}/page/${pageNumber}`; // Tạo đường dẫn động cho product hoặc blog
+  };
+
+  // Hàm cập nhật giao diện phân trang
+  const updatePagination = () => {
+    pagesContainer.innerHTML = ""; // Xóa các trang cũ
+
+    if (totalPages <= 1) {
+      // Không có trang nào
+      paginationElement.style.display = "none";
+      return;
+    }
+
+    // Tính toán phạm vi hiển thị
+    const startPage = Math.max(1, currentPage - 2);
+    const endPage = Math.min(totalPages, currentPage + 2);
+
+    // Tạo các liên kết trang
+    for (let i = startPage; i <= endPage; i++) {
+      const pageLink = document.createElement("a");
+      pageLink.href = createPageLink(i); // Sử dụng createPageLink để tạo đường dẫn
+      pageLink.textContent = i;
+      pageLink.className = i === currentPage ? "active" : "";
+      pageLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        currentPage = i;
+        updatePagination();
+        window.location.href = createPageLink(currentPage); // Chuyển hướng đến trang mới
+      });
+      pagesContainer.appendChild(pageLink);
+    }
+
+    // Cập nhật trạng thái nút Prev và Next
+    prevButton.classList.toggle("disabled", currentPage === 1);
+    nextButton.classList.toggle("disabled", currentPage === totalPages);
+  };
+
+  // Xử lý sự kiện nút Prev
+  prevButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (currentPage > 1) {
+      currentPage--;
+      updatePagination();
+      window.location.href = createPageLink(currentPage); // Chuyển hướng đến trang mới
+    }
+  });
+
+  // Xử lý sự kiện nút Next
+  nextButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (currentPage < totalPages) {
+      currentPage++;
+      updatePagination();
+      window.location.href = createPageLink(currentPage); // Chuyển hướng đến trang mới
+    }
+  });
+
+  // Khởi tạo phân trang
+  updatePagination();
+});

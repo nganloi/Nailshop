@@ -207,78 +207,22 @@
                 <div class="col-lg-9 m-auto">
                     <div class="review-swiper">
                         <div class="swiper-wrapper">
+                            <% for(var i=0 ; i < review.length ; i++){%>
                             <div class="swiper-slide">
                                 <div class="review-box">
                                     <div class="review-img back-img"
-                                        style="background-image: url()"></div>
+                                        style="background-image: url(<%=review[i].user.img%>)"></div>
                                     <div class="review-info-text overflow-text">
                                         <p>
-                                            It is a long established fact that a reader will be distracted by the
-                                            readable content of a page when looking at its layout.It is a long
-                                            established fact that a reader will be distracted by the readable content of
-                                            a page when looking at its layout.It
-                                            is a long established fact that a reader will be
+                                            <%=review[i].content%>
                                         </p>
                                         <div class="review-author">
-                                            <span>- Eliza Martinez</span>
+                                            <span>- <%=review[i].user.name%></span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
-                                <div class="review-box">
-                                    <div class="review-img back-img"
-                                        style="background-image: url(assets/images/review-1.jpg)"></div>
-                                    <div class="review-info-text overflow-text">
-                                        <p>
-                                            It is a long established fact that a reader will be distracted by the
-                                            readable content of a page when looking at its layout.It is a long
-                                            established fact that a reader will be distracted by the readable content of
-                                            a page when looking at its layout.It
-                                            is a long established fact that a reader will be
-                                        </p>
-                                        <div class="review-author">
-                                            <span>- Eliza Martinez</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="review-box">
-                                    <div class="review-img back-img"
-                                        style="background-image: url(assets/images/review-1.jpg)"></div>
-                                    <div class="review-info-text overflow-text">
-                                        <p>
-                                            It is a long established fact that a reader will be distracted by the
-                                            readable content of a page when looking at its layout.It is a long
-                                            established fact that a reader will be distracted by the readable content of
-                                            a page when looking at its layout.It
-                                            is a long established fact that a reader will be
-                                        </p>
-                                        <div class="review-author">
-                                            <span>- Eliza Martinez</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="review-box">
-                                    <div class="review-img back-img"
-                                        style="background-image: url(assets/images/review-1.jpg)"></div>
-                                    <div class="review-info-text overflow-text">
-                                        <p>
-                                            It is a long established fact that a reader will be distracted by the
-                                            readable content of a page when looking at its layout.It is a long
-                                            established fact that a reader will be distracted by the readable content of
-                                            a page when looking at its layout.It
-                                            is a long established fact that a reader will be
-                                        </p>
-                                        <div class="review-author">
-                                            <span>- Eliza Martinez</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <%}%>
                         </div>
                         <div class="swiper-arrows">
                             <div class="swiper-button-prev"></div>

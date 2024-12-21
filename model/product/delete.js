@@ -7,10 +7,23 @@ module.exports = {
       const data1 = await prisma.coupon_product.deleteMany({where: {productid:id}});
       const data2= await prisma.order_product.deleteMany({where: {productid:id}});
       const data3 = await prisma.review.deleteMany({where: {productid:id}});
-      const data4 = await prisma.classfy.deleteMany({where: {productid:id}});
       const data5 = await prisma.user_product.deleteMany({where: {productid:id}});
       const data6 = await prisma.marketing_product.deleteMany({where: {productid:id}});
       const data7 = await prisma.productlike.deleteMany({where: {productid:id}});
+      const data4 = await prisma.classfy.findMany({where: {productid:id}});
+      for(var i=0 ; i< data4.length;i++){
+         const del9 = await prisma.order_product.deleteMany({
+            where:{
+               classfyid:data4[i].id,
+            }
+         })
+         const del10= await prisma.user_product.deleteMany({
+            where:{
+               classfyid:data4[i].id,
+            }         
+         })
+         const data11 = await prisma.classfy.deleteMany({where: {productid:id}});
+      }
       const data8 = await prisma.product.deleteMany({where: {id:id}});
    },
    deleteCart:async(id)=>{
