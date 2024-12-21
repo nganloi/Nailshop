@@ -20,15 +20,20 @@ module.exports = {
          time: time
       }});
       
-      const blog = await prisma.blog.findUnique({where: {id:id}});
-      const blog_tag = await prisma.tag_blog.create({
-         data: {
-             blogid: blog,
-             tagid: parseInt(tag)
-         }
-     })
-     return {data,blog_tag}
+      
+       if(tag>=0) {
+         const dele1 = prisma.tag_blog.deleteMany({where: {blogid:id}})
+         const data1 = prisma.tag_blog.create({
+            data: {
+               blogid: id,
+               tagid: tag
+            }
+         })
 
+       }
+  
+     
+ 
    },
 
 }

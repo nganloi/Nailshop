@@ -46,12 +46,7 @@
                                 <div class="col-12">
                                     <textarea name="address" class="form-input" cols="30" rows="20" placeholder="Address"><%=dataoder.address%></textarea>
                                 </div>
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <input type="checkbox" id="shiptothesameaddress">
-                                        <label for="shiptothesameaddress">ship to the same address</label>
-                                    </div>
-                                </div>
+                             
                                 <div class="col-12">
                                     <div class="submit-btn">
                                         <button type="submit" class="sec-btn" title="Deliver Here">Deliver
@@ -81,7 +76,7 @@
                                   
                                       <p><b>Coupon</b></p>
                                       <form action="/product/coupon/<%= dataoder.id %>" method="post">
-                                        <button class="btn btn-primary" type="submit" >OK</button>
+                                        <button class="btn-coupon" type="submit" >OK</button>
                                       <select  name="coupon">
                                         <% for (var i = 0; i < couponns.length; i++) { %>
                                         <option value="<%= couponns[i].id %>">

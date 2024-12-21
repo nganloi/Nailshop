@@ -38,9 +38,9 @@ module.exports = {
             user = await userr.getUser(userid)
         }
         const blog = await blogg.getBlog(id)
-        const  tag = await tagg.tag()
+        
         const social = await so.getSocial()
-        res.render('./dashboard/blog-detail',{blog:blog, tag:tag, social:social,user:user})
+        res.render('./dashboard/blog-detail',{blog:blog, social:social,user:user})
     },
     postCom:  async(req,res) => {
         const time = `${hours,day}`; 

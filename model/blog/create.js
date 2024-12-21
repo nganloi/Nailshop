@@ -11,7 +11,7 @@ module.exports = {
             content: content,
             time: time
          }});
-         ////Lấy thông tin role vừa tạo
+         ////Lấy thông tin blog vừa tạo
          const data = await prisma.blog.findMany({
           where:{ 
             img: img,
@@ -26,7 +26,7 @@ module.exports = {
                 const creat1=await prisma.tag_blog.create({
                    data:{
                    tagid:parseInt(tag[i]),
-                   blogid:data[0].id
+                   blogid:parseInt(data[0].id)
                    }
                 })   
              }

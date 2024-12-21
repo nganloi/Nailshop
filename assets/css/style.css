@@ -4691,5 +4691,13 @@ table.product-table {
   margin-left: 10px;
 }
 
+.btn-coupon {
+  width: 45px;
+  height: 25px;
+  background-color: rgb(84,52,52);
+  border: none;
+  color: #ddd;
+}
+
  
 
