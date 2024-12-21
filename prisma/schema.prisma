@@ -304,7 +304,7 @@ model coupon{
   discountprice String?
   quantity Int
   active Int
-  buymin String
+  buymin Int
   category category_coupon[]
   order order_coupon[]
   typer typer_coupon[]

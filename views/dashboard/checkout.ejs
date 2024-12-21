@@ -78,10 +78,25 @@
                                     <p><b>cart subtotal</b></p> <span>$<%= sum%></span>
                                 </li>
                                 <li class="list-name">
-                                    <p><b>coupon</b></p><span>$55</span>
+                                  
+                                      <p><b>Coupon</b></p>
+                                      <form action="/product/coupon/<%= dataoder.id %>" method="post">
+                                        <button class="btn btn-primary" type="submit" >OK</button>
+                                      <select  name="coupon">
+                                        <% for (var i = 0; i < couponns.length; i++) { %>
+                                        <option value="<%= couponns[i].id %>">
+                                          $<%= couponns[i].name %>
+                                        </option>
+                                        <% } %>
+                                      </select>
+                                    </form>
                                 </li>
                                 <li class="list-name">
-                                    <p><b>cart total</b></p><span>$<%= sum%></span>
+                                    <p><b>cart total</b></p><span><%if(sum <=save ){%>
+                                        <%= 0%>
+                                        <%}else{%>
+                                            <%=sum - save%>
+                                            <%}%>.00</span>
                                 </li>
                                 
                             </ul>
@@ -115,6 +130,7 @@
             </div>
         </div>
     </section>
+    
     <%- include('../layout/dashboard/footer'); -%>
 
     <!-- footer end -->
