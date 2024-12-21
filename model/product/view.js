@@ -6,7 +6,7 @@ module.exports = {
     const data = await prisma.product.findMany({
       where:{classfy:{some:{}}},
       skip:page,
-      take:4,
+      take:3,
     });
     return data;
    },
@@ -47,4 +47,13 @@ module.exports = {
       });
       return products;
   },
+  review:async(req,res)=>{
+    const data = await prisma.review.findMany({
+      take:8,
+      include:{
+        user:true,
+      }
+    })
+    return data
+  }
 }

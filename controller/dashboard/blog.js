@@ -13,15 +13,22 @@ const year = now.getFullYear();
 const hours = now.getHours();
 module.exports = {
     getBlog: async(req,res) => {
-        const userid = parseInt(req.session.userId)
-        const id = parseInt(req.params.ID)|| 1;
+      const userid = parseInt(req.session.userId)
+      const data = await blogg.Blog();
+      const idpage=parseInt(req.params.ID)||1;
+      var numberpage='';
+      if(data.length> Math.round(data.length/3)*3){
+          numberpage= Math.round(data.length/3)+1;
+         }else{
+             numberpage= Math.round(data.length/3);
+         }
+        const page=(idpage-1)*3
         let user
         if(userid >= 0) {
             user = await userr.getUser(userid)
         }
-        
-       const blog = await blogg.getpageBlog((id-1)*2)
-        res.render('./dashboard/blog', {blog:blog,user:user})
+       const blog = await blogg.getpageBlog(page)
+        res.render('./dashboard/blog', {blog:blog,user:user,number:numberpage,page:idpage})
     },
     getBlogDetail: async(req,res) => {
         const id = parseInt(req.params.ID);

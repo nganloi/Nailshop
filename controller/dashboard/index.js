@@ -7,7 +7,7 @@ const services = require('../../model/service/view')
 const category = require('../../model/category/view')
 const dataCart = require('../../model/user/view.js')
 const marketing_product = require('../../model/marketing-product/view.js')
-// const reviews = require('../../model/')
+const review = require('../../model/product/view.js')
 module.exports = {
     getShop: async(req,res) => {
         const userid = parseInt(req.session.userId)
@@ -20,6 +20,8 @@ module.exports = {
         const service = await services.Service()
         const categorys = await category.category()
         const mrt_product = await marketing_product.marketingProduct()
-        res.render('./dashboard/index',{mrt_shop:mrt_shop,mrt_product:mrt_product,service:service,category:categorys,user:user,blog:blog})
+        const datareview =await review.review()
+        res.render('./dashboard/index',{mrt_shop:mrt_shop,mrt_product:mrt_product,
+            service:service,category:categorys,user:user,blog:blog,review:datareview})
     }
 }

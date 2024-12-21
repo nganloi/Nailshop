@@ -15,10 +15,10 @@ module.exports = {
     });
     return data;
    },
-   getpageBlog: async(blog) => {
+   getpageBlog: async(page) => {
       const data = await prisma.blog.findMany({
-         skip: blog,
-         take: 4,
+         skip:page,
+         take: 3,
          select: {
           id: true,
           img: true,
@@ -53,18 +53,17 @@ module.exports = {
                  }
                }
             },
-            tag: {
-               select: {
-                  tag: {
-                     select: {
-                        name: true
+            tag:{
+               select:{
+                  tag:{
+                     select:{
+                        name:true,
                      }
                   }
                }
             }
-
-         }
-        
+         },
+         
       });
       
       return data;

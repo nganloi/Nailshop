@@ -10,7 +10,6 @@ module.exports = {
       const data5 = await prisma.user_product.deleteMany({where: {productid:id}});
       const data6 = await prisma.marketing_product.deleteMany({where: {productid:id}});
       const data7 = await prisma.productlike.deleteMany({where: {productid:id}});
-     
       const data4 = await prisma.classfy.findMany({where: {productid:id}});
       for(var i=0 ; i< data4.length;i++){
          const del9 = await prisma.order_product.deleteMany({

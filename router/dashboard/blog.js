@@ -6,6 +6,7 @@ const comment = require('../../middlewea/checkComment.js')
 
 router.get('/:ID', blogController.getBlogDetail)
 router.get('/', blogController.getBlog)
+router.get('/page/:ID', blogController.getBlog)
 router.post('/comment/:ID',login.requireLogin, comment.requireComment,blogController.postCom)
 
 
