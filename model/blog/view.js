@@ -52,11 +52,21 @@ module.exports = {
                   }
                  }
                }
+            },
+            tag: {
+               select: {
+                  tag: {
+                     select: {
+                        name: true
+                     }
+                  }
+               }
             }
 
          }
         
       });
+      
       return data;
      },
 

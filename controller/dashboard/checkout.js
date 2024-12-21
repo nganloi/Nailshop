@@ -135,9 +135,9 @@ module.exports = {
                 - dataOder[0].product[i].quantity * (dataOder[0].product[i].product.price * parseInt(dataOder[0].product[i].product.discount) / 100)
             )
         }
-        ///XỬ LÍ COUPONCOUPON
+        ///XỬ LÍ COUPON
 
-        //Lấy coupon người dùng được xử dụngdụng
+        //Lấy coupon người dùng được xử dụng
         const datacoupon1 = await coupon.getCoupon(userid)
         const datacoupon2 = datacoupon1.filter(
             (value, index, self) =>
@@ -220,7 +220,6 @@ module.exports = {
                     }
                 }
         }
-        console.log("sum",sum ,"save",save,"coupon",dataOder[0].coupon[0].coupon.name)
         res.render('./dashboard/checkout', { user: user, dataoder: dataOder[0], couponns: coupons, sum: sum, save: save })
     },
 
