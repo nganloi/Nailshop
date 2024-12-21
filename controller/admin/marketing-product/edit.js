@@ -18,6 +18,8 @@ module.exports = {
       const img=await checkImg.checkImg(anh,data[0])
       const describe=req.body.describe
       const product = req.body.product
+      console.log(anh)
+      console.log(img)
       const update = await edit.postEdit(id,name,img,describe,product);
       res.redirect(`/admin/marketing-product`)
     },

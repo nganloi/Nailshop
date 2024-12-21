@@ -27,7 +27,10 @@ module.exports = {
         const name = req.body.name;
         const describe = req.body.describe;
         const content = req.body.content;
-        const price = req.body.price;
+        var price = parseInt(req.body.price);
+        if(isNaN(price)){
+           price = 0;
+        }
         const category =parseInt(req.body.category);
         const creat = await edit.postEditProduct(name,describe,content,price,category,img,id)
         res.redirect(`/admin/product/edit/${id}`)
@@ -56,7 +59,6 @@ module.exports = {
         const id = parseInt(req.params.ID)
         const name = req.body[`name${id}`]
         const quantity = req.body[`quantity${id}`]
-        console.log(name,quantity)
         const update = await edit.editClassfy(name,quantity,id)
         res.redirect(`/admin/product/classfys/${update[0].productid}`)
     },

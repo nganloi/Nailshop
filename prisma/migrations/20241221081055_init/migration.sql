@@ -68,7 +68,7 @@ CREATE TABLE "marketing_product" (
 CREATE TABLE "product" (
     "id" SERIAL NOT NULL,
     "name" TEXT,
-    "price" TEXT,
+    "price" INTEGER NOT NULL,
     "img" TEXT[],
     "describe" TEXT,
     "content" TEXT,
@@ -93,6 +93,7 @@ CREATE TABLE "category_product" (
 CREATE TABLE "category" (
     "id" SERIAL NOT NULL,
     "name" TEXT,
+    "content" TEXT,
 
     CONSTRAINT "category_pkey" PRIMARY KEY ("id")
 );
@@ -154,6 +155,7 @@ CREATE TABLE "user_product" (
     "productid" INTEGER NOT NULL,
     "userid" INTEGER NOT NULL,
     "classfyid" INTEGER NOT NULL,
+    "quantity" INTEGER NOT NULL,
 
     CONSTRAINT "user_product_pkey" PRIMARY KEY ("id")
 );
@@ -184,6 +186,7 @@ CREATE TABLE "role_user" (
 CREATE TABLE "role" (
     "id" SERIAL NOT NULL,
     "position" TEXT,
+    "active" TEXT[],
 
     CONSTRAINT "role_pkey" PRIMARY KEY ("id")
 );
@@ -304,7 +307,7 @@ CREATE TABLE "coupon" (
     "discountprice" TEXT,
     "quantity" INTEGER NOT NULL,
     "active" INTEGER NOT NULL,
-    "buymin" TEXT NOT NULL,
+    "buymin" INTEGER NOT NULL,
 
     CONSTRAINT "coupon_pkey" PRIMARY KEY ("id")
 );

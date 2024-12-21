@@ -20,6 +20,7 @@ const search = require('./dashboard/search.js')
 router.use('/', shop)
 //PRODUCT
 router.use('/product', products)
+
 router.use('/search',search)
 //SERVICE
 router.use('/service', service)

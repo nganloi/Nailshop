@@ -17,10 +17,10 @@ module.exports = {
     return data;
    },
    postEdit: async(id,name,img,describe,product) => {
-      const data = await prisma.marketing.update({where: {id:id},
+      const data = await prisma.marketing.updateMany({where: {id:id},
       data: {
          name: name,
-         img: img,
+         img:img,
          describe:describe,
       }})
 
@@ -29,14 +29,24 @@ module.exports = {
          //xóa dữ liệu cũ trong marketing_product
          const del = await prisma.marketing_product.deleteMany({where:{marketingid:id}})
          //Thêm dữ liệu mới vào marketing_product
-         for(var i=0 ; i< product.length; i++){
+         if(product > 0){
             const creat1=await prisma.marketing_product.create({
                data:{
-               productid:parseInt(product[i]),
+               productid:parseInt(product),
                marketingid:id
                }
-            })   
+            })  
+         }else{
+            for(var i=0 ; i< product.length; i++){
+               const creat1=await prisma.marketing_product.create({
+                  data:{
+                  productid:parseInt(product[i]),
+                  marketingid:id
+                  }
+               })   
+            }
          }
+         
       }
    },
    ////CHANGE ACTIVE
