@@ -38,5 +38,12 @@ module.exports = {
                 active:2,
             }
         })
-    }
+    },
+    getoder:async(iduser)=>{
+        const data= await prisma.order.findMany({
+            where:{userid:iduser,active:0}
+
+           })
+        return data;
+    },
 }
