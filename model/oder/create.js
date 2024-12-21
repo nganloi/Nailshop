@@ -72,10 +72,24 @@ module.exports = {
             include:{
                 product:{
                     include:{
-                        product:true,
+                        product:{
+                            include:{
+                                category:true,
+                            }
+                        },
                         classfy:true,
                     }
-                }
+                },
+                coupon:{
+                    include:{
+                        coupon:{
+                            include:{
+                                product:true,
+                                category:true,    
+                            }
+                        },
+                    }
+                },
             }
         })
         return data

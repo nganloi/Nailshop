@@ -10,7 +10,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = "postgresql://postgres:12345@localhost:5432/bcare?schema=public" 
+  url      = "postgresql://postgres:1@localhost:5432/shopnail/mydb?schema=public" 
 }
 
 // INFORMATION SHOP
@@ -71,7 +71,7 @@ model marketing_product{
 model product{
   id Int @id @default(autoincrement())
   name String?
-  price String?
+  price Int
   img String[]
   describe String?
   content String?

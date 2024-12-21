@@ -15,14 +15,23 @@ const year = now.getFullYear();
 
 module.exports = {
     getProducts: async(req,res) => {
+      const data = await dataProduct.product();
+      const idpage=parseInt(req.params.ID)||1;
+      var numberpage='';
+      if(data.length> Math.round(data.length/4)*4){
+          numberpage= Math.round(data.length/4)+1;
+         }else{
+             numberpage= Math.round(data.length/4);
+         }
+         const page=(idpage-1)*4
         const userid = parseInt(req.session.userId)
-        const product = await dataProduct.product();
+        const product = await dataProduct.product2(page);
         const cate = await category.category()
         let user
         if(userid >= 0) {
             user = await userr.getUser(userid)
         }
-        res.render('./dashboard/product', {user:user,product:product, cate:cate,selected:product })
+        res.render('./dashboard/product', {user:user,product:product, cate:cate,number:numberpage,page:idpage,selected:product })
     },
     getSearch: async(req,res) => {
       const search = req.query.search;

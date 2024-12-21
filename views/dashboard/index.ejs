@@ -68,7 +68,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="title">
-                        <h2 class="h2-title">our Services</h2>
+                        <h2 class="h2-title">our Product</h2>
                     </div>
                 </div>
             </div>
@@ -76,9 +76,11 @@
                 <div class="col-lg-12">
                     <div class="portfolio-tabbing">
                         <ul id="filters">
+                            <% if(category.length >= 1){%>
                             <li>
-                                <span class="filter active" data-filter=".<%= category[0].id%>"><%= category[0].name%></span>
+                                <span class="filter-active" data-filter=".<%= category[0].id%>"><%= category[0].name%></span>
                             </li>
+                            <%}%>
                             <% for(var i=1 ; i < category.length ;i++){%>
                             <li>
                                 <span class="filter" data-filter=".<%= category[i].id%>"><%= category[i].name%></span>
@@ -115,319 +117,32 @@
         </div>
     </section>
     <!-- courses sec end -->
-    <!-- offer sec start -->
-    <section class="offer back-img" style="background-image: url(assets/images/offer-bg.jpg)">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-10 m-auto">
-                    <div class="offer-text">
-                        <div class="title">
-                            <h2 class="h2-title big-title">Get Special offer</h2>
-                        </div>
-                        <p>
-                            indian dolor sit amet, consectetur adipiscing elit. Proin lorem mauris, gravida eget finibus
-                            ut, lobortis et diam. Aliquam risus. indian dolor sit amet, consectetur adipiscing
-                            elitindian dolor sit amet, consectetur adipiscing elit. Proin lorem mauris, gravida eget
-                            finibus ut, lobortis et diam. Aliquam risus. indian dolor sit amet, consectetur adipiscing
-                            elit
-                        </p>
-                        <a href="javascript:void(0);" class="sec-btn sec-btn-lg" title="Book Appointment">Book
-                            Appointment</a>
+<!-- offer sec start -->
+<% for(var i =0 ; i < mrt_product.length; i++){%>
+    <% if(mrt_product[i].active ==1 ){%>    
+<section class="offer back-img" style="background-image: url(<%=mrt_product[i].img%>)">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-10 m-auto">
+                <div class="offer-text">
+                    <div class="title">
+                        <h2 class="h2-title big-title"><%=mrt_product[i].name%></h2>
                     </div>
+                    <p>
+                        <%=mrt_product[i].describe%>
+                    </p>
+                    <a href="/product" class="sec-btn sec-btn-lg" title="Book Appointment">Book
+                        Appointment</a>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- offer sec end -->
-    <!-- product sec start -->
-    <section class="product">
-        <div class="products-slider">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="product-text">
-                            <h2 class="h2-title">Our latest products</h2>
-                            <p>indian dolor sit amet, consectetur adipiscing elit. Proin lorem mauris, gravida eget
-                                finibus ut, lobortis et diam. Aliquam risus.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-8">
-                        <div class="swiper">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="product-img back-img"
-                                        style="background-image: url(assets/images/product1.jpg)"></div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="product-img back-img"
-                                        style="background-image: url(assets/images/h-product2.jpg)"></div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="product-img back-img"
-                                        style="background-image: url(assets/images/h-product3.jpg)"></div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="product-img back-img"
-                                        style="background-image: url(assets/images/h-product4.jpg)"></div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="product-img back-img"
-                                        style="background-image: url(assets/images/h-product5.jpg)"></div>
-                                </div>
-                            </div>
-                            <div class="swiper-button-prev"></div>
-                            <div class="swiper-button-next"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="beauty-expert">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="title">
-                            <h2 class="h2-title">our Beauty experts</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="expert-detail">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="team-swiper">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <div class="expert-box">
-                                            <div class="expert-img">
-                                                <img src="assets/images/expert-1.jpg" alt="expert1" />
-                                            </div>
-                                            <div class="expert-title">
-                                                <h4 class="h4-title">Madison Arina</h4>
-                                                <span>Makeup artist</span>
-                                            </div>
-                                            <div class="expert-text">
-                                                <p>indian dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                    tempory sed do eiusmod tempory</p>
-                                            </div>
-                                            <div class="social-icons">
-                                                <ul>
-                                                    <li>
-                                                        <a href="javascript:void(0);" title="Instagram"><i
-                                                                class="fab fa-instagram"></i></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:void(0);" title="Facebook"><i
-                                                                class="fab fa-facebook-f"></i></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:void(0);" title="Pinterest"><i
-                                                                class="fab fa-pinterest-p"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="expert-box">
-                                            <div class="expert-img">
-                                                <img src="assets/images/expert2.jpg" alt="expert2" />
-                                            </div>
-                                            <div class="expert-title">
-                                                <h4 class="h4-title">mehjabin rumi</h4>
-                                                <span>therapist</span>
-                                            </div>
-                                            <div class="expert-text">
-                                                <p>indian dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                    tempory sed do eiusmod tempory</p>
-                                            </div>
-                                            <div class="social-icons">
-                                                <ul>
-                                                    <li>
-                                                        <a href="javascript:void(0);" title="Instagram"><i
-                                                                class="fab fa-instagram"></i></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:void(0);" title="Facebook"><i
-                                                                class="fab fa-facebook-f"></i></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:void(0);" title="Pinterest"><i
-                                                                class="fab fa-pinterest-p"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="expert-box">
-                                            <div class="expert-img">
-                                                <img src="assets/images/hair-dresser.jpg" alt="hair-dresser" />
-                                            </div>
-                                            <div class="expert-title">
-                                                <h4 class="h4-title">Madison Alina</h4>
-                                                <span>Hair-dresser</span>
-                                            </div>
-                                            <div class="expert-text">
-                                                <p>indian dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                    tempory sed do eiusmod tempory</p>
-                                            </div>
-                                            <div class="social-icons">
-                                                <ul>
-                                                    <li>
-                                                        <a href="javascript:void(0);" title="Instagram"><i
-                                                                class="fab fa-instagram"></i></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:void(0);" title="Facebook"><i
-                                                                class="fab fa-facebook-f"></i></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:void(0);" title="Pinterest"><i
-                                                                class="fab fa-pinterest-p"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="expert-box">
-                                            <div class="expert-img">
-                                                <img src="assets/images/nail-artist.jpg" alt="nail-artist" />
-                                            </div>
-                                            <div class="expert-title">
-                                                <h4 class="h4-title">Adam Amelia</h4>
-                                                <span>Nail Artist</span>
-                                            </div>
-                                            <div class="expert-text">
-                                                <p>indian dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                    tempory sed do eiusmod tempory</p>
-                                            </div>
-                                            <div class="social-icons">
-                                                <ul>
-                                                    <li>
-                                                        <a href="javascript:void(0);" title="Instagram"><i
-                                                                class="fab fa-instagram"></i></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:void(0);" title="Facebook"><i
-                                                                class="fab fa-facebook-f"></i></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:void(0);" title="Pinterest"><i
-                                                                class="fab fa-pinterest-p"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="expert-box">
-                                            <div class="expert-img">
-                                                <img src="assets/images/expert2.jpg" alt="expert2" />
-                                            </div>
-                                            <div class="expert-title">
-                                                <h4 class="h4-title">mehjabin rumi</h4>
-                                                <span>therapist</span>
-                                            </div>
-                                            <div class="expert-text">
-                                                <p>indian dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                    tempory sed do eiusmod tempory</p>
-                                            </div>
-                                            <div class="social-icons">
-                                                <ul>
-                                                    <li>
-                                                        <a href="javascript:void(0);" title="Instagram"><i
-                                                                class="fab fa-instagram"></i></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:void(0);" title="Facebook"><i
-                                                                class="fab fa-facebook-f"></i></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:void(0);" title="Pinterest"><i
-                                                                class="fab fa-pinterest-p"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="expert-box">
-                                            <div class="expert-img">
-                                                <img src="assets/images/hair-dresser.jpg" alt="hair-dresser" />
-                                            </div>
-                                            <div class="expert-title">
-                                                <h4 class="h4-title">Madison Alina</h4>
-                                                <span>Hair-dresser</span>
-                                            </div>
-                                            <div class="expert-text">
-                                                <p>indian dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                    tempory sed do eiusmod tempory</p>
-                                            </div>
-                                            <div class="social-icons">
-                                                <ul>
-                                                    <li>
-                                                        <a href="javascript:void(0);" title="Instagram"><i
-                                                                class="fab fa-instagram"></i></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:void(0);" title="Facebook"><i
-                                                                class="fab fa-facebook-f"></i></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:void(0);" title="Pinterest"><i
-                                                                class="fab fa-pinterest-p"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="expert-box">
-                                            <div class="expert-img">
-                                                <img src="assets/images/nail-artist.jpg" alt="nail-artist" />
-                                            </div>
-                                            <div class="expert-title">
-                                                <h4 class="h4-title">Adam Amelia</h4>
-                                                <span>Nail Artist</span>
-                                            </div>
-                                            <div class="expert-text">
-                                                <p>indian dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                    tempory sed do eiusmod tempory</p>
-                                            </div>
-                                            <div class="social-icons">
-                                                <ul>
-                                                    <li>
-                                                        <a href="javascript:void(0);" title="Instagram"><i
-                                                                class="fab fa-instagram"></i></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:void(0);" title="Facebook"><i
-                                                                class="fab fa-facebook-f"></i></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:void(0);" title="Pinterest"><i
-                                                                class="fab fa-pinterest-p"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-arrows">
-                                    <div class="swiper-button-prev"></div>
-                                    <div class="swiper-pagination"></div>
-                                    <div class="swiper-button-next"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- product sec end -->
-    <!-- blog sec start -->
+    </div>
+</section>
+<%}%>
+<%}%>
+
+<!-- offer sec end -->
+     <!-- blog sec start -->
     <section class="blog">
         <div class="container lg-container">
             <div class="row">
@@ -478,133 +193,6 @@
         </div>
     </section>
     <!-- blog sec end -->
-    <!-- pricing plan sec -->
-    <section class="pricing-plans">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="title">
-                        <h2 class="h2-title">Pricing plans</h2>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="product-swiper">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="product-box">
-                                    <div class="product-img back-img"
-                                        style="background-image: url(assets/images/product1.jpg)"></div>
-                                    <div class="product-info-text">
-                                        <h4 class="h4-title">facial massage</h4>
-                                        <p>indian dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempory
-                                            sed do eiusmod tempory...</p>
-                                        <div class="product-price"><span>100$</span></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="product-box">
-                                    <div class="product-img back-img"
-                                        style="background-image: url(assets/images/make-up.jpg)"></div>
-                                    <div class="product-info-text">
-                                        <h4 class="h4-title">Make Up</h4>
-                                        <p>indian dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempory
-                                            sed do eiusmod tempory...</p>
-                                        <div class="product-price"><span>100$</span></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="product-box">
-                                    <div class="product-img back-img"
-                                        style="background-image: url(assets/images/bridal_makeup.jpg)"></div>
-                                    <div class="product-info-text">
-                                        <h4 class="h4-title">Bridal Makeup</h4>
-                                        <p>dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempory sed do
-                                            eiusmod tempory...</p>
-                                        <div class="product-price"><span>100$</span></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="product-box">
-                                    <div class="product-img back-img"
-                                        style="background-image: url(assets/images/face-massage.jpeg)"></div>
-                                    <div class="product-info-text">
-                                        <h4 class="h4-title">facial massage</h4>
-                                        <p>dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempory sed do
-                                            eiusmod tempory...</p>
-                                        <div class="product-price"><span>100$</span></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="product-box">
-                                    <div class="product-img back-img"
-                                        style="background-image: url(assets/images/nail-art.jpg)"></div>
-                                    <div class="product-info-text">
-                                        <h4 class="h4-title">Nail Art</h4>
-                                        <p>dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempory sed do
-                                            eiusmod tempory...</p>
-                                        <div class="product-price"><span>100$</span></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="product-box">
-                                    <div class="product-img back-img"
-                                        style="background-image: url(assets/images/Hair-treatment.jpg)"></div>
-                                    <div class="product-info-text">
-                                        <h4 class="h4-title">Hair Styling</h4>
-                                        <p>dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempory sed do
-                                            eiusmod tempory...</p>
-                                        <div class="product-price"><span>100$</span></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="product-box">
-                                    <div class="product-img back-img"
-                                        style="background-image: url(assets/images/make-up.jpg)"></div>
-                                    <div class="product-info-text">
-                                        <h4 class="h4-title">Make Up</h4>
-                                        <p>dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempory sed do
-                                            eiusmod tempory...</p>
-                                        <div class="product-price"><span>100$</span></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="product-box">
-                                    <div class="product-img back-img"
-                                        style="background-image: url(assets/images/bridal_makeup.jpg)"></div>
-                                    <div class="product-info-text">
-                                        <h4 class="h4-title">Bridal Makeup</h4>
-                                        <p>dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempory sed do
-                                            eiusmod tempory...</p>
-                                        <div class="product-price"><span>100$</span></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="product-box">
-                                    <div class="product-img back-img"
-                                        style="background-image: url(assets/images/face-massage.jpeg)"></div>
-                                    <div class="product-info-text">
-                                        <h4 class="h4-title">facial massage</h4>
-                                        <p>dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempory sed do
-                                            eiusmod tempory...</p>
-                                        <div class="product-price"><span>100$</span></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- pricing plan sec -->
     <!-- review sec start -->
     <section class="review">
         <div class="container">
@@ -622,7 +210,7 @@
                             <div class="swiper-slide">
                                 <div class="review-box">
                                     <div class="review-img back-img"
-                                        style="background-image: url(assets/images/review-1.jpg)"></div>
+                                        style="background-image: url()"></div>
                                     <div class="review-info-text overflow-text">
                                         <p>
                                             It is a long established fact that a reader will be distracted by the

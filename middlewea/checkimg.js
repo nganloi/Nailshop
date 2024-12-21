@@ -6,7 +6,7 @@ module.exports={
      var img
      if(anh==undefined ){
         if(data!= undefined){
-            img= data
+            img= data.img
         }else{
             img='/assets/images/blog-2.jpg'
         }

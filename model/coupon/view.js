@@ -12,24 +12,21 @@ module.exports = {
    },
    getCoupon: async(userid,sum) => {
       var data = []
+      ///Lay ma giam gia ma tat ca nguoi dung deu co
       const data1 = await prisma.coupon.findMany({
          where: {
             active: 1,
             typer: {none:{}},
-            product: {none: {}},
             user: {none:{}},
-              
-          
          },
         include: {
-         typer: true,
          product: true,
          category: true
-
         },
        
       })
-      const coupon = await prisma.coupon.findMany({
+      ////Lay ma giam gia cua rieng tung nguoi
+      const data2 = await prisma.coupon.findMany({
          where: {
             active: 1,
             user: {
@@ -42,13 +39,13 @@ module.exports = {
             },
          },
          include: {
-            typer: true,
             product: true,
             category: true
          }
 
       })
-      const data2 = await prisma.coupon.findMany({
+      ///Lay ma giam gia theo phan loai nguoi
+      const data3 = await prisma.coupon.findMany({
          where: {
             active: 1,
             typer: {
@@ -64,7 +61,6 @@ module.exports = {
             }
          },
          include: {
-            typer: true,
             product: true,
             category: true
 
@@ -73,23 +69,35 @@ module.exports = {
       for(var i=0; i<data1.length;i++){
          data.push(data1[i])
       }
-      for(var i=0; i<coupon.length;i++){
-         data.push(coupon[i])
-      }
       for(var i=0; i<data2.length;i++){
          data.push(data2[i])
+      }
+      for(var i=0; i<data3.length;i++){
+         data.push(data3[i])
       }
       return data;
    },
 
    postOrderCoupon: async(id,idcoupon) => {
-     const data = await prisma.order_coupon.create({
-      data: {
-         orderid: id,
-         couponid: idcoupon
+     const checkdata = await prisma.order_coupon.findMany({
+      where:{
+         order: {
+            active: 0,
+         },
+         orderid:id,
       }
-     })
-     return data
+   })
+     if(checkdata.length > 0){
+      const del = await prisma.order_coupon.updateMany({where:{orderid:id},data:{couponid:idcoupon}})
+     }else{
+      const data = await prisma.order_coupon.create({
+         data: {
+            orderid: id,
+            couponid: idcoupon
+         }
+        })
+   
+     }
    },
    getConponoder:async(idoder)=>{
       const data=await prisma.coupon_oder.findMany({

@@ -18,10 +18,14 @@ module.exports = {
       const mail = req.body.mail;
       const pass1 = req.body.pass;
       const user = await login.checkLogin(mail)
-      const checkpass =await bcrypt.compare(pass1, user[0].pass)
-      if(user.length > 0  && checkpass){
-        req.session.userId = user[0].id;
-        res.redirect('/');
+      if(user.length > 0 ){
+        const checkpass =await bcrypt.compare(pass1, user[0].pass)
+        if(checkpass){
+          req.session.userId = user[0].id;
+          res.redirect('/');
+        }else{
+          res.redirect('/login')
+        }
       } else{
         res.redirect('/login')
       }

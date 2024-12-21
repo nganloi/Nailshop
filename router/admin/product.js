@@ -4,6 +4,7 @@ const product = require('../../controller/admin/product/view.js')
 const productEdit = require('../../controller/admin/product/edit.js');
 const productCreate = require('../../controller/admin/product/create.js')
 const deletes = require('../../controller/admin/product/delete.js')
+const check = require('../../middlewea/check/createproduct.js')
 const multer = require('multer');
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -24,7 +25,7 @@ router.get('/classfys',productCreate.getFalse)
 router.get('/discount', productCreate.getFalse)
 
 // EDIT
-router.get('/edit/:ID', productEdit.getEditProduct)//ID của product
+router.get('/edit/:ID',check.classfy, productEdit.getEditProduct)//ID của product
 router.post('/edit/:ID',upload.array("img",5), productEdit.postEditProduct)//ID của product
 ///EDIT CLASSFY
 router.get('/classfys/:ID', productEdit.getclassfys)//ID của product
