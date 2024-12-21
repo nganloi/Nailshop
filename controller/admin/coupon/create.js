@@ -15,7 +15,7 @@ module.exports = {
     },
     postCreateCoupon: async(req,res) => {
         const name = req.body.name
-        const buymin = req.body.buymin
+        const buymin = parseInt(req.body.buymin)
         const quanlity = req.body.quanlity
         var discountpercent = '0'
         var discountprice = '0'

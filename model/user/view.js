@@ -70,6 +70,12 @@ module.exports = {
       }
    })
    return data
-  }
+  },
+  useraddress:async(id)=>{
+   const data= await prisma.user_address.findMany({
+     where:{userid:id}
+   })
+   return data
+ },
   
 }
