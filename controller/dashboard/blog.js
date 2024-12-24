@@ -32,13 +32,13 @@ module.exports = {
     },
     getBlogDetail: async(req,res) => {
         const id = parseInt(req.params.ID);
-        const userid = req.session.userid;
+        const userid = req.session.userId;
+
         let user
         if(userid >= 0) {
             user = await userr.getUser(userid)
         }
         const blog = await blogg.getBlog(id)
-        
         const social = await so.getSocial()
         res.render('./dashboard/blog-detail',{blog:blog, social:social,user:user})
     },
