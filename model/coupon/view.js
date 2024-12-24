@@ -10,6 +10,15 @@ module.exports = {
     });
     return data;
    },
+   couponOn: async() => {
+      const data = await prisma.coupon.findMany({
+         where:{active:1},
+        include:{
+           product:true,
+        }
+      });
+      return data;
+     },
    getCoupon: async(userid,sum) => {
       var data = []
       ///Lay ma giam gia ma tat ca nguoi dung deu co
