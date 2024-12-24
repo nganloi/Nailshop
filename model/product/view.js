@@ -52,6 +52,7 @@ module.exports = {
       take:8,
       include:{
         user:true,
+        product:true,
       }
     })
     return data

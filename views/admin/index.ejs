@@ -27,8 +27,8 @@
 			<!-- stats -->
 			<div class="col-12 col-sm-6 col-xl-3">
 				<div class="stats">
-					<span>Unique views this month</span>
-					<p>5 678</p>
+					<span>List news order</span>
+					<p><%=order.length%></p>
 					<img src="/images/graph-bar.svg" alt="">
 				</div>
 			</div>
@@ -37,8 +37,8 @@
 			<!-- stats -->
 			<div class="col-12 col-sm-6 col-xl-3">
 				<div class="stats">
-					<span>Items added this month</span>
-					<p>172</p>
+					<span>Coupons On</span>
+					<p><%=coupon.length%></p>
 					<img src="/images/film.svg" alt="">
 				</div>
 			</div>
@@ -48,7 +48,7 @@
 			<div class="col-12 col-sm-6 col-xl-3">
 				<div class="stats">
 					<span>New comments</span>
-					<p>2 573</p>
+					<p><%=comment.length%></p>
 					<img src="/images/comments.svg" alt="">
 				</div>
 			</div>
@@ -58,7 +58,7 @@
 			<div class="col-12 col-sm-6 col-xl-3">
 				<div class="stats">
 					<span>New reviews</span>
-					<p>1 021</p>
+					<p><%=review.length%></p>
 					<img src="/images/star-half-alt.svg" alt="">
 				</div>
 			</div>
@@ -68,11 +68,11 @@
 			<div class="col-12 col-xl-6">
 				<div class="dashbox">
 					<div class="dashbox__title">
-						<h3><img src="/images/award.svg" alt=""> Top items</h3>
+						<h3><img src="/images/award.svg" alt=""> List order</h3>
 
 						<div class="dashbox__wrap">
 							<a class="dashbox__refresh" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21,11a1,1,0,0,0-1,1,8.05,8.05,0,1,1-2.22-5.5h-2.4a1,1,0,0,0,0,2h4.53a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4.77A10,10,0,1,0,22,12,1,1,0,0,0,21,11Z"/></svg></a>
-							<a class="dashbox__more" href="">View All</a>
+							<a class="dashbox__more" href="/admin/oder">View All</a>
 						</div>
 					</div>
 
@@ -81,82 +81,28 @@
 							<thead>
 								<tr>
 									<th>ID</th>
-									<th>TITLE</th>
-									<th>CATEGORY</th>
-									<th>RATING</th>
+									<th>NAME</th>
+									<th>ADDRESS</th>
+									<th>PRODUCT</th>
 								</tr>
 							</thead>
 							<tbody>
+								<%for(var i=0; i< order.length; i++){%>
 								<tr>
 									<td>
-										<div class="main__table-text">321</div>
+										<div class="main__table-text"><%=i%></div>
 									</td>
 									<td>
-										<div class="main__table-text">I Dream in Another Language</div>
+										<div class="main__table-text"><%=order[i].user.name%></div>
 									</td>
 									<td>
-										<div class="main__table-text">Movie</div>
+										<div class="main__table-text"><%=order[i].address.slice(0,9)%>...</div>
 									</td>
 									<td>
-										<div class="main__table-text main__table-text--rate">9.2</div>
+										<div class="main__table-text main__table-text--rate"><%=order[i].product.length%></div>
 									</td>
 								</tr>
-								<tr>
-									<td>
-										<div class="main__table-text">54</div>
-									</td>
-									<td>
-										<div class="main__table-text">Benched</div>
-									</td>
-									<td>
-										<div class="main__table-text">Movie</div>
-									</td>
-									<td>
-										<div class="main__table-text main__table-text--rate">9.1</div>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<div class="main__table-text">670</div>
-									</td>
-									<td>
-										<div class="main__table-text">Whitney</div>
-									</td>
-									<td>
-										<div class="main__table-text">TV Series</div>
-									</td>
-									<td>
-										<div class="main__table-text main__table-text--rate">9.0</div>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<div class="main__table-text">241</div>
-									</td>
-									<td>
-										<div class="main__table-text">Blindspotting 2</div>
-									</td>
-									<td>
-										<div class="main__table-text">TV Series</div>
-									</td>
-									<td>
-										<div class="main__table-text main__table-text--rate">8.9</div>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<div class="main__table-text">22</div>
-									</td>
-									<td>
-										<div class="main__table-text">Blindspotting</div>
-									</td>
-									<td>
-										<div class="main__table-text">TV Series</div>
-									</td>
-									<td>
-										<div class="main__table-text main__table-text--rate">8.9</div>
-									</td>
-								</tr>
+								<%}%>
 							</tbody>
 						</table>
 					</div>
@@ -168,11 +114,11 @@
 			<div class="col-12 col-xl-6">
 				<div class="dashbox">
 					<div class="dashbox__title">
-						<h3><img src="/images/img/film.svg" alt=""> Latest items</h3>
+						<h3><img src="/images/img/film.svg" alt=""> List Coupon On</h3>
 
 						<div class="dashbox__wrap">
 							<a class="dashbox__refresh" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21,11a1,1,0,0,0-1,1,8.05,8.05,0,1,1-2.22-5.5h-2.4a1,1,0,0,0,0,2h4.53a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4.77A10,10,0,1,0,22,12,1,1,0,0,0,21,11Z"/></svg></a>
-							<a class="dashbox__more" href="/admin/blog">View All</a>
+							<a class="dashbox__more" href="/admin/coupon">View All</a>
 						</div>
 					</div>
 
@@ -182,81 +128,32 @@
 								<tr>
 									<th>ID</th>
 									<th>TITLE</th>
-									<th>CATEGORY</th>
-									<th>STATUS</th>
+									<th>QUANTITY</th>
+									<th>DISCOUNT</th>
 								</tr>
 							</thead>
 							<tbody>
+								<% for(var i=0; i< coupon.length; i++){%>
 								<tr>
 									<td>
-										<div class="main__table-text">26</div>
+										<div class="main__table-text"><%=i%></div>
 									</td>
 									<td>
-										<div class="main__table-text">I Dream in Another Language</div>
+										<div class="main__table-text"><%=coupon[i].name%></div>
 									</td>
 									<td>
-										<div class="main__table-text">Movie</div>
+										<div class="main__table-text"><%=coupon[i].quantity%></div>
 									</td>
 									<td>
-										<div class="main__table-text main__table-text--green">Visible</div>
+										<div class="main__table-text main__table-text--green"><%if(parseInt(coupon[i].discountpercent) != 0){%>
+											<%=coupon[i].discountpercent%>%
+												<%}else{%>
+													$<%=coupon[i].discountprice%>
+												<%}%>
+										</div>
 									</td>
 								</tr>
-								<tr>
-									<td>
-										<div class="main__table-text">25</div>
-									</td>
-									<td>
-										<div class="main__table-text">Benched</div>
-									</td>
-									<td>
-										<div class="main__table-text">Movie</div>
-									</td>
-									<td>
-										<div class="main__table-text main__table-text--green">Visible</div>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<div class="main__table-text">24</div>
-									</td>
-									<td>
-										<div class="main__table-text">Whitney</div>
-									</td>
-									<td>
-										<div class="main__table-text">TV Series</div>
-									</td>
-									<td>
-										<div class="main__table-text main__table-text--green">Visible</div>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<div class="main__table-text">23</div>
-									</td>
-									<td>
-										<div class="main__table-text">Blindspotting 2</div>
-									</td>
-									<td>
-										<div class="main__table-text">TV Series</div>
-									</td>
-									<td>
-										<div class="main__table-text main__table-text--green">Visible</div>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<div class="main__table-text">22</div>
-									</td>
-									<td>
-										<div class="main__table-text">Blindspotting</div>
-									</td>
-									<td>
-										<div class="main__table-text">TV Series</div>
-									</td>
-									<td>
-										<div class="main__table-text main__table-text--green">Visible</div>
-									</td>
-								</tr>
+								<%}%>
 							</tbody>
 						</table>
 					</div>
@@ -268,11 +165,11 @@
 			<div class="col-12 col-xl-6">
 				<div class="dashbox">
 					<div class="dashbox__title">
-						<h3><img src="/images/user-circle.svg" alt=""> Latest users</h3>
+						<h3><img src="/images/user-circle.svg" alt=""> Latest comment users</h3>
 
 						<div class="dashbox__wrap">
 							<a class="dashbox__refresh" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21,11a1,1,0,0,0-1,1,8.05,8.05,0,1,1-2.22-5.5h-2.4a1,1,0,0,0,0,2h4.53a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4.77A10,10,0,1,0,22,12,1,1,0,0,0,21,11Z"/></svg></a>
-							<a class="dashbox__more" href="/admin/user">View All</a>
+							<a class="dashbox__more" href="/admin/comments">View All</a>
 						</div>
 					</div>
 
@@ -283,80 +180,26 @@
 									<th>ID</th>
 									<th>FULL NAME</th>
 									<th>EMAIL</th>
-									<th>USERNAME</th>
+									<th>COMMENT</th>
 								</tr>
 							</thead>
 							<tbody>
+								<% for(var i=0; i< comment.length;i++){%>
 								<tr>
 									<td>
-										<div class="main__table-text">23</div>
+										<div class="main__table-text"><%= i%></div>
 									</td>
 									<td>
-										<div class="main__table-text">John Doe</div>
+										<div class="main__table-text"><%=comment[i].user.name%></div>
 									</td>
 									<td>
-										<div class="main__table-text main__table-text--grey">email@email.com</div>
+										<div class="main__table-text main__table-text--grey"><%=comment[i].user.email%></div>
 									</td>
 									<td>
-										<div class="main__table-text">Username</div>
+										<div class="main__table-text"><%=comment[i].content.slice(0,10)%>...</div>
 									</td>
 								</tr>
-								<tr>
-									<td>
-										<div class="main__table-text">23</div>
-									</td>
-									<td>
-										<div class="main__table-text">John Doe</div>
-									</td>
-									<td>
-										<div class="main__table-text main__table-text--grey">email@email.com</div>
-									</td>
-									<td>
-										<div class="main__table-text">Username</div>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<div class="main__table-text">23</div>
-									</td>
-									<td>
-										<div class="main__table-text">John Doe</div>
-									</td>
-									<td>
-										<div class="main__table-text main__table-text--grey">email@email.com</div>
-									</td>
-									<td>
-										<div class="main__table-text">Username</div>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<div class="main__table-text">23</div>
-									</td>
-									<td>
-										<div class="main__table-text">John Doe</div>
-									</td>
-									<td>
-										<div class="main__table-text main__table-text--grey">email@email.com</div>
-									</td>
-									<td>
-										<div class="main__table-text">Username</div>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<div class="main__table-text">23</div>
-									</td>
-									<td>
-										<div class="main__table-text">John Doe</div>
-									</td>
-									<td>
-										<div class="main__table-text main__table-text--grey">email@email.com</div>
-									</td>
-									<td>
-										<div class="main__table-text">Username</div>
-									</td>
-								</tr>
+								<%}%>
 							</tbody>
 						</table>
 					</div>
@@ -383,80 +226,26 @@
 									<th>ID</th>
 									<th>ITEM</th>
 									<th>AUTHOR</th>
-									<th>RATING</th>
+									<th>REVIEW</th>
 								</tr>
 							</thead>
 							<tbody>
+								<% for(var i=0; i< review.length;i++){%>
 								<tr>
 									<td>
-										<div class="main__table-text">23</div>
+										<div class="main__table-text"><%=i%></div>
 									</td>
 									<td>
-										<div class="main__table-text">I Dream in Another Language</div>
+										<div class="main__table-text"><%=review[i].product.name%></div>
 									</td>
 									<td>
-										<div class="main__table-text">John Doe</div>
+										<div class="main__table-text"><%=review[i].user.name%></div>
 									</td>
 									<td>
-										<div class="main__table-text main__table-text--rate">7.2</div>
+										<div class="main__table-text main__table-text--rate"><%=review[i].content.slice(0,10)%>...</div>
 									</td>
 								</tr>
-								<tr>
-									<td>
-										<div class="main__table-text">24</div>
-									</td>
-									<td>
-										<div class="main__table-text">Benched</div>
-									</td>
-									<td>
-										<div class="main__table-text">John Doe</div>
-									</td>
-									<td>
-										<div class="main__table-text main__table-text--rate">6.3</div>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<div class="main__table-text">25</div>
-									</td>
-									<td>
-										<div class="main__table-text">Whitney</div>
-									</td>
-									<td>
-										<div class="main__table-text">John Doe</div>
-									</td>
-									<td>
-										<div class="main__table-text main__table-text--rate">8.4</div>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<div class="main__table-text">26</div>
-									</td>
-									<td>
-										<div class="main__table-text">Blindspotting</div>
-									</td>
-									<td>
-										<div class="main__table-text">John Doe</div>
-									</td>
-									<td>
-										<div class="main__table-text main__table-text--rate">9.0</div>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<div class="main__table-text">27</div>
-									</td>
-									<td>
-										<div class="main__table-text">I Dream in Another Language</div>
-									</td>
-									<td>
-										<div class="main__table-text">John Doe</div>
-									</td>
-									<td>
-										<div class="main__table-text main__table-text--rate">7.7</div>
-									</td>
-								</tr>
+								<%}%>
 							</tbody>
 						</table>
 					</div>
