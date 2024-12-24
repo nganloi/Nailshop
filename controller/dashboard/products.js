@@ -45,7 +45,9 @@ module.exports = {
       var product = products.filter((name) => {
         return name.name.toLowerCase().indexOf(search.toLowerCase()) !== -1
     })
-      res.render('./dashboard/product', {user:user,product:product, cate:cate, selected:products})
+      var numberpage=0
+      var idpage=0
+      res.render('./dashboard/product', {user:user,product:product, cate:cate,number:numberpage,page:idpage, selected:products})
   },
   getSearchCate: async(req,res) => {
     const categ = parseInt(req.query.category);
@@ -56,8 +58,10 @@ module.exports = {
         user = await userr.getUser(userid)
     }
     const product = await dataProduct.getSearchCate(categ)
-   
-    res.render('./dashboard/product', {user:user,product:product, cate:cate, selected: categ})
+    var numberpage=0
+    var idpage=0
+
+    res.render('./dashboard/product', {user:user,product:product, cate:cate,number:numberpage,page:idpage, selected: categ})
 },
 getSearchPrice: async(req,res) => {
   const price1 = parseInt(req.query.price1) || 0;
@@ -69,8 +73,9 @@ getSearchPrice: async(req,res) => {
       user = await userr.getUser(userid)
   }
   const product = await dataProduct.getSearchPrice(price1,price2)
- 
-  res.render('./dashboard/product', {user:user,product:product, cate:cate, selected:product})
+  var numberpage=0
+  var idpage=0
+  res.render('./dashboard/product', {user:user,product:product, cate:cate,number:numberpage,page:idpage, selected:product})
 },
     getSignProducts: async (req, res) => {
         const userid = parseInt(req.session.userId);
