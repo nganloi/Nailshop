@@ -16,6 +16,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage }); 
 // VIEW
 router.get('/',view.getMarketingShop)
+router.get('/page/:ID',view.getMarketingShop)
 // CREATE
 router.get('/create', create.getCreate)
 router.post('/create',upload.single("img"),create.postCreate)

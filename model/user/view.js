@@ -6,6 +6,11 @@ module.exports = {
     const data = await prisma.user.findMany();
     return data;
    },
+   getPage: async(page,quantity) => {
+      const data = await prisma.user.findMany({skip:page,take:quantity});
+      return data;
+     },
+  
    getUser: async(userid) => {
       const data = await prisma.user.findUnique({
          where: {id:userid},
