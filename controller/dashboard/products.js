@@ -25,7 +25,7 @@ module.exports = {
          }
         const page=(idpage-1)*3
         const userid = parseInt(req.session.userId)
-        const product = await dataProduct.product2(page);
+        const product = await dataProduct.productPage(page);
         const cate = await category.category()
         let user
         if(userid >= 0) {

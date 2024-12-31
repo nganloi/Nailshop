@@ -5,7 +5,7 @@ const couponCreate = require('../../controller/admin/coupon/create.js')
 const couponEdit = require('../../controller/admin/coupon/edit.js')
 const deletet = require('../../controller/admin/coupon/delete.js')
 router.get('/', coupon.getCoupon)
-
+router.get('/page/:ID', coupon.getCoupon)
 //CREATE
 router.get('/create', couponCreate.getCreateCoupon)
 router.post('/create', couponCreate.postCreateCoupon)

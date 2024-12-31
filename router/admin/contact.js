@@ -3,6 +3,7 @@ const router = express.Router();
 const contact = require('../../controller/admin/contact')
 
 router.get('/', contact.getContact)
+router.get('/page/:ID', contact.getContact)
 router.get('/view/:ID', contact.viewContact)
 router.get('/delete/:ID', contact.deletContact)
 

@@ -28,17 +28,29 @@ module.exports = {
     
     return data;
    },
-   getpageBlog: async(page) => {
+   getpageBlog: async(page,quantity) => {
       const data = await prisma.blog.findMany({
          skip:page,
-         take: 3,
+         take: quantity,
          select: {
           id: true,
           img: true,
           name: true,
           describe: true,
           content: true,
-          time: true
+          time: true,
+          comment: {
+            select: {
+               content: true,
+               time: true,
+              user: {
+               select: {
+                  name: true,
+                  img: true
+               }
+              }
+            }
+         }
          }
         });
         return data;
@@ -85,6 +97,18 @@ module.exports = {
 
      getComment: async() => {
       const data = await prisma.comment.findMany({
+         include:{
+            user:true,
+            blog:true,
+         }
+      });
+      
+      return data;
+     },
+     getPageComment: async(page,quantity) => {
+      const data = await prisma.comment.findMany({
+         skip:page,
+         take:quantity,
          include:{
             user:true,
             blog:true,
