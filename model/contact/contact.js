@@ -6,6 +6,10 @@ module.exports={
         const data=await prisma.contact.findMany()
         return data
     },
+    getPage:async(page,quantity)=>{
+        const data=await prisma.contact.findMany({skip:page,take:quantity})
+        return data
+    },
     postContact: async(name,email,phone,subject,message) => {
         const data = await prisma.contact.create({
             data: {

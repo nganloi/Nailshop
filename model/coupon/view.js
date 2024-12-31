@@ -10,6 +10,16 @@ module.exports = {
     });
     return data;
    },
+   getPage: async(page,quantity) => {
+      const data = await prisma.coupon.findMany({
+         skip:page,
+         take:quantity,
+        include:{
+           product:true,
+        }
+      });
+      return data;
+     },
    couponOn: async() => {
       const data = await prisma.coupon.findMany({
          where:{active:1},

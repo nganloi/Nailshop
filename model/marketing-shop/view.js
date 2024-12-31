@@ -7,4 +7,8 @@ module.exports = {
     const data = await prisma.marketing_shop.findMany();
     return data;
    },
+   getPage: async(page,quantity) => {
+      const data = await prisma.marketing_shop.findMany({skip:page,take:quantity});
+      return data;
+     },
 }

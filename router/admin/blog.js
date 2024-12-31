@@ -17,7 +17,7 @@ const upload = multer({ storage: storage });
 
 // VIEW
 router.get('/', view.getBlog)
-
+router.get('/page/:ID',view.getBlog)
 //CREATE
 router.get('/create', create.getCreate)
 router.post('/create',upload.single("img"),create.postCreate)

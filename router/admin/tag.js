@@ -7,6 +7,7 @@ const deletet=require('../../controller/admin/tag/delete.js')
 
 // VIEW
 router.get('/',view.getTag)
+router.get('/page/:ID',view.getTag)
 // CREATE
 router.post('/create',create.postCreate)
 // EDIT
