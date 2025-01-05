@@ -16,9 +16,43 @@ module.exports = {
         })
         return data
     },
+    getPageOder:async(page,quantity)=>{
+        const data = await prisma.order.findMany({
+            where:{active:1},
+            skip:page,
+            take:quantity,
+            include:{
+                product:{
+                    include:{
+                        product:true,
+                        classfy:true,
+                    }
+                },
+                user:true,
+            }
+        })
+        return data
+    },
     oderConfirm:async()=>{
         const data = await prisma.order.findMany({
             where:{active:2},
+            include:{
+                product:{
+                    include:{
+                        product:true,
+                        classfy:true,
+                    }
+                },
+                user:true,
+            }
+        })
+        return data
+    },
+    getPageOderConfirm:async(page,quantity)=>{
+        const data = await prisma.order.findMany({
+            where:{active:2},
+            skip:page,
+            take:quantity,
             include:{
                 product:{
                     include:{

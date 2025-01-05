@@ -1157,7 +1157,7 @@ ul {
 }
 @media (min-width: 576px) {
   .paginator-wrap {
-    justify-content: space-between;
+    justify-content:center;
   }
   .paginator-wrap span {
     display: flex;
@@ -1170,7 +1170,7 @@ ul {
   align-items: center;
   background-color: #28282d;
   height: 40px;
-  width: 240px;
+  width: auto;
   border-radius: 4px;
 }
 .paginator__item {

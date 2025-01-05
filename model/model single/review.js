@@ -12,6 +12,17 @@ module.exports = {
         })
         return data
     },
+    getPage:async(page,quantity)=>{
+        const data = await prisma.review.findMany({
+            skip:page,
+            take:quantity,
+            include:{
+                user:true,
+                product:true,
+            }
+        })
+        return data
+    },
     delete:async(id)=>{
         const del = await prisma.review.deleteMany({
             where:{

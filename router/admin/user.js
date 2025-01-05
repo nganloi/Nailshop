@@ -6,6 +6,7 @@ const edit = require('../../controller/admin/user/edit.js')
 
 //VIEW
 router.get('/', user.getUser)
+router.get('/page/:ID', user.getUser)
 
 // SEE
 router.get('/edit/:ID',edit.getEdit )

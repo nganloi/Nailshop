@@ -27,7 +27,7 @@ module.exports = {
         if(userid >= 0) {
             user = await userr.getUser(userid)
         }
-       const blog = await blogg.getpageBlog(page)
+       const blog = await blogg.getpageBlog(page,3)
         res.render('./dashboard/blog', {blog:blog,user:user,number:numberpage,page:idpage})
     },
     getBlogDetail: async(req,res) => {

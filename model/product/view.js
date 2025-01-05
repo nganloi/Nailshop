@@ -56,5 +56,13 @@ module.exports = {
       }
     })
     return data
-  }
+  },
+  productPage: async(page) => {
+    const data = await prisma.product.findMany({
+      where:{classfy:{some:{}}},
+      skip:page,
+      take:3,
+    });
+    return data;
+   },
 }

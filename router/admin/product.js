@@ -18,6 +18,7 @@ const upload = multer({ storage: storage });
 
 // VIEW
 router.get('/', product.getProduct)
+router.get('/page/:ID',product.getProduct)
 // CREATE
 router.get('/create', productCreate.getCreateProduct)
 router.post('/create',upload.array("img",5),productCreate.postCreate)
