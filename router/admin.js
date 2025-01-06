@@ -32,7 +32,7 @@ router.use('/product', product)
 router.use('/user', user)
 
 // PAGES
-// router.use('/pages', pages)
+//  router.use('/pages', pages)
 
 // COMMENTS
 router.use('/comments', comments)
