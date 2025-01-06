@@ -4,7 +4,7 @@ const admin = require('./admin/shop.js')
 const product = require('./admin/product.js')
 const blog = require('./admin/blog.js')
 const user = require('./admin/user.js')
-const pages = require('./admin/page.js')
+// const pages = require('./admin/page.js')
 const comments = require('./admin/comments.js')
 const reviews = require('./admin/reviews.js')
 const coupon = require('./admin/coupon.js')
@@ -32,7 +32,7 @@ router.use('/product', product)
 router.use('/user', user)
 
 // PAGES
-router.use('/pages', pages)
+// router.use('/pages', pages)
 
 // COMMENTS
 router.use('/comments', comments)

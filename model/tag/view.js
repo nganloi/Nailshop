@@ -7,4 +7,10 @@ module.exports = {
     return data;
 
    },
+   getPage: async(page,quantity) => {
+      const data = await prisma.tag.findMany({skip:page,take:quantity});
+      return data;
+  
+     },
+  
 }
