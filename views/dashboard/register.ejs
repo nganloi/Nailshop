@@ -41,28 +41,38 @@
                         <form action="/register" method="post" class="form">
                             <div class="row">
                                 <div class="col-9">
-                                    <input type="name" class="form-input" placeholder="Name" name="name" required>
+                                    <input type="text" class="form-input" placeholder="Name" name="name" required 
+                                           pattern="^[a-zA-Z0-9]{3,50}$" 
+                                           title="Tên chỉ chứa chữ cái hoặc chữ cái và số, từ 3 đến 50 ký tự.">
                                 </div><br>
                                 <div class="col-9">
-                                    <input type="email" class="form-input" placeholder="E-mail" name="mail" required>
+                                    <input type="email" class="form-input" placeholder="E-mail" name="mail" required 
+                                           title="Vui lòng nhập email hợp lệ (ví dụ: example@example.com).">
                                 </div><br>
                                 <div class="col-9">
-                                    <input type="text" class="form-input" placeholder="Phone" name="phone" required>
+                                    <input type="text" class="form-input" placeholder="Phone" name="phone" required 
+                                           pattern="^\d{10,15}$" 
+                                           title="Số điện thoại phải là số từ 10 đến 15 ký tự.">
                                 </div><br>
                                 <div class="col-9">
-                                    <input type="text" class="form-input" placeholder=" Address" name="address" required>
+                                    <input type="text" class="form-input" placeholder="Address" name="address" required 
+                                           pattern="^.{5,100}$" 
+                                           title="Địa chỉ phải từ 5 đến 100 ký tự.">
                                 </div><br>
                                 <div class="col-9">
-                                    <input type="password" class="form-input" placeholder="Password" name="pass" >
+                                    <input type="password" class="form-input" placeholder="Password" name="pass" required 
+                                           pattern="^.{3,}$" 
+                                           title="Mật khẩu phải có ít nhất 3 ký tự, có thể bao gồm số, chữ cái và ký tự đặc biệt.">
                                 </div>
-                                <div class="col-7" >
+                                <div class="col-7">
                                     <div class="submit-btn-login">
                                         <button type="submit" class="sec-btn"><span>Register</span></button>
-                                        <a href="/login" class="sec-btn" ><span>Login</span></a>
+                                        <a href="/login" class="sec-btn"><span>Login</span></a>
                                     </div>
                                 </div>
                             </div>
                         </form>
+                        
                     </div>
                 </div>
             </div>

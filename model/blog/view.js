@@ -38,7 +38,19 @@ module.exports = {
           name: true,
           describe: true,
           content: true,
-          time: true
+          time: true,
+          comment: {
+            select: {
+               content: true,
+               time: true,
+              user: {
+               select: {
+                  name: true,
+                  img: true
+               }
+              }
+            }
+         }
          }
         });
         return data;
