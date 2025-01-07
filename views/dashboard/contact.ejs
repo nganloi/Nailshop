@@ -41,20 +41,23 @@
                         <form action="/contact" method="post" class="form">
                             <div class="row">
                                 <div class="col-12">
-                                    <input type="text" class="form-input" placeholder="Full Name" name="name">
+                                    <input type="text" class="form-input" placeholder="Full Name" name="name" required 
+                                           pattern="^[a-zA-Z\s]{3,50}$" title="Tên chỉ chứa chữ cái và từ 3 đến 50 ký tự.">
                                 </div>
                                 <div class="col-12">
                                     <input type="email" class="form-input" placeholder="E-mail Address" name="email" required>
                                 </div>
                                 <div class="col-lg-6">
-                                    <input type="text" class="form-input" placeholder="Phone Number" name="phone">
+                                    <input type="text" class="form-input" placeholder="Phone Number" name="phone" required 
+                                           pattern="^\d{10,15}$" title="Số điện thoại phải từ 10 đến 15 chữ số.">
                                 </div>
                                 <div class="col-lg-6">
-                                    <input type="text" class="form-input" placeholder="Subject" name="subject">
+                                    <input type="text" class="form-input" placeholder="Subject" name="subject" required 
+                                           pattern="^.{3,100}$" title="Chủ đề phải từ 3 đến 100 ký tự.">
                                 </div>
                                 <div class="col-12">
-                                    <textarea class="form-input" cols="30" name="message" rows="20"
-                                        placeholder="Type Message Here...."></textarea>
+                                    <textarea class="form-input" cols="30" name="message" rows="20" placeholder="Type Message Here...." required
+                                              pattern="^.{10,500}$" title="Nội dung phải từ 10 đến 500 ký tự."></textarea>
                                 </div>
                                 <div class="col-12">
                                     <div class="submit-btn">
@@ -63,6 +66,7 @@
                                 </div>
                             </div>
                         </form>
+                        
                     </div>
                 </div>
             </div>
