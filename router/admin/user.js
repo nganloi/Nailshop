@@ -13,4 +13,7 @@ router.get('/edit/:ID',edit.getEdit )
 
 // DELETE
 router.get('/delete/:ID', delet. deletet)
+
+// search
+router.get('/search', user.getSearch)
 module.exports = router;

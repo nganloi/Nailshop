@@ -5,6 +5,7 @@ const edit = require('../../controller/admin/category/edit.js');
 const create = require('../../controller/admin/category/create.js')
 const deletet=require('../../controller/admin/category/delete.js')
 const multer = require('multer');
+const { route } = require('../dashboard.js');
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, './assets/upload/');
@@ -25,4 +26,7 @@ router.get('/edit/:ID', edit.getEdit)
 router.post('/edit/:ID',edit.postEdit)
 //DELETE
 router.get('/delete/:ID',deletet.deletet)
+
+//SEARCH
+router.get('/search', view.getSearch )
 module.exports = router;

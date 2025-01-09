@@ -562,6 +562,7 @@ ul {
   font-size: 14px;
   border-radius: 4px;
 }
+
 .main__title-form input:hover,
 .main__title-form input:focus {
   border-color: #ff55a5;
