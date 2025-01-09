@@ -16,4 +16,7 @@ router.post('/edit/:ID', couponEdit.postEditCoupon)
 router.get('/status/:ID',couponEdit.changeStatus)
 //DELETE
 router.get('/delete/:ID',deletet.delete)
+
+// search
+router.get('/search', coupon.getSearch)
 module.exports = router;

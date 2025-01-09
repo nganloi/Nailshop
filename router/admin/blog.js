@@ -28,4 +28,7 @@ router.post('/edit/:ID',upload.single("img"),edit.postEdit)
 //DELETE
 router.get('/delete/:ID',deletet.deletet)
 
+// search
+router.get('/search', view.getSearch)
+
 module.exports = router;

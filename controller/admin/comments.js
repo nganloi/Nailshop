@@ -6,7 +6,7 @@ module.exports = {
     getComment: async(req,res) => {
         const data = await commentt.getComment()
         const idpage=parseInt(req.params.ID)||1;
-        var numberpage='';
+        var numberpage=''; 
         if(data.length> Math.round(data.length/3)*3){
             numberpage= Math.round(data.length/3)+1;
            }else{

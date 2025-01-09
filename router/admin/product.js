@@ -6,6 +6,7 @@ const productCreate = require('../../controller/admin/product/create.js')
 const deletes = require('../../controller/admin/product/delete.js')
 const check = require('../../middlewea/check/createproduct.js')
 const multer = require('multer');
+const view = require('../../model/user/view.js');
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, './assets/upload/');
@@ -44,4 +45,7 @@ router.get('/status/:ID',productEdit.changeStatus)
 
 ///DELETE PRODUCT
 router.get('/delete/:ID',deletes.delete)
+
+// search
+router.get('/search', product.getSearch)
 module.exports = router;

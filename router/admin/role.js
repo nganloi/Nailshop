@@ -23,4 +23,7 @@ router.get('/edit/:ID', edit.getEdit)
 router.post('/edit/:ID',edit.postEdit)
 //DELETE
 router.get('/delete/:ID',deletet.deletet)
+
+//search
+router.get('/search', view.getSearch)
 module.exports = router;
